@@ -384,8 +384,7 @@ export const CHAPTER: Chapter = {
             "Six plush animal onesies in a row. The pig is on his way.",
             "{stay_team}. Assembled. Mostly.",
           ],
-          still: "still_stay_crew",
-          video: "stay_crew",
+          still: "still_stay_crew", // no clip: Gemini Omni refused this still (docs/adventures/README.md)
           then: "crew_done",
         },
       },

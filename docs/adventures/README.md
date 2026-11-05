@@ -9,7 +9,7 @@ the last choice, else `main`). Choosing a different adventure reloads the page; 
 | id | Title (default cast) | Status | Campaign | Content | Story bible | Art / media manifests | Budget |
 |---|---|---|---|---|---|---|---|
 | `main` | Loose Orphans: Legend of Minsung | done, art and media drawn | `web/src/campaigns/main.ts` | `web/src/data/chapters/` | `docs/story-bible.md` | `tools/art/pixellab.toml`, `tools/art/cast.toml` + `cast/ch*.toml`, `tools/media/*.toml` | `config.toml [budget.main]` |
-| `stay` | The L-Team | playable end to end; pictures, portraits and music drawn, cutscenes not yet | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
+| `stay` | The L-Team | done: pictures, portraits, music and 6 of 7 cutscenes drawn | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
 
 `main` keeps the folders it had before there were adventures; every later adventure uses the `adventures/<id>/`
 layout below.
@@ -45,4 +45,7 @@ layout below.
 
 ## The L-Team's art and media
 Drawn on 2026-11-05: 48 PixelLab pictures, 8 Nano Banana crew portraits, 5 Lyria tracks (ledgers in `docs/`).
-Cutscenes come next: each clip animates its still, so dry-run `tools.media cutscenes --adventure stay` and ask.
+Then 6 of 7 cutscenes ($3.78). Gemini Omni refused `stay_crew` twice ("prohibited content", nothing charged), so
+the crew reveal plays as its still with the slow zoom and `ch1.ts` names no video for it. To try again, soften the
+still or its prompt in `tools/media/adventures/stay/cutscenes.toml`, dry-run, ask, then put `video: "stay_crew"` back.
+The guard portraits `stay_kim` and `stay_kang` were hand-recoloured to drop collar insignia (`docs/art-notes.md`).

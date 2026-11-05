@@ -13,3 +13,9 @@ figures at 2x (`BACKDROP_SCALE` and `FIGURE_SCALE` in `web/src/scenes/overworld.
 of the backdrop's height. A style-lock composite once drew the figures at 1x, made the cast look
 tiny beside the couches, and cost two discarded redraws of `qd_living_room`; the first drawing was right. At true
 scale a backdrop's couch should be about twice a figure's height, as in `dorm` and `qd_living_room`.
+
+### 2026-11-05: the L-Team's guard portraits, hand-recoloured
+PixelLab drew `portraits/stay_kim` and `portraits/stay_kang` with red collar patches and stars twice, even with
+"no insignia" in the prompt, which made the fictional camp read as a real foreign army. Instead of a third paid
+take, the saturated red and gold pixels below the chin were recoloured to each uniform's own cloth colour with a
+small Pillow pass (red: r > 140 with g and b under 0.45 r; gold: r > 170, g > 0.6 r, b < 55). The cap badges stay.
