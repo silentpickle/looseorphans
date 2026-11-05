@@ -11,6 +11,7 @@ import { CutsceneScene } from "./scenes/cutscene";
 import { DialogueScene } from "./scenes/dialogue";
 import { EndScene } from "./scenes/end";
 import { MinigameScene } from "./scenes/minigame";
+import { SelectScene } from "./scenes/select";
 import { OverworldScene } from "./scenes/overworld";
 import { TitleScene } from "./scenes/title";
 import { watchForCrashes } from "./ui/crash-note";
@@ -46,6 +47,7 @@ function createGame(): Phaser.Game {
     scene: [
       BootScene,
       TouchScene,
+      SelectScene,
       TitleScene,
       OverworldScene,
       DialogueScene,

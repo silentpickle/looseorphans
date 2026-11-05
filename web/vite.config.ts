@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 // Settings come from ../config.toml at build time; the game reads them from the CONFIG constant (src/config.ts).
-// One campaign (src/campaigns/main.ts) is bundled through the `@campaign` alias.
+// Every adventure (src/campaigns/index.ts) is bundled; `@campaign` is the one this page plays (active.ts).
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "smol-toml";
@@ -54,7 +54,7 @@ function restartOnConfigChange(): Plugin {
   };
 }
 
-const CAMPAIGN_FILE = resolve(import.meta.dirname, "src", "campaigns", "main.ts");
+const CAMPAIGN_FILE = resolve(import.meta.dirname, "src", "campaigns", "active.ts");
 
 export default defineConfig({
   base: "./",

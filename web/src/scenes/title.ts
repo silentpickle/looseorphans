@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { GAME_HEIGHT, GAME_WIDTH, SETTINGS } from "../config";
 import { CAMPAIGN } from "@campaign";
+import { ADVENTURES } from "../campaigns/index";
 import { playMusic } from "../audio/music";
 import { takeResumeRequest } from "../hot";
 import { Controls } from "../input/controls";
@@ -13,6 +14,7 @@ import {
   DIM_COLOR,
   FONT_SIZE_SMALL,
   FONT_SIZE_TITLE,
+  LINE_HEIGHT,
   PADDING,
   drawWindow,
   textStyle,
@@ -26,7 +28,6 @@ const SUBTITLE_Y = 156;
 const MENU_X = 270;
 const MENU_Y = 212;
 const MENU_W = 110;
-const MENU_H = 56;
 const LOGO_Y = 58;
 const ART_SCALE = 2;
 const OUTLINE = { stroke: "#000000", strokeThickness: 4 };
@@ -35,6 +36,11 @@ const LOGO_KEY = CAMPAIGN.title.logo;
 const FOOT_MARGIN = 24;
 const FOOT_Y = GAME_HEIGHT - FOOT_MARGIN;
 const NEW_GAME = 0;
+const CONTINUE = 1;
+/** The title's rows; "Adventures" goes back to the select screen when the build has more than one. */
+const ROWS: readonly string[] =
+  ADVENTURES.length > 1 ? ["New Game", "Continue", "Adventures"] : ["New Game", "Continue"];
+const MENU_H = ROWS.length * LINE_HEIGHT + PADDING * HALF;
 
 export class TitleScene extends Phaser.Scene {
   private controls!: Controls;
@@ -64,7 +70,7 @@ export class TitleScene extends Phaser.Scene {
       })
       .setOrigin(CENTER);
     drawWindow(this.add.graphics(), MENU_X - PADDING, MENU_Y - PADDING, MENU_W + PADDING, MENU_H);
-    this.menu = new Menu(this, MENU_X, MENU_Y, ["New Game", "Continue"], [true, this.saved]);
+    this.menu = new Menu(this, MENU_X, MENU_Y, ROWS, [true, this.saved, true]);
     this.add
       .text(centerX, FOOT_Y, "Tap, click, or Z / Enter to choose", {
         ...textStyle(FONT_SIZE_SMALL, DIM_COLOR),
@@ -90,7 +96,8 @@ export class TitleScene extends Phaser.Scene {
     const chose = this.menu.tapTo(this.controls.tapped()) || this.controls.pressedA();
     if (!chose || !this.menu.isEnabled) return;
     if (this.menu.selected === NEW_GAME) this.begin(CAMPAIGN.startChapter);
-    else this.resume();
+    else if (this.menu.selected === CONTINUE) this.resume();
+    else this.scene.start("select");
   }
 
   private debugChapter(): string | null {

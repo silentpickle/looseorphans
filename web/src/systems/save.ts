@@ -1,18 +1,10 @@
-// The browser storage boundary. It can throw (private mode, blocked storage), so this is the one try/catch.
+// The campaign's save and small settings, kept in browser storage (systems/storage.ts).
 import { CAMPAIGN } from "@campaign";
 import { MEMBERS } from "../data/members";
+import { storage } from "./storage";
 import type { SaveData } from "./state";
 
 const KEY = CAMPAIGN.saveKey;
-
-function storage(): Storage | null {
-  try {
-    return globalThis.localStorage;
-  } catch (error: unknown) {
-    if (error instanceof DOMException || error instanceof ReferenceError) return null;
-    throw error;
-  }
-}
 
 export function loadSave(): SaveData | null {
   const store = storage();

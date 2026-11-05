@@ -1,8 +1,10 @@
 // Loads the sprites and every generated picture listed in art/manifest.json, builds the LPC animations, then goes
-// to the title. Music and video are not loaded here; scenes fetch them when they need them.
+// to the adventure select (when there is a choice to make) or the title. Music and video are not loaded here; scenes fetch them when they need them.
 import Phaser from "phaser";
 import { MANIFEST_KEY, MANIFEST_URL, artKey } from "../data/art";
 import { FIGURES } from "../data/figures";
+import { adventureAsked } from "../campaigns/active";
+import { ADVENTURES } from "../campaigns/index";
 
 export const FRAME = 64;
 export const ATLAS_KEY = "atlas";
@@ -48,7 +50,7 @@ export class BootScene extends Phaser.Scene {
       .fillStyle(WHITE, 1)
       .fillRect(0, 0, SPARK_SIZE, SPARK_SIZE)
       .generateTexture(SPARK_KEY, SPARK_SIZE, SPARK_SIZE);
-    this.scene.start("title");
+    this.scene.start(ADVENTURES.length > 1 && !adventureAsked() ? "select" : "title");
   }
 
   private queueArt(manifest: Manifest): void {

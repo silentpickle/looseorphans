@@ -1,5 +1,5 @@
-// A campaign is one whole game on this engine: its chapters, its words and where it keeps its save. Each build
-// bundles exactly one, chosen by the `@campaign` alias in vite.config.ts.
+// A campaign is one whole game on this engine (an adventure): its chapters, its words and where it keeps its save.
+// Every build bundles them all (campaigns/index.ts); campaigns/active.ts picks the one a page plays.
 import type { Chapter } from "../data/types";
 
 /** The story meter: what it is called, how full it gets, where Ending A starts, and the cutscene stamp. */
