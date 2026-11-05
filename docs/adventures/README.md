@@ -46,8 +46,9 @@ Each step ends on its **done when**. Work them in order; the human approves at s
 8. **Manifests, dry runs, ask.** `tools/art/adventures/<id>/pixellab.toml`, `tools/art/cast/<id>.toml` (LPC figures,
    free: `uv run python -m tools.art cast`), `tools/media/adventures/<id>/{music,cutscenes,images}.toml`; ids
    prefixed `<id>_`, and no id in two groups. Add `[budget.<id>]` to `config.toml`. Dry-run every runner with
-   `--adventure <id>`, show the counts and costs, and ask. Check the keys with `test -e secrets.env` (never open it).
-   Done when the human says yes.
+   `--adventure <id>`, show the counts and costs, and ask. Offer the cheaper shapes too: cutscenes are optional (a
+   trope with no `video` plays its still), and so is music (cues can borrow the first game's tracks). Check the keys
+   with `test -e secrets.env` (never open it). Done when the human says yes.
 9. **Generate.** Pictures, music and portraits first; cutscenes last, since each clip animates its still. Run clips
    one at a time (`--only <clip>`): a Gemini "prohibited content" refusal stops the batch but costs nothing. A
    refused clip keeps its still; drop its `video` from the chapter.

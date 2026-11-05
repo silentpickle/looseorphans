@@ -49,6 +49,25 @@ subscription (Google AI Pro, or AI Plus outside the US). It's handy for chatting
 pay for the API key. It's usually for university students, and most reports say 18 and up. Check
 [Google's student page](https://one.google.com/ai-student) for the current rules.
 
+### Spend less: cutscenes and music are optional
+
+The cutscenes are the most expensive part (about $0.62 for each 6-second clip), and you can skip them entirely. A
+story moment without a clip shows its still picture with a slow zoom, captions and sparkles, and that looks good.
+Tell Claude "no cutscenes" (or "music only, no cutscenes") when it asks about the budget. Music is optional too:
+without new tracks, your adventure borrows the first game's. The cheapest good-looking adventure is just pictures.
+
+### Another way to get pictures: `agy` and a Gemini subscription
+
+If you already pay for a Gemini app subscription, or got it free as a student, Google's **Antigravity** coding agent
+(its command is `agy`) runs on that subscription instead of an API key. Reports say it can draw pictures with Google's
+image model from the subscription's own image quota. That quota is separate from chat, small, and changes often. As
+far as we know it **can't** make the video cutscenes or the music.
+
+This project's tools don't call `agy`, so ask Claude to help you use it by hand. Have it draw each picture from the
+prompts in the adventure's `pixellab.toml`, save it as `web/public/assets/art/<group>/<id>.png`, then run the
+palette and manifest steps so it matches the game. It's slower and fussier than PixelLab, but it can cost nothing
+extra.
+
 **If you're under 18:** ask a parent or guardian to own anything that needs a card, and to set a spending limit on
 it. Every tool here shows you the price and waits for your "yes" before it spends a cent.
 

@@ -209,6 +209,12 @@ gemini.google.com, including the free student offer) gives no API credit. The to
 AI Studio with billing turned on. PixelLab offers a small free trial, enough for a handful of key pictures; check
 its site for the current numbers.
 
+**Cheaper routes.** Cutscenes are optional: a story moment without a clip plays its still with a slow zoom, so you
+can set an adventure's `cutscenes_usd_cap` to 0 and skip the most expensive tool. If you have a Gemini subscription,
+Google's Antigravity agent (`agy`) is reported to draw pictures from that subscription's image quota (not video or
+music). The tools here don't call it, but you can draw pictures with it by hand; see
+[`docs/start-here.md`](docs/start-here.md).
+
 **Where to put them.** One file at the repo root, which git ignores:
 
 ```bash
