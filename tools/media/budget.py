@@ -53,12 +53,16 @@ def row_kind(line: str) -> str:
     return line.split("|")[KIND_COLUMN].strip()
 
 
+def ledger_rows(ledger: Path) -> list[str]:
+    """Every call row in the ledger; none when there is no ledger yet."""
+    if not ledger.exists():
+        return []
+    return [line for line in ledger.read_text().splitlines() if line.startswith(ROW_PREFIX)]
+
+
 def spent(ledger: Path, kind: str | None = ANY_KIND) -> int:
     """Cents already spent according to the ledger, on one kind or on everything."""
-    if not ledger.exists():
-        return 0
-    rows = [line for line in ledger.read_text().splitlines() if line.startswith(ROW_PREFIX)]
-    return sum(row_cents(line) for line in rows if kind in (ANY_KIND, row_kind(line)))
+    return sum(row_cents(line) for line in ledger_rows(ledger) if kind in (ANY_KIND, row_kind(line)))
 
 
 def check_one(used: int, batch_cents: int, cap_cents: int, label: str) -> int:

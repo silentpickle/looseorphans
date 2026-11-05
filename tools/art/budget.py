@@ -33,12 +33,21 @@ class LedgerRow:
         return f"| {today} | {self.piece} | {self.size} | {self.pictures} | {self.note} |"
 
 
+def ledger_rows(ledger: Path) -> list[str]:
+    """Every call row in the ledger; none when there is no ledger yet."""
+    if not ledger.exists():
+        return []
+    return [line for line in ledger.read_text().splitlines() if line.startswith(ROW_PREFIX)]
+
+
+def row_pictures(line: str) -> int:
+    """The pictures column of one ledger row."""
+    return int(line.split("|")[PICTURES_COLUMN + 1].strip())
+
+
 def spent(ledger: Path) -> int:
     """Pictures already spent according to the ledger."""
-    if not ledger.exists():
-        return 0
-    rows = [line for line in ledger.read_text().splitlines() if line.startswith(ROW_PREFIX)]
-    return sum(int(line.split("|")[PICTURES_COLUMN + 1].strip()) for line in rows)
+    return sum(row_pictures(line) for line in ledger_rows(ledger))
 
 
 def check(ledger: Path, batch: int, cap: int) -> int:

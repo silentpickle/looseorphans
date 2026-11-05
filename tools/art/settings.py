@@ -5,6 +5,7 @@ from __future__ import annotations
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG = ROOT / "config.toml"
@@ -25,11 +26,17 @@ class ArtSettings:
     lpc_frame: int
 
 
+def budget_table(raw: dict[str, Any]) -> dict[str, Any]:
+    """The caps in config.toml."""
+    table: dict[str, Any] = raw["budget"]
+    return table
+
+
 def load_settings(path: Path = CONFIG) -> ArtSettings:
     """Read the settings file; every field is required."""
     raw = tomllib.loads(path.read_text())
     return ArtSettings(
-        pictures_cap=int(raw["budget"]["pixellab_pictures_cap"]),
+        pictures_cap=int(budget_table(raw)["pixellab_pictures_cap"]),
         palette_colors=int(raw["art"]["palette_colors"]),
         lpc_frame=int(raw["art"]["lpc_frame"]),
     )

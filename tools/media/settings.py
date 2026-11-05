@@ -6,6 +6,7 @@ import math
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG = ROOT / "config.toml"
@@ -55,10 +56,16 @@ def cents(usd: float) -> int:
     return round(usd * CENTS)
 
 
+def budget_table(raw: dict[str, Any]) -> dict[str, Any]:
+    """The caps in config.toml."""
+    table: dict[str, Any] = raw["budget"]
+    return table
+
+
 def load_settings(path: Path = CONFIG) -> MediaSettings:
     """Read the settings file; every field is required."""
     raw = tomllib.loads(path.read_text())
-    budget, media = raw["budget"], raw["media"]
+    budget, media = budget_table(raw), raw["media"]
     return MediaSettings(
         music_cap_cents=cents(float(budget["music_usd_cap"])),
         cutscenes_cap_cents=cents(float(budget["cutscenes_usd_cap"])),
