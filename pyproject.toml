@@ -1,0 +1,54 @@
+[project]
+name = "loose-orphans"
+version = "0.0.1"
+description = "Art, music and cutscene pipelines for Loose Orphans: Legend of Minsung"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14",
+    "mypy>=1.19",
+    "pytest>=8",
+    "pillow>=11",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D203", "D213",   # conflict with D211 / D212 (one blank line before class; summary on the first line)
+    "COM812",         # conflicts with the formatter
+    "C901",           # measured by scripts/complexity.py, which also keeps the ratchet
+    "CPY001",         # a private project with no copyright header policy
+    "FBT001", "FBT002",  # boolean flags on small CLI helpers are fine here
+    "TC001", "TC002", "TC003",  # runtime imports read better than TYPE_CHECKING blocks in scripts this small
+    "EM101", "EM102", "TRY003",  # raising with an inline message is the house style
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "PLR2004", "D"]   # asserts, literal expectations and no docstrings in tests
+"scripts/complexity.py" = ["ALL"]        # copied verbatim from house_walkthrough; its own style
+"tools/**/__main__.py" = ["T201"]        # the CLIs print
+"tools/**" = ["T201"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+files = ["tools", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff.format]
+exclude = ["scripts/complexity.py"]   # copied verbatim from house_walkthrough

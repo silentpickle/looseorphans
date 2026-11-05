@@ -1,0 +1,43 @@
+# Chapter 5 NPCs: the Bog of Hosier and the Unreal Unearth
+
+[[figure]]
+id = "npc_hosier"   # gentle giant bog wizard: long dark hair, stubble, a forest-green knit jumper
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/boots/male/brown", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/forest", "beards/beard/5oclock_shadow/dark_brown",
+          "hair/long_messy/male/dark_brown"]
+
+[[figure]]
+id = "npc_bogwoman"   # bog folk: red hair, a moss skirt
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/brown", "legs/skirts/plain/female/forest",
+          "torso/clothes/blouse_longsleeve/female/tan", "hair/long/female/ginger"]
+
+[[figure]]
+id = "npc_turfcutter"   # bog folk: ginger beard, peat-brown work clothes
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/boots/male/black", "legs/pants/male/brown",
+          "torso/clothes/longsleeve/longsleeve/male/walnut", "beards/beard/basic/ginger", "hair/messy2/male/ginger"]
+
+[[figure]]
+id = "npc_soul_f"   # a lost soul in the whirlwind: pale lavender, all white
+layers = ["body/bodies/female/lavender", "head/heads/human/female/lavender", "eyes/human/adult/brown",
+          "legs/skirts/plain/female/white", "torso/clothes/blouse_longsleeve/female/white",
+          "hair/long_straight/female/ashplatinum"]
+
+[[figure]]
+id = "npc_soul_m"   # her partner in the whirlwind
+layers = ["body/bodies/male/lavender", "head/heads/human/male/lavender", "eyes/human/adult/brown",
+          "legs/pants/male/white", "torso/clothes/longsleeve/longsleeve/male/white",
+          "hair/long_messy/male/platinum"]
+
+[[figure]]
+id = "npc_soul_limbo"   # the first circle: grey and waiting
+layers = ["body/bodies/male/lavender", "head/heads/human/male/lavender", "eyes/human/adult/brown",
+          "legs/pants/male/bluegray", "torso/clothes/longsleeve/longsleeve/male/bluegray", "hair/xlong/male/gray"]
+
+[[figure]]
+id = "npc_ghoul"   # the banquet ghoul at the third circle: green-grey, a maroon frock coat, a gold crown
+layers = ["body/bodies/male/zombie_green", "head/heads/human/male/zombie_green", "eyes/human/adult/brown",
+          "feet/boots/male/black", "legs/pants/male/black", "torso/jacket/frock/male/maroon",
+          "hair/long_messy/male/dark_gray", "hat/formal/crown/adult/gold"]

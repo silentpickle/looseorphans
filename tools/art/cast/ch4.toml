@@ -1,0 +1,31 @@
+# Chapter 4 NPCs: The Glory. Composed with the rest: uv run python -m tools.art cast
+
+[[figure]]
+id = "npc_dongun"   # Moon Dong-un: long black hair, all black, patient
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/pants/female/black", "torso/clothes/blouse/female/black",
+          "hair/long/female/black"]
+
+[[figure]]
+id = "npc_yeonjinx"   # Park Yeon-jinx: on-air pink blouse, white skirt, a glossy bob
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/white", "legs/skirts/plain/female/white", "torso/clothes/blouse/female/pink",
+          "hair/bob/adult/light_brown"]
+
+[[figure]]
+id = "npc_camera"   # camera operator: charcoal jacket, buzzcut
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal", "torso/jacket/collared/male/charcoal",
+          "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "npc_floor"   # floor director: teal shirt, parted hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal", "torso/clothes/longsleeve/longsleeve/male/teal",
+          "hair/parted/male/dark_brown"]
+
+[[figure]]
+id = "npc_intern"   # studio intern: sky blouse, ponytail
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/pants/female/navy", "torso/clothes/blouse/female/sky",
+          "hair/ponytail/female/chestnut"]

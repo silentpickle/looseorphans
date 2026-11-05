@@ -1,0 +1,70 @@
+# The cast: every name, nickname, pet and in-joke the story uses, as data. The story text holds tokens such as {m1}
+# and {m1.pet}; web/src/cast.ts fills them in from this file. Settings only. No secrets: those live in secrets.env.
+#
+# These are the fictional defaults that ship in the public repo. To make a game about your own friends, copy this
+# file to cast.local.toml (gitignored) and change the values; the build uses cast.local.toml when it exists, and
+# only the keys you list there replace these. Run `CAST_DEFAULTS=1 npm test` to ignore it and test the defaults.
+
+[game]   # replace the same-named keys of config.toml [game]
+title = "Loose Orphans: Legend of Minsung"
+dedication = ""   # the credits' dedication line; empty uses a generic one
+
+[terms]
+slug = "legend-minsung"        # prefix of the browser save and volume keys
+game_name = "Legend of Minsung"
+meter = "Minsung"              # the story meter
+unison = "Minsung Unison"      # the duet that ends the game
+fandom = "LOOSE ENDS"         # what the fans are called
+currency = "Loose Change"     # what battles pay
+barrier = "Solmoon"           # the barrier woven from the bard's songs
+trio = "THE TRIAD"            # the producer trio
+aussie = "the sunny line"     # the finale party pick for the leader and the sunshine mage
+cats = "Pickle, Noodle, Waffle"   # the ninja's three cats
+cat3 = "Waffle"               # the third cat on its own
+sk_m1_a = "Confession Song"
+sk_m2_a = "Side Door"
+sk_m3_b = "Rolling Thunder"
+sk_m4_b = "East Wind"
+en_m1 = "Chef's Special"
+en_m7 = "Long Walk"
+
+# name: shown everywhere; nick, given, initial: the nickname, the private first name and its initial used in notes;
+# pet: the companion character that trots after the member.
+[members.m1]
+name = "Sol"
+given = "Solho"
+initial = "S"
+pet = "Sol Quokka"
+
+[members.m2]
+name = "Rae"
+given = "Raemin"
+initial = "R"
+pet = "Raebit"
+
+[members.m3]
+name = "Dae"
+nick = "Dae"
+pet = "Wolf Dae"
+
+[members.m4]
+name = "Ari"
+pet = "Arinet"
+
+[members.m5]
+name = "Bo"
+nick = "Bobo"
+pet = "Bopig"
+
+[members.m6]
+name = "Lio"
+nick = "Lili"
+pet = "Liochick"
+
+[members.m7]
+name = "Jun"
+pet = "Junpup"
+
+[members.m8]
+name = "Nico"
+pet = "Nicofox"

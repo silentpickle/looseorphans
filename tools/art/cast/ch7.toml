@@ -1,0 +1,31 @@
+# Chapter 7 NPCs: the Solmoon Arena. Three golden hunters, the Saja Boyz leader in a black suit, a stagehand.
+
+[[figure]]
+id = "npc_hunter_roomie"   # the hunters' leader: long purple braid, white
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/pants/female/white",
+          "torso/clothes/blouse_longsleeve/female/white", "hair/braid/female/purple"]
+
+[[figure]]
+id = "npc_hunter_meera"   # tall and blunt: high black ponytail, all black
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/pants/female/black",
+          "torso/clothes/longsleeve/longsleeve/female/black", "hair/high_ponytail/female/raven"]
+
+[[figure]]
+id = "npc_hunter_zooey"   # the bright one: black bob, golden yellow
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/pants/female/yellow",
+          "torso/clothes/blouse_longsleeve/female/yellow", "hair/bob/adult/black"]
+
+[[figure]]
+id = "npc_saja_leader"   # the Saja Boyz leader: black suit, long tied hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black", "torso/jacket/collared/male/black",
+          "hair/long_tied/male/raven"]
+
+[[figure]]
+id = "npc_stagehand"   # stage crew: black tee, cargo grey, buzzcut
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/shortsleeve/shortsleeve/male/black", "hair/buzzcut/adult/black"]

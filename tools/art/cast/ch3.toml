@@ -1,0 +1,68 @@
+# Chapter 3, Scarlet Heart Ryeo: the Goryeo palace. Composed with: uv run python -m tools.art cast
+# Sol is mistaken for a court lady, so he wears a hanbok (orange jeogori, red chima) on a female body with his own
+# head and hair. The princes keep their hair and companion-animal cues under a white shirt and an open vest in their colour.
+
+[[figure]]
+id = "ch3_m1_hanbok"   # court lady Sol: orange jacket over a long red skirt
+layers = ["body/bodies/female/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/skirts/belle/female/red",
+          "torso/clothes/blouse_longsleeve/female/orange", "hair/messy1/male/black"]
+
+[[figure]]
+id = "ch3_m4_prince"   # long black hair, gold vest
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black", "torso/clothes/longsleeve/longsleeve/male/white",
+          "torso/clothes/vest_open/male/yellow", "hair/long/male/black"]
+
+[[figure]]
+id = "ch3_m7_prince"   # brown fringe, sky vest, puppy ears
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/slate", "torso/clothes/longsleeve/longsleeve/male/white",
+          "torso/clothes/vest_open/male/sky", "hair/bangs/male/dark_brown", "head/ears/down/adult/light"]
+
+[[figure]]
+id = "ch3_m8_prince"   # chestnut bedhead, pink vest, fox tail
+layers = ["body/tail/cat/adult/bg/carrot", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/clothes/vest_open/male/pink",
+          "hair/bedhead/male/chestnut"]
+
+[[figure]]
+id = "ch3_sooo"   # the masked 4th prince: Rae in black and maroon; the cat ears and tail give him away
+layers = ["body/tail/cat/adult/bg/black", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/black", "torso/clothes/vest_open/male/maroon",
+          "head/ears/cat/adult_back/black", "hair/parted/male/black", "head/ears/cat/adult_front/black",
+          "facial/masks/plain/adult/silver"]
+
+# Chapter 3 NPCs
+
+[[figure]]
+id = "ch3_court_lady"
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/skirts/belle/female/forest",
+          "torso/clothes/blouse_longsleeve/female/white", "hair/bunches/female/black"]
+
+[[figure]]
+id = "ch3_head_lady"
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "legs/skirts/belle/female/navy",
+          "torso/clothes/blouse_longsleeve/female/lavender", "hair/long_tied/female/gray"]
+
+[[figure]]
+id = "ch3_palace_guard"
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black", "torso/clothes/longsleeve/longsleeve/male/red",
+          "torso/clothes/vest_open/male/black", "hat/headband/tied/adult/black", "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "ch3_queen_mother"
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/black", "torso/clothes/robe/female/purple", "hair/long/female/gray",
+          "hat/formal/crown/adult/gold"]
+
+[[figure]]
+id = "ch3_servant"
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/tan", "torso/clothes/longsleeve/longsleeve/male/tan",
+          "hat/cloth/bandana/adult/brown", "hair/buzzcut/adult/black"]

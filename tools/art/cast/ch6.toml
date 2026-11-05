@@ -1,0 +1,43 @@
+# Chapter 6 NPCs: Hamilsung, a colonial city that rhymes (badly). Compose with: uv run python -m tools.art cast
+
+[[figure]]
+id = "npc_burrsung"   # Aaron Burr-sung: black tricorne, charcoal frock coat, a very careful cravat
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/jacket/frock/male/charcoal",
+          "neck/cravat/male/white", "hair/ponytail/male/black", "hat/pirate/tricorne/basic/adult/black"]
+
+[[figure]]
+id = "npc_georgwi"   # King Geor-Gwi: gold crown, red cape, powdered hair, purple coat
+layers = ["cape/solid_behind/red", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/white",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/jacket/frock/male/purple",
+          "cape/solid/male/red", "neck/capeclip/male/yellow", "hair/long_tied/male/white",
+          "hat/formal/crown/adult/gold"]
+
+[[figure]]
+id = "npc_redcoat"   # a redcoat: red frock, white breeches, black tricorne
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/white",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/jacket/frock/male/red",
+          "neck/cravat/male/white", "hair/plain/male/dark_brown", "hat/pirate/tricorne/basic/adult/black"]
+
+[[figure]]
+id = "npc_tavern"   # the tavern keeper: leather apron, rolled sleeves, ginger hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/brown",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/aprons/apron/male/leather",
+          "hair/bangslong/male/ginger"]
+
+[[figure]]
+id = "npc_colonial_woman"   # a townswoman in a yellow skirt
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown",
+          "feet/shoes/female/brown", "legs/skirts/plain/female/yellow", "torso/clothes/blouse/female/white",
+          "hair/long/female/chestnut"]
+
+[[figure]]
+id = "npc_courier"   # the post rider: brown tricorne, blue coat, a satchel of other people's letters
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/tan",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/jacket/frock/male/navy",
+          "hair/plain/male/light_brown", "hat/pirate/tricorne/basic/adult/brown"]

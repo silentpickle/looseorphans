@@ -1,0 +1,24 @@
+# Chapter 2: Squish Game. uv run python -m tools.art cast
+[[figure]]
+id = "m1_143"   # Sol as Player 143: green tracksuit
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/white", "legs/pants/male/green",
+          "torso/clothes/longsleeve/longsleeve/male/green", "hair/messy1/male/black"]
+
+[[figure]]
+id = "npc_pink_guard"   # pink jumpsuit, hood drawn tight like a mask
+layers = ["body/bodies/male/light", "head/heads/human/male/light",
+          "feet/shoes2/male/black", "legs/pants/male/pink",
+          "torso/clothes/longsleeve/longsleeve/male/pink", "hat/cloth/hood/adult/pink"]
+
+[[figure]]
+id = "npc_grandpa"   # Player 001: green tracksuit, grey hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/white", "legs/pants/male/green",
+          "torso/clothes/longsleeve/longsleeve/male/green", "hair/balding/adult/gray"]
+
+[[figure]]
+id = "npc_front_manager"   # all black, hood up
+layers = ["body/bodies/male/light", "head/heads/human/male/light",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/black", "hat/cloth/hood/adult/black"]

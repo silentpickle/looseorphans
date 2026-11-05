@@ -1,0 +1,81 @@
+# Every cutscene: uv run python -m tools.media cutscenes (dry run) / --run. One Gemini Omni image-to-video call per
+# clip, with the still as the first frame. A clip already under web/public/assets/video/ is never regenerated;
+# delete its .webm and .mp4 to redo the pixel pass and its raw MP4 under .cache/media/video/ to animate it again
+# (that spends). The still defaults to web/public/assets/art/stills/<id>.png; a clip whose still is not drawn yet is
+# reported and skipped. `still` overrides the path (relative to web/public/assets/art/). seconds is 3..10;
+# every clip is 6 s (about $0.63) so the whole set stays inside the $10 media total in config.toml.
+# Prompts describe camera, motion and light only: never a real person's name or a show title.
+
+[[clip]]
+id = "sample_ongsang"
+group = "sample"
+still = "backdrops/ongsang_street.png"
+seconds = 6
+prompt = "Camera slowly pushes in, red camellia petals drift across a seaside street, warm afternoon light, gentle waves along the harbour wall."
+
+[[clip]]
+id = "shatter"
+group = "prologue"
+seconds = 6
+prompt = "The glowing golden dome cracks further and bursts into shards that fly outward, purple lightning flashes, the figure in the black suit raises his hand as the eight young men in hoodies are pushed back across the rooftop, slow motion, a slight camera shake."
+
+[[clip]]
+id = "declaration"
+group = "trope"
+seconds = 6
+prompt = "The police officer calls out with his arms wide as small red hearts pulse and float up around him, the woman in the apron hides her blushing face, the two older women in the doorway whisper to each other, red camellia petals drift, sunset light, the camera slowly pushes in."
+
+[[clip]]
+id = "piggyback"
+group = "trope"
+seconds = 6
+prompt = "The young man in the green tracksuit carries the other on his back with slow careful steps across the glowing glass bridge, the one on his back clings tighter with his eyes shut, carnival lights twinkle above, the camera tracks slowly alongside."
+
+[[clip]]
+id = "wrist_grab"
+group = "trope"
+seconds = 6
+prompt = "The masked prince holds the court lady's wrist, the white mask slowly slips and falls away, their eyes meet, cherry blossom petals drift down, lanterns flicker, then a bright flash of lightning lights the courtyard, slow motion."
+
+[[clip]]
+id = "long_game"
+group = "trope"
+seconds = 6
+prompt = "The two women sit still across the go board, one slowly places a black stone, the other narrows her eyes, snow falls past the window behind them, cold blue light, a slow dolly in toward the board."
+
+[[clip]]
+id = "shared_umbrella"
+group = "trope"
+seconds = 6
+prompt = "Rain falls on the misty bog, the young man in the orange hoodie stands still under the red umbrella, ripples spread across the black pool and the reflection below him wavers, mist drifts between the gnarled oaks, a slow push in."
+
+[[clip]]
+id = "intercepted_letter"
+group = "trope"
+seconds = 6
+prompt = "The man in the tricorn hat unfolds the wax-sealed letter and smirks as he reads, the candle flame flickers, rain runs down the window where the bunny plush and the quokka plush peek in, the camera slowly zooms toward the letter."
+
+[[clip]]
+id = "duet"
+group = "trope"
+seconds = 6
+prompt = "The two singers lean toward each other and sing into their microphones, the golden light frame behind them glows brighter, sparkles rise, purple haze drifts, the spotlight shimmers, the camera circles gently."
+
+[[clip]]
+id = "confession"
+group = "ending"
+seconds = 6
+prompt = "Rain falls on the rooftop as the two young men under the red umbrella hold hands and turn toward each other, raindrops glitter in the city lights, slow motion, the camera slowly pulls back and rises."
+
+[[clip]]
+id = "moon_pan"
+group = "ending"
+seconds = 6
+prompt = "Clouds drift slowly across the huge full moon, city lights twinkle, the two silhouettes on the rooftop lean closer together, then the long-haired young man in the corner turns to the viewer and winks, the camera drifts slowly toward the moon."
+
+[[clip]]
+id = "finale_concert"
+group = "finale"
+still = "backdrops/finale_concert.png"
+seconds = 6
+prompt = "Spotlights sweep across the empty stage, the crowd's sea of white lightsticks sways in time, confetti rains down, pink and gold beams pulse, fireworks burst high above the stage, the camera slowly pushes in."

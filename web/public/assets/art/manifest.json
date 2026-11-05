@@ -1,0 +1,545 @@
+{
+  "backdrops": [
+    {
+      "id": "bog",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "dorm",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "finale_concert",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "glory_baduk",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "glory_studio",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "goryeo_hall",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "goryeo_palace",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "hamilsung_room",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "hamilsung_street",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "kpdh_stage",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "ongsang_harbor",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "ongsang_street",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "rooftop",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "squish_arena",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "squish_bridge",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "unearth_circle",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "battles": [
+    {
+      "id": "bog_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "concert_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "glory_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "goryeo_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "hamilsung_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "kpdh_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "ongsang_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "rooftop_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "squish_battle",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "bosses": [
+    {
+      "id": "burrsung_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "contract_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "front_manager_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "georgwi_boss",
+      "width": 192,
+      "height": 128
+    },
+    {
+      "id": "ghoul_boss",
+      "width": 192,
+      "height": 128
+    },
+    {
+      "id": "gwi_demon_boss",
+      "width": 192,
+      "height": 128
+    },
+    {
+      "id": "jester_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "saja_leader_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "yeonjinx_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "yoohoo_boss",
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "companions": [
+    {
+      "id": "bunny",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "chick",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "durpy",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "ferret",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "fox",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "pig_rabbit",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "puppy",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "quokka",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "sussy",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "wolf",
+      "width": 48,
+      "height": 48
+    }
+  ],
+  "enemies": [
+    {
+      "id": "algorithm",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "anti",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "bog_wisp",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "clause",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "commenter",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "demon_fan",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "fancam",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "palace_guard",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "pink_guard",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "redcoat",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "sasaeng",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "weather_sprite",
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "portraits": [
+    {
+      "id": "m3",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "burrsung",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m5",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "dongbaek",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "dongun",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m6",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "front_manager",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "georgwi",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "gwi",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m1",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "hosier",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "hunter",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m4",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m8",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "jester",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m2",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "saja_leader",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m7",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "yeonjinx",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "yongsick",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "yoohoo",
+      "width": 128,
+      "height": 128
+    }
+  ],
+  "props": [
+    {
+      "id": "baduk_stones",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "banana_milk",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "brownie",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "camellia",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "contract_scroll",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "dalgona",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "doll",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "encore_ticket",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "ferry",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "id": "fountain_pen",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "letter",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "lightstick",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "microphone",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "shard",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "umbrella",
+      "width": 32,
+      "height": 32
+    }
+  ],
+  "stills": [
+    {
+      "id": "confession",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "declaration",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "duet",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "intercepted_letter",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "long_game",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "moon_pan",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "piggyback",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "shared_umbrella",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "shatter",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "wrist_grab",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "title": [
+    {
+      "id": "logo",
+      "width": 256,
+      "height": 96
+    },
+    {
+      "id": "title",
+      "width": 320,
+      "height": 180
+    }
+  ]
+}

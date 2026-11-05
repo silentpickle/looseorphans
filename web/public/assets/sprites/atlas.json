@@ -1,0 +1,143 @@
+{
+  "schema": "sprites/1",
+  "frame": 64,
+  "columns": 9,
+  "rows": {
+    "walk_up": {
+      "row": 0,
+      "frames": 9
+    },
+    "walk_left": {
+      "row": 1,
+      "frames": 9
+    },
+    "walk_down": {
+      "row": 2,
+      "frames": 9
+    },
+    "walk_right": {
+      "row": 3,
+      "frames": 9
+    },
+    "idle_up": {
+      "row": 4,
+      "frames": 1
+    },
+    "idle_left": {
+      "row": 5,
+      "frames": 1
+    },
+    "idle_down": {
+      "row": 6,
+      "frames": 1
+    },
+    "idle_right": {
+      "row": 7,
+      "frames": 1
+    },
+    "slash_up": {
+      "row": 8,
+      "frames": 6
+    },
+    "slash_left": {
+      "row": 9,
+      "frames": 6
+    },
+    "slash_down": {
+      "row": 10,
+      "frames": 6
+    },
+    "slash_right": {
+      "row": 11,
+      "frames": 6
+    },
+    "spellcast_up": {
+      "row": 12,
+      "frames": 7
+    },
+    "spellcast_left": {
+      "row": 13,
+      "frames": 7
+    },
+    "spellcast_down": {
+      "row": 14,
+      "frames": 7
+    },
+    "spellcast_right": {
+      "row": 15,
+      "frames": 7
+    },
+    "thrust_up": {
+      "row": 16,
+      "frames": 8
+    },
+    "thrust_left": {
+      "row": 17,
+      "frames": 8
+    },
+    "thrust_down": {
+      "row": 18,
+      "frames": 8
+    },
+    "thrust_right": {
+      "row": 19,
+      "frames": 8
+    },
+    "hurt": {
+      "row": 20,
+      "frames": 6
+    }
+  },
+  "figures": {
+    "m1": "m1.png",
+    "m2": "m2.png",
+    "m3": "m3.png",
+    "m4": "m4.png",
+    "m5": "m5.png",
+    "m6": "m6.png",
+    "m7": "m7.png",
+    "m8": "m8.png",
+    "npc_woman": "npc_woman.png",
+    "npc_cop": "npc_cop.png",
+    "npc_ajumma": "npc_ajumma.png",
+    "npc_jester": "npc_jester.png",
+    "m1_143": "m1_143.png",
+    "npc_pink_guard": "npc_pink_guard.png",
+    "npc_grandpa": "npc_grandpa.png",
+    "npc_front_manager": "npc_front_manager.png",
+    "ch3_m1_hanbok": "ch3_m1_hanbok.png",
+    "ch3_m4_prince": "ch3_m4_prince.png",
+    "ch3_m7_prince": "ch3_m7_prince.png",
+    "ch3_m8_prince": "ch3_m8_prince.png",
+    "ch3_sooo": "ch3_sooo.png",
+    "ch3_court_lady": "ch3_court_lady.png",
+    "ch3_head_lady": "ch3_head_lady.png",
+    "ch3_palace_guard": "ch3_palace_guard.png",
+    "ch3_queen_mother": "ch3_queen_mother.png",
+    "ch3_servant": "ch3_servant.png",
+    "npc_dongun": "npc_dongun.png",
+    "npc_yeonjinx": "npc_yeonjinx.png",
+    "npc_camera": "npc_camera.png",
+    "npc_floor": "npc_floor.png",
+    "npc_intern": "npc_intern.png",
+    "npc_hosier": "npc_hosier.png",
+    "npc_bogwoman": "npc_bogwoman.png",
+    "npc_turfcutter": "npc_turfcutter.png",
+    "npc_soul_f": "npc_soul_f.png",
+    "npc_soul_m": "npc_soul_m.png",
+    "npc_soul_limbo": "npc_soul_limbo.png",
+    "npc_ghoul": "npc_ghoul.png",
+    "npc_burrsung": "npc_burrsung.png",
+    "npc_georgwi": "npc_georgwi.png",
+    "npc_redcoat": "npc_redcoat.png",
+    "npc_tavern": "npc_tavern.png",
+    "npc_colonial_woman": "npc_colonial_woman.png",
+    "npc_courier": "npc_courier.png",
+    "npc_hunter_roomie": "npc_hunter_roomie.png",
+    "npc_hunter_meera": "npc_hunter_meera.png",
+    "npc_hunter_zooey": "npc_hunter_zooey.png",
+    "npc_saja_leader": "npc_saja_leader.png",
+    "npc_stagehand": "npc_stagehand.png",
+    "npc_gwi": "npc_gwi.png"
+  }
+}

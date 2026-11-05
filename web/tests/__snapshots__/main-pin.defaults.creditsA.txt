@@ -1,0 +1,174 @@
+[
+ {
+  "text": "Loose Orphans: Legend of Minsung",
+  "kind": "title"
+ },
+ {
+  "text": "Ending A: The Confession",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "For our favourite LOOSE ENDS",
+  "kind": "head"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Starring",
+  "kind": "head"
+ },
+ {
+  "text": "Dae",
+  "kind": "body"
+ },
+ {
+  "text": "Rae",
+  "kind": "body"
+ },
+ {
+  "text": "Bo",
+  "kind": "body"
+ },
+ {
+  "text": "Ari",
+  "kind": "body"
+ },
+ {
+  "text": "Sol",
+  "kind": "body"
+ },
+ {
+  "text": "Lio",
+  "kind": "body"
+ },
+ {
+  "text": "Jun",
+  "kind": "body"
+ },
+ {
+  "text": "Nico",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Made by",
+  "kind": "head"
+ },
+ {
+  "text": "Anonymous",
+  "kind": "body"
+ },
+ {
+  "text": "with Claude",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Pictures",
+  "kind": "head"
+ },
+ {
+  "text": "Drawn with PixelLab",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Character sprites",
+  "kind": "head"
+ },
+ {
+  "text": "The Liberated Pixel Cup artists",
+  "kind": "body"
+ },
+ {
+  "text": "(full list in assets/sprites/CREDITS.md)",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Music",
+  "kind": "head"
+ },
+ {
+  "text": "Composed with Lyria",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Cutscenes",
+  "kind": "head"
+ },
+ {
+  "text": "Animated with Gemini",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "With love and apologies to",
+  "kind": "head"
+ },
+ {
+  "text": "When the Camellia Blooms",
+  "kind": "body"
+ },
+ {
+  "text": "Squid Game",
+  "kind": "body"
+ },
+ {
+  "text": "Scarlet Heart Ryeo",
+  "kind": "body"
+ },
+ {
+  "text": "The Glory",
+  "kind": "body"
+ },
+ {
+  "text": "Hamilton",
+  "kind": "body"
+ },
+ {
+  "text": "KPop Demon Hunters",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "No lyrics were harmed in the making of this game.",
+  "kind": "body"
+ },
+ {
+  "text": "",
+  "kind": "gap"
+ },
+ {
+  "text": "Thank you for playing.",
+  "kind": "head"
+ }
+]

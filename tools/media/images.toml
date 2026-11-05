@@ -1,0 +1,13 @@
+# Nano Banana pictures: redraw a reference photo or picture in the house style. Empty in the shipped game, which has
+# none; add [[image]] tables here and run `uv run --env-file secrets.env python -m tools.media image --run`.
+# A picture whose reference files are not on disk is reported and skipped; a picture already on disk is never redrawn.
+# Example (kept commented out):
+#
+# [[image]]
+# id = "m1_portrait"
+# group = "portraits"
+# prompt = "pixel art portrait of a ..., flat background"
+# width = 128
+# height = 128
+# references = ["web/public/assets/art/portraits/m3.png"]
+# key = "#00ff00"

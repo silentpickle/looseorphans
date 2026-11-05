@@ -1,0 +1,7734 @@
+{
+ "campaign": {
+  "id": "main",
+  "settings": {
+   "width": 640,
+   "height": 360,
+   "debug_chapter_skip": false,
+   "maker": "Anonymous",
+   "title": "Loose Orphans: Legend of Minsung",
+   "dedication": ""
+  },
+  "subtitle": "a Final Fantasy for LOOSE ENDS",
+  "title": {
+   "music": "title",
+   "backdrop": "title_title",
+   "logo": "title_logo"
+  },
+  "saveKey": "legend-minsung.save",
+  "volumeKey": "legend-minsung.volume",
+  "startChapter": "prologue",
+  "chapters": {
+   "ch1": {
+    "id": "ch1",
+    "title": "Chapter 1: Where the Camilla Blooms",
+    "party": [
+     "m3",
+     "m6",
+     "m4"
+    ],
+    "start": {
+     "map": "street",
+     "x": 9,
+     "y": 9
+    },
+    "maps": {
+     "street": {
+      "id": "street",
+      "name": "Ongsang, by the Camilla",
+      "backdrop": "backdrop_ongsang_street",
+      "battle": "ongsang_battle",
+      "music": "ongsang",
+      "placeholder": 12096874,
+      "grid": [
+       "####################",
+       "######.........#####",
+       "######.A.......#####",
+       "######.....Y...#####",
+       "#####..........#####",
+       "######.........#####",
+       "####...D....J..#####",
+       "####....B..........^",
+       "####..........######",
+       "....................",
+       "....C.........######"
+      ],
+      "onEnter": "ongsang_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "anti"
+        ],
+        [
+         "anti",
+         "commenter"
+        ],
+        [
+         "fancam"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "dongbaek",
+        "name": "Dong-baek-ish",
+        "figure": "npc_woman",
+        "glyph": "D",
+        "dialogue": "dongbaek",
+        "variants": [
+         {
+          "when": "jester_done",
+          "dialogue": "dongbaek_after"
+         },
+         {
+          "when": "clue_napkin&clue_sock&clue_laugh",
+          "dialogue": "dongbaek_ready"
+         }
+        ]
+       },
+       {
+        "id": "yongsick",
+        "name": "Officer Yong-sick",
+        "figure": "npc_cop",
+        "glyph": "Y",
+        "dialogue": "yongsick",
+        "variants": [
+         {
+          "when": "jester_done",
+          "dialogue": "yongsick_after"
+         }
+        ]
+       },
+       {
+        "id": "ajumma_a",
+        "name": "Ajumma Kwak",
+        "figure": "npc_ajumma",
+        "glyph": "A",
+        "dialogue": "ajumma_a",
+        "variants": [
+         {
+          "when": "clue_napkin",
+          "dialogue": "ajumma_a_again"
+         }
+        ]
+       },
+       {
+        "id": "ajumma_b",
+        "name": "Ajumma Bae",
+        "figure": "npc_ajumma",
+        "glyph": "B",
+        "dialogue": "ajumma_b",
+        "variants": [
+         {
+          "when": "clue_sock",
+          "dialogue": "ajumma_b_again"
+         }
+        ]
+       },
+       {
+        "id": "ajumma_c",
+        "name": "Ajumma Choi",
+        "figure": "npc_ajumma",
+        "glyph": "C",
+        "dialogue": "ajumma_c",
+        "variants": [
+         {
+          "when": "clue_laugh",
+          "dialogue": "ajumma_c_again"
+         }
+        ]
+       },
+       {
+        "id": "jester",
+        "name": "???",
+        "figure": "npc_jester",
+        "glyph": "J",
+        "dialogue": "jester",
+        "shownWhen": "clue_napkin&clue_sock&clue_laugh",
+        "hiddenWhen": "jester_done"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "^",
+        "map": "harbor",
+        "requires": "jester_done",
+        "x": 4,
+        "y": 8
+       }
+      ]
+     },
+     "harbor": {
+      "id": "harbor",
+      "name": "Ongsang Harbor",
+      "backdrop": "backdrop_ongsang_harbor",
+      "music": "ongsang",
+      "placeholder": 2841994,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "###########H########",
+       "#.......##.......###",
+       "#...v.............##",
+       "####################"
+      ],
+      "onEnter": "harbor_intro",
+      "npcs": [
+       {
+        "id": "m1_ferry",
+        "name": "???",
+        "figure": "m1",
+        "glyph": "H",
+        "dialogue": "m1_ferry",
+        "facing": "up"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "street",
+        "x": 9,
+        "y": 9
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "ongsang_intro": [
+      {
+       "id": "a",
+       "text": "A seaside town. Red camellias in pots. A bar called CAMILLA, which is not how you spell it."
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "Dae-hyung? Ari? Oh thank god. Where's everyone else? Where's Sol?"
+      },
+      {
+       "id": "c",
+       "speaker": "Dae",
+       "text": "Scattered. We find the shard here, we find the others. Stick together."
+      },
+      {
+       "id": "d",
+       "speaker": "Ari",
+       "text": "The lighting here is incredible. Someone is clearly in love in this town."
+      },
+      {
+       "id": "e",
+       "text": "(Talk to everyone. Something is wrong in Ongsang.)"
+      }
+     ],
+     "dongbaek": [
+      {
+       "id": "a",
+       "speaker": "Dong-baek-ish",
+       "text": "W-welcome to Camilla. Please don't be a critic. Or a Jester. There's a Jester."
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "A jester?"
+      },
+      {
+       "id": "c",
+       "speaker": "Dong-baek-ish",
+       "text": "He leaves notes. 'Don't laugh.' Everyone's scared. The ajummas know more than they say."
+      }
+     ],
+     "dongbaek_ready": [
+      {
+       "id": "a",
+       "speaker": "Dong-baek-ish",
+       "text": "You found all three clues? Then... he's here. Behind the camellias. He's always behind the camellias."
+      }
+     ],
+     "dongbaek_after": [
+      {
+       "id": "a",
+       "speaker": "Dong-baek-ish",
+       "text": "You did it. Ongsang can laugh again. Take this, it fell out of his hat. It glows."
+      },
+      {
+       "id": "b",
+       "text": "Got the first Lightstick Shard!",
+       "set": "shard_1"
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "One down. Six to go. Also I'm keeping the hat."
+      },
+      {
+       "id": "d",
+       "speaker": "Dong-baek-ish",
+       "text": "There's a ferry at the harbor. A boy in an orange hoodie was asking about you."
+      }
+     ],
+     "yongsick": [
+      {
+       "id": "a",
+       "speaker": "Officer Yong-sick",
+       "text": "DONG-BAEK-SSI! I LOVE YOU! ...Oh. Visitors. I love her. I say it every day. Loudly. In public."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "Does it work?"
+      },
+      {
+       "id": "c",
+       "speaker": "Officer Yong-sick",
+       "text": "NOT YET! But a feeling kept quiet is a feeling that rots. Say it or lose it."
+      },
+      {
+       "id": "d",
+       "speaker": "Dae",
+       "text": "...Sol needs to meet this guy."
+      }
+     ],
+     "yongsick_after": [
+      {
+       "id": "a",
+       "speaker": "Officer Yong-sick",
+       "text": "You DECLARED it! I felt it from across town! Keep that. Use it. Somebody in your group needs it."
+      }
+     ],
+     "ajumma_a": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Kwak",
+       "text": "The Jester? Leaves a napkin with a riddle. Always from Camilla. Folded twice."
+      },
+      {
+       "id": "b",
+       "text": "Clue found: the folded napkin.",
+       "set": "clue_napkin",
+       "meter": 1
+      }
+     ],
+     "ajumma_a_again": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Kwak",
+       "text": "Folded TWICE. I'm not saying it again."
+      }
+     ],
+     "ajumma_b": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Bae",
+       "text": "Only one sock. He leaves one sock. Orange. Who wears orange socks in a crime?"
+      },
+      {
+       "id": "b",
+       "text": "Clue found: a single orange sock.",
+       "set": "clue_sock",
+       "meter": 1
+      }
+     ],
+     "ajumma_b_again": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Bae",
+       "text": "Orange. SOCK. Go."
+      }
+     ],
+     "ajumma_c": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Choi",
+       "text": "You hear him laugh before you see him. Behind the flowers. A laugh like a wet balloon."
+      },
+      {
+       "id": "b",
+       "text": "Clue found: the laugh behind the camellias.",
+       "set": "clue_laugh",
+       "meter": 1
+      }
+     ],
+     "ajumma_c_again": [
+      {
+       "id": "a",
+       "speaker": "Ajumma Choi",
+       "text": "Wet balloon. Behind the flowers. Shoo."
+      }
+     ],
+     "jester": [
+      {
+       "id": "a",
+       "speaker": "???",
+       "text": "Hee hee hee. Three clues and a boy band. Did you come to laugh at me, Ongsang?"
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "We came for the shard in your hat. And for everybody you scared."
+      },
+      {
+       "id": "c",
+       "speaker": "The Jester",
+       "text": "Then let's see if your smiles survive the punchline."
+      },
+      {
+       "id": "d",
+       "text": "The Jester steps out from behind the camellias!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "jester"
+        ],
+        "music": "boss",
+        "then": "jester_won"
+       }
+      }
+     ],
+     "jester_won": [
+      {
+       "id": "a",
+       "speaker": "The Jester",
+       "text": "No... the town is... laughing WITH you..."
+      },
+      {
+       "id": "b",
+       "speaker": "Officer Yong-sick",
+       "text": "DAE-SSI! Now! Everything you want to say! SAY IT!"
+      },
+      {
+       "id": "c",
+       "speaker": "Dae",
+       "text": "...SOL SOLHO, WHEREVER YOU ARE! YOU'RE OUR HEART! AND YOU SHOULD TELL HIM! WE ALL KNOW! LOOSE ENDS KNOWS!",
+       "action": {
+        "kind": "cutscene",
+        "trope": "declaration",
+        "title": "Trope: The Loud Public Declaration",
+        "caption": [
+         "Ongsang gasps.",
+         "The camellias bloom all at once.",
+         "Dae learned DECLARE!"
+        ],
+        "still": "still_declaration",
+        "video": "declaration",
+        "then": "jester_done"
+       }
+      }
+     ],
+     "jester_done": [
+      {
+       "id": "a",
+       "text": "The Jester dissolves into confetti. Ongsang exhales.",
+       "set": "jester_done",
+       "meter": 3
+      }
+     ],
+     "harbor_intro": [
+      {
+       "id": "a",
+       "text": "Salt air. A ferry pulling out. Someone small and orange on the deck."
+      }
+     ],
+     "m1_ferry": [
+      {
+       "id": "a",
+       "speaker": "Lio",
+       "text": "SOL! SOL, IT'S US!"
+      },
+      {
+       "id": "b",
+       "text": "The ferry is already too far. The figure waves both arms, then holds up a note to the wind."
+      },
+      {
+       "id": "c",
+       "text": "A quokka plush skitters down the gangway and drops a folded paper at your feet."
+      },
+      {
+       "id": "d",
+       "text": "'Raemin-hyung. If you find this first: I was going to say it. I'm still going to. -S' ... Quokka Note 1 collected.",
+       "set": "note_1",
+       "meter": 2
+      },
+      {
+       "id": "e",
+       "speaker": "Ari",
+       "text": "He's heading toward the island with the green tracksuits. That can't be good."
+      },
+      {
+       "id": "f",
+       "speaker": "Dae",
+       "text": "Then that's where we go next.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch2"
+       }
+      }
+     ]
+    }
+   },
+   "ch2": {
+    "id": "ch2",
+    "title": "Chapter 2: Squish Game",
+    "party": [
+     "m2",
+     "m7",
+     "m8"
+    ],
+    "enemies": [
+     {
+      "id": "pink_guard",
+      "name": "Pink Guard",
+      "stats": {
+       "hp": 44,
+       "mp": 0,
+       "atk": 13,
+       "def": 6,
+       "mag": 3,
+       "spd": 10
+      },
+      "stayPoints": 26,
+      "art": "enemy_pink_guard",
+      "color": 14249114,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "points a triangle at",
+       "says 'Player eliminated' to"
+      ]
+     },
+     {
+      "id": "algorithm_wisp",
+      "name": "Algorithm Wisp",
+      "stats": {
+       "hp": 38,
+       "mp": 0,
+       "atk": 12,
+       "def": 4,
+       "mag": 10,
+       "spd": 15
+      },
+      "stayPoints": 24,
+      "art": "enemy_algorithm",
+      "color": 5926105,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "recommends something terrible to",
+       "buries the post of"
+      ]
+     },
+     {
+      "id": "front_manager",
+      "name": "The Front Manager",
+      "stats": {
+       "hp": 180,
+       "mp": 30,
+       "atk": 15,
+       "def": 9,
+       "mag": 11,
+       "spd": 12
+      },
+      "stayPoints": 160,
+      "art": "boss_front_manager_boss",
+      "color": 2236962,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "adjusts the schedule against",
+       "files a complaint about",
+       "says 'the game is fair' to"
+      ]
+     }
+    ],
+    "speakers": {
+     "The Front Manager": "front_manager"
+    },
+    "start": {
+     "map": "arena",
+     "x": 9,
+     "y": 8
+    },
+    "maps": {
+     "arena": {
+      "id": "arena",
+      "name": "The Arena",
+      "backdrop": "backdrop_squish_arena",
+      "battle": "squish_battle",
+      "music": "squish",
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "#......###.........#",
+       "#..G..........H....#",
+       "#..................#",
+       "#.....######.......#",
+       "#..................#",
+       "#....Q..........O..#",
+       "#........v.........#"
+      ],
+      "placeholder": 13081179,
+      "onEnter": "arena_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "pink_guard"
+        ],
+        [
+         "algorithm_wisp"
+        ],
+        [
+         "pink_guard",
+         "algorithm_wisp"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "guard_circle",
+        "name": "Pink Guard",
+        "figure": "npc_pink_guard",
+        "glyph": "G",
+        "dialogue": "red_light_rules",
+        "variants": [
+         {
+          "when": "minigame:red_light:won",
+          "dialogue": "guard_circle_after"
+         }
+        ]
+       },
+       {
+        "id": "grandpa",
+        "name": "Grandpa 001",
+        "figure": "npc_grandpa",
+        "glyph": "O",
+        "dialogue": "grandpa",
+        "variants": [
+         {
+          "when": "got_banana_milk",
+          "dialogue": "grandpa_again"
+         }
+        ]
+       },
+       {
+        "id": "m1_143",
+        "name": "Player 143",
+        "figure": "m1_143",
+        "glyph": "H",
+        "dialogue": "m1_reunion",
+        "shownWhen": "minigame:red_light:won",
+        "hiddenWhen": "m1_joined",
+        "facing": "left"
+       },
+       {
+        "id": "guard_square",
+        "name": "Pink Guard",
+        "figure": "npc_pink_guard",
+        "glyph": "Q",
+        "dialogue": "dalgona_rules",
+        "shownWhen": "m1_joined",
+        "variants": [
+         {
+          "when": "minigame:dalgona:won",
+          "dialogue": "guard_square_after"
+         }
+        ]
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "bridge",
+        "requires": "minigame:dalgona:won",
+        "x": 10,
+        "y": 8
+       }
+      ]
+     },
+     "bridge": {
+      "id": "bridge",
+      "name": "The Glass Bridge",
+      "backdrop": "backdrop_squish_bridge",
+      "battle": "squish_battle",
+      "music": "squish",
+      "grid": [
+       "#######.....########",
+       "#######..F..########",
+       "######.......#######",
+       "######.......#######",
+       "######.......#######",
+       "#####.........######",
+       "#####.........######",
+       "#####.........######",
+       "#####...T.....######",
+       "####...........#####",
+       "####.....v.....#####"
+      ],
+      "placeholder": 2832970,
+      "onEnter": "bridge_intro",
+      "npcs": [
+       {
+        "id": "guard_triangle",
+        "name": "Pink Guard",
+        "figure": "npc_pink_guard",
+        "glyph": "T",
+        "dialogue": "glass_rules",
+        "variants": [
+         {
+          "when": "minigame:glass_bridge:won",
+          "dialogue": "guard_triangle_after"
+         }
+        ]
+       },
+       {
+        "id": "front_manager",
+        "name": "The Front Manager",
+        "figure": "npc_front_manager",
+        "glyph": "F",
+        "dialogue": "front_manager",
+        "shownWhen": "bridge_done",
+        "hiddenWhen": "front_done",
+        "facing": "down"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "arena",
+        "x": 9,
+        "y": 8
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "arena_intro": [
+      {
+       "id": "a",
+       "text": "Meanwhile, on an island nobody can find on a map."
+      },
+      {
+       "id": "b",
+       "text": "A sand field. Pink guards in masks. A giant doll humming to herself."
+      },
+      {
+       "id": "c",
+       "speaker": "Rae",
+       "text": "...I fell asleep on a rooftop and woke up in a playground. Why am I in a tracksuit."
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "Why are any of us in tracksuits. Why is mine number 456. That's a lot of people ahead of me."
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "Hyung. The doll is looking at us."
+      },
+      {
+       "id": "f",
+       "speaker": "Rae",
+       "text": "Don't look back. It's like a cat. If you don't look at it, it gets curious and comes over."
+      },
+      {
+       "id": "g",
+       "text": "(Talk to the guard with the circle mask.)"
+      }
+     ],
+     "red_light_rules": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "Players. The first game is Red Light, Green Light."
+      },
+      {
+       "id": "b",
+       "speaker": "Pink Guard",
+       "text": "Move while she looks away. Freeze when she turns. Those who move on red will be... disqualified."
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "'Disqualified' is doing a lot of work in that sentence."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "Fine. I've stood still through worse. Fan meetings.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "red_light",
+         "title": "Red Light, Green Light",
+         "prompt": "Move only while she looks away: press A outside the red.",
+         "rounds": 5,
+         "lives": 2,
+         "sweepsPerSecond": 0.6,
+         "window": 0.35,
+         "invert": true
+        },
+        "onWin": "red_light_won",
+        "onLose": "red_light_lost"
+       }
+      }
+     ],
+     "red_light_won": [
+      {
+       "id": "a",
+       "text": "The doll's head turns one last time. Everyone who crossed the line is still standing."
+      },
+      {
+       "id": "b",
+       "speaker": "Nico",
+       "text": "We did it! ...Wait. There's someone else over there. In a green tracksuit. Number 143."
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "One-four-three. 'I love you' in pager code. Somebody upstairs has a sense of humour."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "...That's Solho."
+      }
+     ],
+     "red_light_lost": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "Movement detected. Players will return to the starting line."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "We moved because you said 'detected' in a scary voice. Again."
+      }
+     ],
+     "guard_circle_after": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "Proceed. The next game will be announced. Probably by me. Again."
+      }
+     ],
+     "grandpa": [
+      {
+       "id": "a",
+       "speaker": "Grandpa 001",
+       "text": "Heh. I'm Player 001. I'm just here to have fun."
+      },
+      {
+       "id": "b",
+       "speaker": "Nico",
+       "text": "That's the scariest thing anyone has said on this island."
+      },
+      {
+       "id": "c",
+       "text": "Grandpa 001 hands Nico two cartons of banana milk.",
+       "set": "got_banana_milk",
+       "action": {
+        "kind": "give",
+        "item": "banana_milk",
+        "count": 2
+       }
+      }
+     ],
+     "grandpa_again": [
+      {
+       "id": "a",
+       "speaker": "Grandpa 001",
+       "text": "Have you ever played marbles? No? Good. Don't."
+      }
+     ],
+     "m1_reunion": [
+      {
+       "id": "a",
+       "speaker": "Sol",
+       "text": "RAEMIN-HYUNG? Jun! Jeongin! You're here! You're real! Are you real? Pinch me. No, don't, I bruise."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "You're number 143."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "I KNOW. I didn't pick it! They hand them out! It's a coincidence! A coincidence with a pager code!"
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "He's turning the colour of the tracksuit."
+      },
+      {
+       "id": "e",
+       "speaker": "Rae",
+       "text": "...Stay close. If anyone's getting disqualified, it's not you.",
+       "choices": [
+        {
+         "text": "Sol: 'Is that... worry? From you?'",
+         "next": "f",
+         "meter": 1
+        },
+        {
+         "text": "Sol grabs his sleeve and doesn't let go.",
+         "next": "g",
+         "meter": 2
+        }
+       ]
+      },
+      {
+       "id": "f",
+       "speaker": "Rae",
+       "text": "It's logistics.",
+       "next": "h"
+      },
+      {
+       "id": "g",
+       "speaker": "Rae",
+       "text": "...Fine. Sleeve's yours. For now.",
+       "next": "h"
+      },
+      {
+       "id": "h",
+       "text": "Sol joins the party!",
+       "set": "m1_joined",
+       "action": {
+        "kind": "party",
+        "members": [
+         "m2",
+         "m1",
+         "m7",
+         "m8"
+        ]
+       }
+      }
+     ],
+     "dalgona_rules": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "Game two. Dalgona. Carve the shape out of the candy without breaking it."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "What shape is mine. Please be the circle. Please be the circle."
+      },
+      {
+       "id": "c",
+       "speaker": "Pink Guard",
+       "text": "Yours is a quokka."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "WHO MAKES A QUOKKA DALGONA."
+      },
+      {
+       "id": "e",
+       "speaker": "Rae",
+       "text": "Lick the back of it. The sugar softens. Trust me.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "grid",
+         "id": "dalgona",
+         "title": "Dalgona: the Quokka",
+         "rule": "trace",
+         "grid": [
+          "..#...#..",
+          ".#######.",
+          ".##.#.##.",
+          ".#######.",
+          "..#####..",
+          "...###..."
+         ],
+         "moves": 3
+        },
+        "onWin": "dalgona_won",
+        "onLose": "dalgona_lost"
+       }
+      }
+     ],
+     "dalgona_won": [
+      {
+       "id": "a",
+       "text": "A perfect sugar quokka lifts free. Its little face is smiling."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "I'm never eating it. I'm going to frame it. I'm going to name it."
+      },
+      {
+       "id": "c",
+       "speaker": "Nico",
+       "text": "The exit to the south just opened. There's a bridge."
+      }
+     ],
+     "dalgona_lost": [
+      {
+       "id": "a",
+       "text": "Crack. The quokka loses an ear."
+      },
+      {
+       "id": "b",
+       "speaker": "Pink Guard",
+       "text": "...We have more candy. Try again."
+      }
+     ],
+     "guard_square_after": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "The bridge is to the south. Watch your step. That's not advice. That's the game."
+      }
+     ],
+     "bridge_intro": [
+      {
+       "id": "a",
+       "text": "A long bridge of glass panes over a black drop. Lanterns sway on the railings."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "Half these panes are tempered glass. Half are regular. I've been doing the math."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "And?"
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "Left. Then right. Then right again. Then left. After that I'm guessing, and I'm never wrong, so assume I'm right.",
+       "set": "roast_logic"
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "Hyung, your confidence is a medical condition."
+      }
+     ],
+     "glass_rules": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "Game three. Cross the bridge. Step on the left pane or the right pane. Choose well."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "I'm going to be honest. My legs have stopped listening to me.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "grid",
+         "id": "glass_bridge",
+         "title": "The Glass Bridge",
+         "rule": "path",
+         "grid": [
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "L"
+         ],
+         "moves": 3
+        },
+        "onWin": "glass_won",
+        "onLose": "glass_lost"
+       }
+      }
+     ],
+     "glass_lost": [
+      {
+       "id": "a",
+       "text": "A pane cracks under Sol's foot. Rae yanks him back by the collar."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "That's one. Don't make it two. Start again."
+      }
+     ],
+     "glass_won": [
+      {
+       "id": "a",
+       "text": "Halfway across, Sol freezes. The drop under the glass goes on forever."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "I can't. Hyung, I can't move. I'm sorry, go without me, tell the cats I..."
+      },
+      {
+       "id": "c",
+       "speaker": "Rae",
+       "text": "Get on my back."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "What?"
+      },
+      {
+       "id": "e",
+       "speaker": "Rae",
+       "text": "Get on my back, Solho. Close your eyes. Count the panes for me.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "piggyback",
+        "title": "Trope: The Piggyback Ride",
+        "caption": [
+         "Rae carries Sol across the glass.",
+         "Sol counts every pane out loud.",
+         "He gets the numbers wrong on purpose. Rae lets him."
+        ],
+        "still": "still_piggyback",
+        "video": "piggyback",
+        "then": "bridge_done"
+       }
+      }
+     ],
+     "bridge_done": [
+      {
+       "id": "a",
+       "text": "They reach the far side. Sol slides down. Neither of them says anything for a while.",
+       "set": "bridge_done",
+       "meter": 3
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "For the record, I was right about the first four."
+      },
+      {
+       "id": "c",
+       "text": "A figure in black waits at the end of the bridge."
+      }
+     ],
+     "guard_triangle_after": [
+      {
+       "id": "a",
+       "speaker": "Pink Guard",
+       "text": "...That was against the rules. I'm not reporting it. Go."
+      }
+     ],
+     "front_manager": [
+      {
+       "id": "a",
+       "speaker": "The Front Manager",
+       "text": "Players 456, 218, 067 and 143. You carried a player. That is not in the schedule."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Who even ARE you?"
+      },
+      {
+       "id": "c",
+       "speaker": "The Front Manager",
+       "text": "I manage the front. Of everything. The Director sends his regards, and his Clause 7."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "Tell your Director he can file it with the cat litter.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "front_manager"
+        ],
+        "music": "boss",
+        "then": "front_won"
+       }
+      }
+     ],
+     "front_won": [
+      {
+       "id": "a",
+       "speaker": "The Front Manager",
+       "text": "Impressive. But the game was never fair."
+      },
+      {
+       "id": "b",
+       "text": "He presses a button. The floor under Sol opens like a trapdoor.",
+       "set": "front_done"
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "HYUNG!"
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "SOLHO!"
+      },
+      {
+       "id": "e",
+       "text": "Rae's hand closes on air. On the glass where Sol stood: a folded note and a Lightstick Shard."
+      },
+      {
+       "id": "f",
+       "text": "'Raemin-hyung. You carried me. I was counting wrong on purpose. Did you notice? -S' ... Quokka Note 2 collected. The second Lightstick Shard!",
+       "set": "note_2",
+       "meter": 2
+      },
+      {
+       "id": "g",
+       "speaker": "Nico",
+       "text": "He'll be okay. He's Sol. He always lands somewhere loud."
+      },
+      {
+       "id": "h",
+       "speaker": "Rae",
+       "text": "...Then we'll follow the noise.",
+       "set": "shard_2",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch3"
+       }
+      }
+     ]
+    }
+   },
+   "ch3": {
+    "id": "ch3",
+    "title": "Chapter 3: Scarlet Heart Ryeo",
+    "party": [
+     "m1",
+     "m4",
+     "m7",
+     "m8"
+    ],
+    "start": {
+     "map": "palace",
+     "x": 9,
+     "y": 7
+    },
+    "costumes": {
+     "m1": "ch3_m1_hanbok",
+     "m4": "ch3_m4_prince",
+     "m7": "ch3_m7_prince",
+     "m8": "ch3_m8_prince",
+     "m2": "ch3_sooo"
+    },
+    "speakers": {
+     "Queen Mother Yoo-hoo": "yoohoo"
+    },
+    "enemies": [
+     {
+      "id": "palace_guard",
+      "name": "Palace Guard",
+      "art": "enemy_palace_guard",
+      "stats": {
+       "hp": 40,
+       "mp": 0,
+       "atk": 12,
+       "def": 5,
+       "mag": 3,
+       "spd": 10
+      },
+      "stayPoints": 20,
+      "color": 9054762,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "asks for your hall pass",
+       "blocks the gate with a very long spear"
+      ]
+     },
+     {
+      "id": "yoohoo",
+      "name": "Queen Mother Yoo-hoo",
+      "art": "boss_yoohoo_boss",
+      "stats": {
+       "hp": 200,
+       "mp": 30,
+       "atk": 13,
+       "def": 8,
+       "mag": 12,
+       "spd": 11
+      },
+      "stayPoints": 160,
+      "color": 5906286,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "issues a decree against joy",
+       "smiles at you. It's worse.",
+       "pours poisoned flattery"
+      ]
+     }
+    ],
+    "maps": {
+     "palace": {
+      "id": "palace",
+      "name": "Goryeo Palace, the Inner Court",
+      "backdrop": "backdrop_goryeo_palace",
+      "battle": "goryeo_battle",
+      "music": "goryeo",
+      "placeholder": 9079434,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "########.^.#########",
+       ".......O.....G...###",
+       "..................E.",
+       "............S.......",
+       ".I..C...............",
+       "#..................#",
+       "#..................#",
+       "#..................#"
+      ],
+      "onEnter": "palace_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "palace_guard"
+        ],
+        [
+         "palace_guard",
+         "palace_guard"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "ohmy",
+        "name": "Court Lady Oh-my",
+        "figure": "ch3_head_lady",
+        "glyph": "O",
+        "dialogue": "ohmy",
+        "variants": [
+         {
+          "when": "etiquette_done",
+          "dialogue": "ohmy_after"
+         }
+        ]
+       },
+       {
+        "id": "m8_stays",
+        "name": "Nico",
+        "figure": "ch3_m8_prince",
+        "glyph": "I",
+        "dialogue": "m8_stays",
+        "shownWhen": "sooo_joined",
+        "facing": "right"
+       },
+       {
+        "id": "chae",
+        "name": "Court Lady Chae",
+        "figure": "ch3_court_lady",
+        "glyph": "C",
+        "dialogue": "chae",
+        "variants": [
+         {
+          "when": "sooo_rescue",
+          "dialogue": "chae_after"
+         }
+        ]
+       },
+       {
+        "id": "guard",
+        "name": "Palace Guard",
+        "figure": "ch3_palace_guard",
+        "glyph": "G",
+        "dialogue": "guard",
+        "variants": [
+         {
+          "when": "etiquette_done",
+          "dialogue": "guard_after"
+         }
+        ]
+       },
+       {
+        "id": "servant",
+        "name": "Little Eunuch Bok",
+        "figure": "ch3_servant",
+        "glyph": "E",
+        "dialogue": "servant",
+        "variants": [
+         {
+          "when": "note_3",
+          "dialogue": "servant_after"
+         }
+        ]
+       },
+       {
+        "id": "sooo",
+        "name": "Wang Sooo",
+        "figure": "ch3_sooo",
+        "glyph": "S",
+        "dialogue": "sooo",
+        "shownWhen": "sooo_rescue",
+        "hiddenWhen": "sooo_joined"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "^",
+        "map": "hall",
+        "requires": "etiquette_done",
+        "x": 9,
+        "y": 9
+       }
+      ]
+     },
+     "hall": {
+      "id": "hall",
+      "name": "The Great Hall",
+      "backdrop": "backdrop_goryeo_hall",
+      "battle": "goryeo_battle",
+      "music": "goryeo",
+      "placeholder": 6961690,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "###########....#####",
+       "##############.#####",
+       "###.##########...###",
+       "###..............###",
+       "###......Y.......###",
+       "#...L............###",
+       "##.......v........##"
+      ],
+      "onEnter": "hall_intro",
+      "npcs": [
+       {
+        "id": "yoohoo",
+        "name": "Queen Mother Yoo-hoo",
+        "figure": "ch3_queen_mother",
+        "glyph": "Y",
+        "dialogue": "yoohoo_tea",
+        "variants": [
+         {
+          "when": "sooo_joined",
+          "dialogue": "yoohoo_boss"
+         },
+         {
+          "when": "sooo_rescue",
+          "dialogue": "yoohoo_waiting"
+         },
+         {
+          "when": "minigame:tea:lost",
+          "dialogue": "yoohoo_tea_again"
+         }
+        ]
+       },
+       {
+        "id": "tea_lady",
+        "name": "Court Lady Min",
+        "figure": "ch3_court_lady",
+        "glyph": "L",
+        "dialogue": "tea_lady",
+        "facing": "right"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "palace",
+        "x": 9,
+        "y": 5
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "palace_intro": [
+      {
+       "id": "a",
+       "text": "A flash. A gong. Cherry blossoms. Somewhere, a thousand years ago, a boy lands face first."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Ow. OW. Okay. Where... Why am I wearing a SKIRT? Is this a skirt?"
+      },
+      {
+       "id": "c",
+       "speaker": "Ari",
+       "text": "It's a chima. Red silk, orange jeogori. Sol, the light on you right now. Honestly? Stunning."
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "We woke up as princes. You woke up as a court lady. The palace has opinions."
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "I'm the 14th prince. I checked. Legally, nobody can make me carry anything."
+      },
+      {
+       "id": "f",
+       "speaker": "Sol",
+       "text": "I'm fine! Totally fine! Has anyone seen Raemin-hyung? He'd laugh at this. Then he'd... also laugh."
+      },
+      {
+       "id": "g",
+       "text": "(The head court lady is staring at you. Court ladies are not supposed to sit on the floor.)"
+      }
+     ],
+     "ohmy": [
+      {
+       "id": "a",
+       "speaker": "Court Lady Oh-my",
+       "text": "You. New girl. You fell out of the sky and you're on my paving. Name?"
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Sol! Sol... -ah. Sol-ah. Court Lady Sol-ah. Reporting for... court."
+      },
+      {
+       "id": "c",
+       "speaker": "Court Lady Oh-my",
+       "text": "The Queen Mother takes her tea within the hour. No girl serves her without passing my questions."
+      },
+      {
+       "id": "q1",
+       "speaker": "Court Lady Oh-my",
+       "text": "First. A prince passes you in the courtyard. What do you do?",
+       "choices": [
+        {
+         "text": "Bow low and wish him a good day.",
+         "next": "q1_kind",
+         "meter": 2
+        },
+        {
+         "text": "Ask for a selfie. Politely.",
+         "next": "q1_funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "q1_kind",
+       "speaker": "Court Lady Oh-my",
+       "text": "Hm. Correct. Humble, and you meant it.",
+       "next": "q2"
+      },
+      {
+       "id": "q1_funny",
+       "speaker": "Court Lady Oh-my",
+       "text": "A self... what? Never mind. You said 'politely'. I'll allow it.",
+       "next": "q2"
+      },
+      {
+       "id": "q2",
+       "speaker": "Court Lady Oh-my",
+       "text": "Second. The Queen Mother says her tea is cold. You say?",
+       "choices": [
+        {
+         "text": "I'll warm it at once, Your Majesty.",
+         "next": "q2_kind",
+         "meter": 2
+        },
+        {
+         "text": "Respectfully, it's iced tea. It's a trend.",
+         "next": "q2_funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "q2_kind",
+       "speaker": "Court Lady Oh-my",
+       "text": "Good. Quick, quiet, no excuses.",
+       "next": "q3"
+      },
+      {
+       "id": "q2_funny",
+       "speaker": "Jun",
+       "text": "She's going to get us all exiled to an island. Wonderful. I'll pack.",
+       "next": "q3"
+      },
+      {
+       "id": "q3",
+       "speaker": "Court Lady Oh-my",
+       "text": "Last. The masked 4th prince looks at you across the courtyard. Everyone else runs. You?",
+       "choices": [
+        {
+         "text": "Look back, gently. Everyone deserves to be seen.",
+         "next": "q3_kind",
+         "meter": 2
+        },
+        {
+         "text": "Stare back harder. I never lose a staring contest.",
+         "next": "q3_funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "q3_kind",
+       "speaker": "Court Lady Oh-my",
+       "text": "...No one has ever said that about Prince Wang Sooo. Hm. Interesting.",
+       "next": "done"
+      },
+      {
+       "id": "q3_funny",
+       "speaker": "Court Lady Oh-my",
+       "text": "Brave. Foolish. The two are cousins in this palace.",
+       "next": "done"
+      },
+      {
+       "id": "done",
+       "speaker": "Court Lady Oh-my",
+       "text": "You pass. Barely. Go up the steps to the Great Hall, and do NOT spill.",
+       "set": "etiquette_done"
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "Spill? Me? I've never spilled anything in my— okay, a few things."
+      }
+     ],
+     "ohmy_after": [
+      {
+       "id": "a",
+       "speaker": "Court Lady Oh-my",
+       "text": "Why are you still here? The Hall. Tea. Go. Small steps."
+      }
+     ],
+     "chae": [
+      {
+       "id": "a",
+       "speaker": "Court Lady Chae",
+       "text": "Did you hear? The 4th prince, Wang Sooo, came back from the north. He wears a mask. Always."
+      },
+      {
+       "id": "b",
+       "speaker": "Court Lady Chae",
+       "text": "They say he's cold. They say he hisses at people. Like a cat."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "...Like a cat. Ha. Haha. No. Lots of people hiss. Probably."
+      }
+     ],
+     "chae_after": [
+      {
+       "id": "a",
+       "speaker": "Court Lady Chae",
+       "text": "He grabbed your WRIST? In FRONT of the Hall? I'm going to faint. I'm writing this down."
+      }
+     ],
+     "guard": [
+      {
+       "id": "a",
+       "speaker": "Palace Guard",
+       "text": "Halt. The Great Hall is for princes and proper court ladies."
+      },
+      {
+       "id": "b",
+       "speaker": "Nico",
+       "text": "I'm a prince. These are my friends. Legally that makes them fine."
+      },
+      {
+       "id": "c",
+       "speaker": "Palace Guard",
+       "text": "Nice try, small prince. The lady needs Court Lady Oh-my's word."
+      }
+     ],
+     "guard_after": [
+      {
+       "id": "a",
+       "speaker": "Palace Guard",
+       "text": "Oh-my says you passed. Up the steps. And mind the hem; it's longer than you think."
+      }
+     ],
+     "servant": [
+      {
+       "id": "a",
+       "speaker": "Little Eunuch Bok",
+       "text": "Court lady! A little round animal ran past and dropped this under the cherry tree. It's addressed to a 'Raemin-hyung'?"
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "That's MINE. That's— I wrote that. Last night. In a different century. Give."
+      },
+      {
+       "id": "c",
+       "text": "'Raemin-hyung. I bet you'd look good in a mask. That's not the thing I wanted to say. The thing is next time. -S' ... Quokka Note 3 collected.",
+       "set": "note_3",
+       "meter": 2
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "'Next time.' You've written 'next time' in three centuries now."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "AND IT WILL BE NEXT TIME. Eventually. Shush."
+      }
+     ],
+     "servant_after": [
+      {
+       "id": "a",
+       "speaker": "Little Eunuch Bok",
+       "text": "I didn't read it. I only read the 'Raemin-hyung' part. And the rest. Sorry, court lady."
+      }
+     ],
+     "hall_intro": [
+      {
+       "id": "a",
+       "text": "The Great Hall. Lacquer, silk, mountains in the windows. On the dais, a woman with a crown and a very small smile."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "Gold light from the left, cold light from the right. This is a villain's lighting setup. I know my lighting."
+      }
+     ],
+     "tea_lady": [
+      {
+       "id": "a",
+       "speaker": "Court Lady Min",
+       "text": "The Queen Mother's cup must be exactly full. Not almost. Not over. Exactly."
+      },
+      {
+       "id": "b",
+       "speaker": "Court Lady Min",
+       "text": "The last girl who overpoured is now a gardener. On an island."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "Exactly full. Exactly full. I can do exactly. I'm an exact person."
+      }
+     ],
+     "yoohoo_tea": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "A new girl. With a boy's walk and a sparrow's nerves. Pour, child. Let us see what you are."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Pouring! Yes! Pouring is my... thing. One of my things. I have several."
+      },
+      {
+       "id": "c",
+       "text": "Sol lifts the celadon teapot.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "tea",
+         "title": "Tea for the Queen Mother",
+         "prompt": "Pour when the cup is exactly full",
+         "rounds": 3,
+         "lives": 2,
+         "sweepsPerSecond": 1,
+         "window": 0.18,
+         "invert": false
+        },
+        "onWin": "tea_won",
+        "onLose": "tea_lost"
+       }
+      }
+     ],
+     "yoohoo_tea_again": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "Back again, little puddle-maker? Dry robes are on their way. Pour. Properly, this time."
+      },
+      {
+       "id": "b",
+       "text": "Sol lifts the celadon teapot. Steady hands. Steady. STEADY.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "tea",
+         "title": "Tea for the Queen Mother",
+         "prompt": "Pour when the cup is exactly full",
+         "rounds": 3,
+         "lives": 2,
+         "sweepsPerSecond": 1,
+         "window": 0.18,
+         "invert": false
+        },
+        "onWin": "tea_won",
+        "onLose": "tea_lost"
+       }
+      }
+     ],
+     "tea_lost": [
+      {
+       "id": "a",
+       "text": "SPLASH. Hot tea, all over the royal silk."
+      },
+      {
+       "id": "b",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "..."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "I'M SO SORRY. It's fine! It's a pattern now! Very modern! I'll try again!"
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "Breathe. Watch the cup, not her face. Talk to her again when you're ready."
+      }
+     ],
+     "tea_won": [
+      {
+       "id": "a",
+       "text": "Three cups. Exactly full. Not a drop on the silk."
+      },
+      {
+       "id": "b",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "...Too perfect. No court lady pours like that on her first day. You are a spy from the future."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "That's— okay that's weirdly accurate, but in a NICE way—"
+      },
+      {
+       "id": "d",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "Guards. Take the girl and her pretty princes away.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "palace_guard",
+         "palace_guard"
+        ],
+        "then": "guards_won"
+       }
+      }
+     ],
+     "guards_won": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "More guards. MORE. Bring the whole wall."
+      },
+      {
+       "id": "b",
+       "text": "Footsteps from every door. Too many."
+      },
+      {
+       "id": "c",
+       "text": "Then a hand closes around Sol's wrist. Cold silver mask. Black sleeve. A grip that doesn't ask."
+      },
+      {
+       "id": "d",
+       "speaker": "???",
+       "text": "...Run. Now."
+      },
+      {
+       "id": "e",
+       "text": "The masked prince pulls Sol out of the hall, down the steps, into the cherry blossoms.",
+       "set": "sooo_rescue",
+       "action": {
+        "kind": "warp",
+        "map": "palace",
+        "x": 11,
+        "y": 7
+       }
+      }
+     ],
+     "yoohoo_waiting": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "Ah, the girl who runs away with masked princes. Come back when you've decided to lose properly."
+      }
+     ],
+     "sooo": [
+      {
+       "id": "a",
+       "speaker": "Wang Sooo",
+       "text": "..."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Th-thank you. For the... wrist. The rescue. The wrist rescue. Your Highness."
+      },
+      {
+       "id": "c",
+       "speaker": "Wang Sooo",
+       "text": "You talk too much for a court lady."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "And you talk too LITTLE for a— wait. Do you have... cat ears?"
+      },
+      {
+       "id": "e",
+       "speaker": "Wang Sooo",
+       "text": "No."
+      },
+      {
+       "id": "f",
+       "speaker": "Jun",
+       "text": "It's obviously—"
+      },
+      {
+       "id": "g",
+       "speaker": "Ari",
+       "text": "Shh. Let him have the drama. Some of us have waited three chapters for this."
+      },
+      {
+       "id": "h",
+       "speaker": "Wang Sooo",
+       "text": "The Queen Mother has something that glows. In her sleeve. I want it gone. You want it. So. Together."
+      },
+      {
+       "id": "i",
+       "speaker": "Nico",
+       "text": "Four's a party, five's a crowd. I'll stay out here with the court ladies. They have rice cakes."
+      },
+      {
+       "id": "j",
+       "speaker": "Jun",
+       "text": "You're abandoning us for snacks."
+      },
+      {
+       "id": "k",
+       "speaker": "Nico",
+       "text": "Maknae privilege. It's legally binding. Go get your shard, noona-hyung.",
+       "set": "sooo_joined"
+      },
+      {
+       "id": "l",
+       "text": "Wang Sooo joins the party. Nico stays behind to guard the rice cakes.",
+       "action": {
+        "kind": "party",
+        "members": [
+         "m1",
+         "m2",
+         "m4",
+         "m7"
+        ]
+       }
+      }
+     ],
+     "m8_stays": [
+      {
+       "id": "a",
+       "speaker": "Nico",
+       "text": "Court Lady Chae says I'm the most handsome prince. I didn't even ask. I just stood here."
+      },
+      {
+       "id": "b",
+       "speaker": "Nico",
+       "text": "Somewhere Lio-hyung is baking. I can smell it across centuries. Go on."
+      }
+     ],
+     "yoohoo_boss": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "The girl returns, with my most disappointing grandson. Wang Sooo, you were always the quiet one."
+      },
+      {
+       "id": "b",
+       "speaker": "Wang Sooo",
+       "text": "Still am. Give back what isn't yours."
+      },
+      {
+       "id": "c",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "This little light? A man in a dark suit gave it to me. 'Keep them apart,' he said. 'Keep them quiet.'"
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "Director Gwi. Of course. Even here. He has offices in EVERY century."
+      },
+      {
+       "id": "e",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "This palace runs on secrets, child. A feeling said out loud is a scandal. Kneel."
+      },
+      {
+       "id": "f",
+       "speaker": "Sol",
+       "text": "No. Not today. Not in a skirt this nice.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "yoohoo"
+        ],
+        "music": "boss",
+        "then": "yoohoo_won"
+       }
+      }
+     ],
+     "yoohoo_won": [
+      {
+       "id": "a",
+       "speaker": "Queen Mother Yoo-hoo",
+       "text": "Impossible... a court lady... and a cat..."
+      },
+      {
+       "id": "b",
+       "text": "Something bright rolls out of her sleeve and across the floor. The third Lightstick Shard!",
+       "set": "shard_3"
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "Three down. LOOSE ENDS knows we're counting."
+      },
+      {
+       "id": "d",
+       "text": "Sol reaches for the shard. So does Wang Sooo. Their hands meet over it."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "Your Highness. Before anything else happens. Can I... see your face? Just once?",
+       "action": {
+        "kind": "cutscene",
+        "trope": "wrist_grab",
+        "title": "Trope: Wrist Grab, then Unmasking",
+        "caption": [
+         "The masked prince catches Sol's wrist. He doesn't let go.",
+         "The silver mask comes away. It's Raemin.",
+         "They lean in. Closer. Closer.",
+         "CRACK. Dating Ban lightning splits the hall."
+        ],
+        "still": "still_wrist_grab",
+        "video": "wrist_grab",
+        "then": "unmasked"
+       }
+      }
+     ],
+     "unmasked": [
+      {
+       "id": "a",
+       "speaker": "Sol",
+       "text": "M-Raemin-hyung? It was YOU? The whole time? The CAT EARS—"
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "...You poured very well."
+      },
+      {
+       "id": "c",
+       "text": "Red lightning crawls across the floor between them. A contract seal burns in the air: CLAUSE 7."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "Sol. Hold on to—"
+      },
+      {
+       "id": "e",
+       "text": "The floor opens like a page turning. Sol falls one way. Raemin falls the other. The shard falls with Ari and Jun.",
+       "meter": 3
+      },
+      {
+       "id": "f",
+       "speaker": "Ari",
+       "text": "That was the best-lit near-kiss I've ever seen. And I'm furious about it."
+      },
+      {
+       "id": "g",
+       "speaker": "Jun",
+       "text": "Grab Nico. Wherever this drops us, we find them again.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch4"
+       }
+      }
+     ]
+    }
+   },
+   "ch4": {
+    "id": "ch4",
+    "title": "Chapter 4: The Glory",
+    "party": [
+     "m4",
+     "m7",
+     "m8",
+     "m6"
+    ],
+    "start": {
+     "map": "baduk",
+     "x": 9,
+     "y": 9
+    },
+    "speakers": {
+     "Moon Dong-un": "dongun",
+     "Park Yeon-jinx": "yeonjinx"
+    },
+    "enemies": [
+     {
+      "id": "glory_weather_sprite",
+      "name": "Weather Sprite",
+      "art": "enemy_weather_sprite",
+      "stats": {
+       "hp": 46,
+       "mp": 0,
+       "atk": 13,
+       "def": 5,
+       "mag": 10,
+       "spd": 13
+      },
+      "stayPoints": 26,
+      "color": 7317724,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "drizzles on your snacks",
+       "rolls in like a cold front"
+      ]
+     },
+     {
+      "id": "glory_sasaeng",
+      "name": "Sasaeng Shade",
+      "art": "enemy_sasaeng",
+      "stats": {
+       "hp": 52,
+       "mp": 0,
+       "atk": 14,
+       "def": 6,
+       "mag": 4,
+       "spd": 15
+      },
+      "stayPoints": 30,
+      "color": 4013404,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "peeks out from behind a pillar",
+       "knows your schedule better than you"
+      ]
+     },
+     {
+      "id": "yeonjinx",
+      "name": "Park Yeon-jinx",
+      "art": "boss_yeonjinx_boss",
+      "stats": {
+       "hp": 230,
+       "mp": 30,
+       "atk": 15,
+       "def": 9,
+       "mag": 13,
+       "spd": 12
+      },
+      "stayPoints": 200,
+      "color": 14251935,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "clicks to the next slide",
+       "forecasts your bad day",
+       "smiles for camera two"
+      ]
+     }
+    ],
+    "maps": {
+     "baduk": {
+      "id": "baduk",
+      "name": "Dong-un's Baduk Room",
+      "backdrop": "backdrop_glory_baduk",
+      "battle": "glory_battle",
+      "music": "glory",
+      "placeholder": 3820124,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "##.....#####.....###",
+       "#....D.#####......##",
+       "..................##",
+       ".........v........##"
+      ],
+      "onEnter": "baduk_intro",
+      "encounters": {
+       "rate": 0.02,
+       "groups": [
+        [
+         "glory_sasaeng"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "dongun",
+        "name": "Moon Dong-un",
+        "figure": "npc_dongun",
+        "glyph": "D",
+        "dialogue": "dongun",
+        "facing": "right",
+        "variants": [
+         {
+          "when": "baduk_won",
+          "dialogue": "dongun_go"
+         }
+        ]
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "studio",
+        "requires": "baduk_won",
+        "x": 10,
+        "y": 9
+       }
+      ]
+     },
+     "studio": {
+      "id": "studio",
+      "name": "Channel 9 Weather Studio",
+      "backdrop": "backdrop_glory_studio",
+      "battle": "glory_battle",
+      "music": "glory",
+      "placeholder": 5921382,
+      "grid": [
+       "####################",
+       "####################",
+       "#####I..############",
+       "####......##########",
+       "##........##########",
+       "#..F......#####.Y.##",
+       "..........#####.....",
+       "###..............###",
+       "###.###.....D....###",
+       "###.###C.........###",
+       "....###...v......###"
+      ],
+      "onEnter": "studio_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "glory_weather_sprite"
+        ],
+        [
+         "glory_sasaeng"
+        ],
+        [
+         "glory_weather_sprite",
+         "glory_sasaeng"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "yeonjinx",
+        "name": "Park Yeon-jinx",
+        "figure": "npc_yeonjinx",
+        "glyph": "Y",
+        "dialogue": "yeonjinx",
+        "hiddenWhen": "glory_done"
+       },
+       {
+        "id": "camera_op",
+        "name": "Camera Operator",
+        "figure": "npc_camera",
+        "glyph": "C",
+        "dialogue": "camera_op",
+        "facing": "left",
+        "variants": [
+         {
+          "when": "glory_done",
+          "dialogue": "camera_op_after"
+         }
+        ]
+       },
+       {
+        "id": "floor_director",
+        "name": "Floor Director",
+        "figure": "npc_floor",
+        "glyph": "F",
+        "dialogue": "floor_director",
+        "variants": [
+         {
+          "when": "glory_done",
+          "dialogue": "floor_director_after"
+         }
+        ]
+       },
+       {
+        "id": "intern",
+        "name": "Intern",
+        "figure": "npc_intern",
+        "glyph": "I",
+        "dialogue": "intern",
+        "variants": [
+         {
+          "when": "note_4",
+          "dialogue": "intern_again"
+         }
+        ]
+       },
+       {
+        "id": "dongun_studio",
+        "name": "Moon Dong-un",
+        "figure": "npc_dongun",
+        "glyph": "D",
+        "dialogue": "dongun_end",
+        "shownWhen": "glory_done",
+        "facing": "down"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "baduk",
+        "x": 9,
+        "y": 9
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "baduk_intro": [
+      {
+       "id": "a",
+       "text": "A quiet room. Snow at the window. A baduk board mid-game, and nobody sitting at it."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "Cold blue window, one warm lamp. Someone in here has been waiting a very long time."
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "Or someone forgot to pay the heating bill. Where are we?"
+      },
+      {
+       "id": "d",
+       "speaker": "Nico",
+       "text": "Lio found a kitchen in under a minute. Legally, that's a record."
+      },
+      {
+       "id": "e",
+       "speaker": "Lio",
+       "text": "Good morning! It's night. Don't care. The oven's warm and there are brownies in twenty."
+      },
+      {
+       "id": "f",
+       "text": "(A woman in black stands by the table. She hasn't looked up from the board.)"
+      }
+     ],
+     "dongun": [
+      {
+       "id": "a",
+       "speaker": "Moon Dong-un",
+       "text": "You're the boys who fell out of the sky. I watched. I watch everything."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "That's not as reassuring as you think it is."
+      },
+      {
+       "id": "c",
+       "speaker": "Moon Dong-un",
+       "text": "Park Yeon-jinx. Nine o'clock weather. She forecasts sunshine for herself and rain for everyone else."
+      },
+      {
+       "id": "d",
+       "speaker": "Moon Dong-un",
+       "text": "She took something of yours. A glowing stick. She calls it her lucky pointer."
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "Our shard? She's using our shard as a weather clicker?"
+      },
+      {
+       "id": "f",
+       "speaker": "Moon Dong-un",
+       "text": "I don't chase her. I surround her. Sit.",
+       "choices": [
+        {
+         "text": "Teach us.",
+         "next": "learn",
+         "meter": 2
+        },
+        {
+         "text": "Just fight her?",
+         "next": "fight",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "learn",
+       "speaker": "Moon Dong-un",
+       "text": "Good. Patience is a move too.",
+       "next": "puzzle"
+      },
+      {
+       "id": "fight",
+       "speaker": "Moon Dong-un",
+       "text": "You could. She'd smile for camera two, and it would rain on you for a week."
+      },
+      {
+       "id": "puzzle",
+       "speaker": "Moon Dong-un",
+       "text": "White is hers, black is yours. Close every door she has. Even the one she keeps inside.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "grid",
+         "id": "glory_baduk",
+         "title": "Surround her stones",
+         "rule": "surround",
+         "grid": [
+          ".ooo..",
+          "xo.ox.",
+          ".xoo..",
+          "..x...",
+          ".....o"
+         ],
+         "moves": 8
+        },
+        "onWin": "baduk_won",
+        "onLose": "baduk_lost"
+       }
+      }
+     ],
+     "baduk_lost": [
+      {
+       "id": "a",
+       "speaker": "Moon Dong-un",
+       "text": "Not yet. A door is any empty point touching her stones. The edge of the board is a wall."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "Count them first. Then place. I'll pretend I did that the first time."
+      },
+      {
+       "id": "c",
+       "speaker": "Moon Dong-un",
+       "text": "Again. I've lost to this board a thousand times. That's how I know where it ends.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "grid",
+         "id": "glory_baduk",
+         "title": "Surround her stones",
+         "rule": "surround",
+         "grid": [
+          ".ooo..",
+          "xo.ox.",
+          ".xoo..",
+          "..x...",
+          ".....o"
+         ],
+         "moves": 8
+        },
+        "onWin": "baduk_won",
+        "onLose": "baduk_lost"
+       }
+      }
+     ],
+     "baduk_won": [
+      {
+       "id": "a",
+       "text": "The last stone clicks down. Her stones have nowhere left to go."
+      },
+      {
+       "id": "b",
+       "speaker": "Moon Dong-un",
+       "text": "Eighteen years I practised that shape. You learned it in one evening."
+      },
+      {
+       "id": "c",
+       "speaker": "Ari",
+       "text": "Beginner's luck is just talent with good lighting."
+      },
+      {
+       "id": "d",
+       "speaker": "Moon Dong-un",
+       "text": "She goes live at nine. The studio is down the hall. Don't fight her forecast. Outlast it.",
+       "set": "baduk_won",
+       "meter": 1
+      }
+     ],
+     "dongun_go": [
+      {
+       "id": "a",
+       "speaker": "Moon Dong-un",
+       "text": "Nine o'clock. Down the hall. Patience."
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "I'm bringing the brownies. Live TV needs snacks."
+      }
+     ],
+     "studio_intro": [
+      {
+       "id": "a",
+       "text": "A TV studio. ON AIR glows red. A giant weather map fills the back wall."
+      },
+      {
+       "id": "b",
+       "speaker": "Park Yeon-jinx",
+       "text": "Good evening! Tonight: sunshine over me, and a ninety percent chance of disappointment over you."
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "Look at the map. That high-pressure system is shaped like a quokka."
+      },
+      {
+       "id": "d",
+       "speaker": "Ari",
+       "text": "...It's waving. Weather doesn't wave."
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "Sol-hyung. He's in the forecast somehow. Somewhere this broadcast reaches."
+      },
+      {
+       "id": "f",
+       "speaker": "Lio",
+       "text": "Then let's get on TV. Loudly."
+      }
+     ],
+     "yeonjinx": [
+      {
+       "id": "a",
+       "speaker": "Park Yeon-jinx",
+       "text": "Oh! Guests! Nobody books guests on my segment. Darlings, you're standing in my cold front."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "You have our shard. You're using it as a clicker."
+      },
+      {
+       "id": "c",
+       "speaker": "Park Yeon-jinx",
+       "text": "Lucky pointer. I click, the weather obeys. Watch: scattered showers over the boy band."
+      },
+      {
+       "id": "d",
+       "speaker": "Nico",
+       "text": "We're indoors."
+      },
+      {
+       "id": "e",
+       "speaker": "Park Yeon-jinx",
+       "text": "Not for long, sweetheart. Tonight's forecast: you, losing. Back to you in the studio!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "yeonjinx"
+        ],
+        "music": "boss",
+        "forecast": true,
+        "then": "yeonjinx_won"
+       }
+      }
+     ],
+     "yeonjinx_won": [
+      {
+       "id": "a",
+       "speaker": "Park Yeon-jinx",
+       "text": "No, no, no. This isn't in my forecast. It was on the cue cards!"
+      },
+      {
+       "id": "enter",
+       "text": "Moon Dong-un steps out from behind camera two. She was there the whole time."
+      },
+      {
+       "id": "b",
+       "speaker": "Moon Dong-un",
+       "text": "You only ever forecast tomorrow, Yeon-jinx. Nobody forecasts the long game."
+      },
+      {
+       "id": "c",
+       "speaker": "Park Yeon-jinx",
+       "text": "Fine! Take the clicker! Director Gwi already has the next eighteen years booked anyway."
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "Director Gwi. Read us the fine print."
+      },
+      {
+       "id": "e",
+       "speaker": "Park Yeon-jinx",
+       "text": "The Dating Ban Contract. It gets signed in the room where it happens. After that, nobody confesses. Ever."
+      },
+      {
+       "id": "f",
+       "speaker": "Park Yeon-jinx",
+       "text": "Clear skies forever. That's the extended outlook. Goodnight!"
+      },
+      {
+       "id": "g",
+       "speaker": "Ari",
+       "text": "'The room where it happens.' That sounds like a different genre entirely."
+      },
+      {
+       "id": "h",
+       "speaker": "Moon Dong-un",
+       "text": "Then you have somewhere to be. Go slowly. Win once.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "long_game",
+        "title": "Trope: The Long Game",
+        "caption": [
+         "Eighteen years of patience.",
+         "Forty seconds of weather.",
+         "One stone, exactly where she always said it would go."
+        ],
+        "still": "still_long_game",
+        "video": "long_game",
+        "then": "long_game_done"
+       }
+      }
+     ],
+     "long_game_done": [
+      {
+       "id": "a",
+       "text": "The broadcast cuts to colour bars. Yeon-jinx drifts off the map like a passing front.",
+       "set": "glory_done",
+       "meter": 3
+      },
+      {
+       "id": "b",
+       "text": "Got the fourth Lightstick Shard!",
+       "set": "shard_4"
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "Brownies for the crew! Everyone gets one. Even the weather."
+      }
+     ],
+     "dongun_end": [
+      {
+       "id": "a",
+       "speaker": "Moon Dong-un",
+       "text": "I spent my whole life on one game. Don't spend yours waiting for the perfect moment."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "Is that advice for us, or for someone who isn't here?"
+      },
+      {
+       "id": "c",
+       "speaker": "Moon Dong-un",
+       "text": "Tell the boy in the forecast. He's been waiting longer than he thinks."
+      },
+      {
+       "id": "d",
+       "speaker": "Jun",
+       "text": "The room where it happens. Whatever it is, we get there before the pen does."
+      },
+      {
+       "id": "e",
+       "speaker": "Nico",
+       "text": "Someone in the comments always knows the way. LOOSE ENDS knows."
+      },
+      {
+       "id": "f",
+       "speaker": "Lio",
+       "text": "Then let's go. I packed the leftover brownies.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch5"
+       }
+      }
+     ],
+     "camera_op": [
+      {
+       "id": "a",
+       "speaker": "Camera Operator",
+       "text": "Thirty seconds to air. Don't look into the lens."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "I was born looking into the lens."
+      },
+      {
+       "id": "c",
+       "speaker": "Camera Operator",
+       "text": "...Camera two likes you. Camera two likes nobody."
+      }
+     ],
+     "camera_op_after": [
+      {
+       "id": "a",
+       "speaker": "Camera Operator",
+       "text": "Best ratings in years. The quokka cloud is trending. Nobody can find the guy who drew it."
+      }
+     ],
+     "floor_director": [
+      {
+       "id": "a",
+       "speaker": "Floor Director",
+       "text": "Quiet on set! You four aren't on the rundown."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "We end up on everybody's rundown eventually."
+      },
+      {
+       "id": "c",
+       "speaker": "Floor Director",
+       "text": "Fair. Tip from the crew: she changes the weather every turn. Rain helps magic, heat helps fists."
+      },
+      {
+       "id": "d",
+       "speaker": "Floor Director",
+       "text": "Snow slows everyone, wind speeds everyone up. Don't panic. It always clears eventually."
+      }
+     ],
+     "floor_director_after": [
+      {
+       "id": "a",
+       "speaker": "Floor Director",
+       "text": "And we're out! ...Can someone tell me who's doing the weather tomorrow?"
+      }
+     ],
+     "intern": [
+      {
+       "id": "a",
+       "speaker": "Intern",
+       "text": "Oh! Hi! I'm not supposed to talk. I found this taped behind the weather wall. It has a little quokka on it."
+      },
+      {
+       "id": "b",
+       "text": "'Raemin-hyung. Saw a weather map shaped like me and laughed until I cried. You'd say it's not that funny. It is. -S' ... Quokka Note 4 collected.",
+       "set": "note_4",
+       "meter": 2
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "He's laughing. Wherever he is, he's laughing. That's really good."
+      }
+     ],
+     "intern_again": [
+      {
+       "id": "a",
+       "speaker": "Intern",
+       "text": "I didn't see anything. I'm an intern. I see nothing."
+      }
+     ]
+    }
+   },
+   "ch5": {
+    "id": "ch5",
+    "title": "Chapter 5: The Bog of Hosier",
+    "party": [
+     "m1",
+     "m5",
+     "m6"
+    ],
+    "start": {
+     "map": "bog",
+     "x": 9,
+     "y": 7
+    },
+    "speakers": {
+     "Rae (reflection)": "m2"
+    },
+    "items": [
+     {
+      "id": "black_coffee",
+      "name": "Hosier's Black Coffee",
+      "heal": 35,
+      "line": "drinks it black, makes a face, feels better"
+     }
+    ],
+    "enemies": [
+     {
+      "id": "bog_wisp",
+      "name": "Bog Wisp",
+      "art": "enemy_bog_wisp",
+      "stats": {
+       "hp": 38,
+       "mp": 0,
+       "atk": 12,
+       "def": 5,
+       "mag": 9,
+       "spd": 13
+      },
+      "stayPoints": 24,
+      "color": 7319178,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "flickers just out of reach",
+       "hums a note too low to hear"
+      ]
+     },
+     {
+      "id": "banquet_ghoul",
+      "name": "The Banquet Ghoul",
+      "art": "boss_ghoul_boss",
+      "stats": {
+       "hp": 190,
+       "mp": 24,
+       "atk": 14,
+       "def": 8,
+       "mag": 11,
+       "spd": 10
+      },
+      "stayPoints": 160,
+      "color": 5909050,
+      "width": 128,
+      "height": 128,
+      "lines": [
+       "serves tomorrow on a silver plate",
+       "asks if you'll finish that",
+       "rings for dessert"
+      ]
+     }
+    ],
+    "maps": {
+     "bog": {
+      "id": "bog",
+      "name": "The Bog of Hosier",
+      "backdrop": "backdrop_bog",
+      "battle": "bog_battle",
+      "music": "bog",
+      "placeholder": 3885614,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "###########..#..#D##",
+       "######...##..#..H.##",
+       "########..........##",
+       "########M........###",
+       "#######.....########",
+       "#######.....########",
+       "#T..........########",
+       "#....###############"
+      ],
+      "onEnter": "bog_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "bog_wisp"
+        ],
+        [
+         "bog_wisp",
+         "bog_wisp"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "hosier",
+        "name": "Hosier",
+        "figure": "npc_hosier",
+        "glyph": "H",
+        "dialogue": "hosier",
+        "variants": [
+         {
+          "when": "ghoul_done",
+          "dialogue": "hosier_after"
+         },
+         {
+          "when": "bassoff_won",
+          "dialogue": "hosier_door"
+         },
+         {
+          "when": "met_hosier",
+          "dialogue": "hosier_rematch"
+         }
+        ]
+       },
+       {
+        "id": "moira",
+        "name": "Moira of the Moss",
+        "figure": "npc_bogwoman",
+        "glyph": "M",
+        "dialogue": "moira",
+        "facing": "left",
+        "variants": [
+         {
+          "when": "umbrella_done",
+          "dialogue": "moira_end"
+         },
+         {
+          "when": "ghoul_done",
+          "dialogue": "moira_rain"
+         }
+        ]
+       },
+       {
+        "id": "turfcutter",
+        "name": "Turf-Cutter Seamus-ish",
+        "figure": "npc_turfcutter",
+        "glyph": "T",
+        "dialogue": "turfcutter",
+        "facing": "right",
+        "variants": [
+         {
+          "when": "note_5",
+          "dialogue": "turfcutter_again"
+         }
+        ]
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "D",
+        "map": "unearth",
+        "requires": "bassoff_won",
+        "x": 10,
+        "y": 10
+       }
+      ]
+     },
+     "unearth": {
+      "id": "unearth",
+      "name": "Unreal Unearth",
+      "backdrop": "backdrop_unearth_circle",
+      "battle": "bog_battle",
+      "music": "bog",
+      "placeholder": 2760499,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "##########.X.#######",
+       "##########...#######",
+       "##########...#######",
+       "##########...#######",
+       "######L.....F..#####",
+       "#####....G......####",
+       "#####v.........P####"
+      ],
+      "onEnter": "unearth_intro",
+      "npcs": [
+       {
+        "id": "hosier_guide",
+        "name": "Hosier",
+        "figure": "npc_hosier",
+        "glyph": "G",
+        "dialogue": "hosier_guide",
+        "facing": "right",
+        "variants": [
+         {
+          "when": "ghoul_done",
+          "dialogue": "hosier_circles"
+         }
+        ]
+       },
+       {
+        "id": "limbo",
+        "name": "The Waiting Man",
+        "figure": "npc_soul_limbo",
+        "glyph": "L",
+        "dialogue": "limbo",
+        "variants": [
+         {
+          "when": "circle_1",
+          "dialogue": "limbo_again"
+         }
+        ]
+       },
+       {
+        "id": "francesca",
+        "name": "Francesca-ish",
+        "figure": "npc_soul_f",
+        "glyph": "F",
+        "dialogue": "lovers",
+        "facing": "right",
+        "variants": [
+         {
+          "when": "circle_2",
+          "dialogue": "lovers_again"
+         }
+        ]
+       },
+       {
+        "id": "paolo",
+        "name": "Paolo-ish",
+        "figure": "npc_soul_m",
+        "glyph": "P",
+        "dialogue": "paolo",
+        "facing": "up",
+        "variants": [
+         {
+          "when": "circle_2",
+          "dialogue": "paolo_again"
+         }
+        ]
+       },
+       {
+        "id": "ghoul",
+        "name": "The Banquet Ghoul",
+        "figure": "npc_ghoul",
+        "glyph": "X",
+        "dialogue": "ghoul",
+        "shownWhen": "circle_2",
+        "hiddenWhen": "ghoul_done"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "bog",
+        "x": 17,
+        "y": 4
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "bog_intro": [
+      {
+       "id": "a",
+       "text": "Mist. Moss. Trees older than the idea of trees. Somewhere, a kettle is whistling."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Okay. Okay okay okay. A swamp. Is this a swamp? Raemin-hyung would hate this. He'd hate the mud. I'm fine!"
+      },
+      {
+       "id": "c",
+       "speaker": "Bo",
+       "text": "It's a bog. Bogs are just swamps that do leg day. Breathe."
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "Good morning, bog! I found an oven inside a tree stump, so if anyone needs a brownie, it's handled."
+      },
+      {
+       "id": "e",
+       "text": "(A cottage with a crooked chimney. Smoke. Someone very tall is hanging socks on a line.)"
+      }
+     ],
+     "hosier": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "Oh, hello. Travellers. Mind the soft ground; it keeps what it's given. Socks? Hand-knit. Wool from the hill."
+      },
+      {
+       "id": "b",
+       "speaker": "Bo",
+       "text": "You're... really tall. Respectfully. What's your deadlift?"
+      },
+      {
+       "id": "c",
+       "speaker": "Hosier",
+       "text": "I've never tried. I mostly lift kettles. Coffee? I call this pot 'Too Sweet', as a joke. It isn't."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "Do you have sugar? Any sugar? A sugar-adjacent product?"
+      },
+      {
+       "id": "e",
+       "speaker": "Hosier",
+       "text": "There's no sugar in the bog. Everything here is a little bitter, and the better for it."
+      },
+      {
+       "id": "f",
+       "speaker": "Sol",
+       "text": "That's the saddest thing anyone has ever said to me. I'll take two."
+      },
+      {
+       "id": "g",
+       "speaker": "Hosier",
+       "text": "You're after the shard. It went down, under the cottage, into the Unreal Unearth. Nine circles. One's hungry."
+      },
+      {
+       "id": "h",
+       "speaker": "Hosier",
+       "text": "The door only opens for a low enough note, and my voice has gone soft with the damp. Can any of you go deep?"
+      },
+      {
+       "id": "i",
+       "speaker": "Lio",
+       "text": "...Good morning.",
+       "set": "met_hosier"
+      },
+      {
+       "id": "j",
+       "text": "Three herons take off at once. A frog applauds."
+      },
+      {
+       "id": "k",
+       "speaker": "Hosier",
+       "text": "Oh, that's lovely. Then let's sing the door open, you and I. A friendly bass-off.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "bassoff",
+         "title": "Bass-off: Lio vs Hosier",
+         "prompt": "Drop the note when the marker hits the middle",
+         "rounds": 4,
+         "lives": 3,
+         "sweepsPerSecond": 1.4,
+         "window": 0.22,
+         "invert": false
+        },
+        "onWin": "bassoff_won",
+        "onLose": "bassoff_lost"
+       }
+      }
+     ],
+     "hosier_rematch": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "Ready to go low again? The door's patient. So am I."
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "Ready. I had a brownie. That's lower-register fuel."
+      },
+      {
+       "id": "c",
+       "text": "Lio and Hosier square up across the moss.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "bassoff",
+         "title": "Bass-off: Lio vs Hosier",
+         "prompt": "Drop the note when the marker hits the middle",
+         "rounds": 4,
+         "lives": 3,
+         "sweepsPerSecond": 1.4,
+         "window": 0.22,
+         "invert": false
+        },
+        "onWin": "bassoff_won",
+        "onLose": "bassoff_lost"
+       }
+      }
+     ],
+     "bassoff_lost": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "Close. The bog felt it. The door only rattled."
+      },
+      {
+       "id": "b",
+       "speaker": "Bo",
+       "text": "Shake it off, Lili. Reps. That was just a warm-up set."
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "One more?",
+       "choices": [
+        {
+         "text": "Again. From the chest.",
+         "next": "d"
+        },
+        {
+         "text": "Catch our breath first.",
+         "next": "e"
+        }
+       ]
+      },
+      {
+       "id": "d",
+       "text": "Lio rolls his shoulders. Hosier hums a starting note.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "timing",
+         "id": "bassoff",
+         "title": "Bass-off: Lio vs Hosier",
+         "prompt": "Drop the note when the marker hits the middle",
+         "rounds": 4,
+         "lives": 3,
+         "sweepsPerSecond": 1.4,
+         "window": 0.22,
+         "invert": false
+        },
+        "onWin": "bassoff_won",
+        "onLose": "bassoff_lost"
+       }
+      },
+      {
+       "id": "e",
+       "speaker": "Hosier",
+       "text": "Take your time. Come back when the note's ready. I'll be here. I'm always here."
+      }
+     ],
+     "bassoff_won": [
+      {
+       "id": "a",
+       "text": "Lio lands the last note so low the pools ripple outward. The moss hums along."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "Well. That's the lowest note this bog has heard since the glaciers left. Thank you."
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "Thank YOU. You were amazing. Can I hug you? I'm going to hug you."
+      },
+      {
+       "id": "d",
+       "text": "The cottage door creaks open. Where the floor should be, there are stairs going down.",
+       "set": "bassoff_won",
+       "meter": 1
+      },
+      {
+       "id": "e",
+       "speaker": "Hosier",
+       "text": "I'll walk you down. Mind the circles. Mind each other more."
+      }
+     ],
+     "hosier_door": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "The door's open. I'll meet you at the bottom of the stairs. I know a shortcut."
+      },
+      {
+       "id": "b",
+       "speaker": "Bo",
+       "text": "Shortcut through a hell dimension. Love that for us."
+      },
+      {
+       "id": "c",
+       "speaker": "Hosier",
+       "text": "And take a pair of socks. These are the Cherry Wine ones. The deep red. Wet feet make you sad."
+      }
+     ],
+     "hosier_after": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "You came back up. Most don't hurry. Moira's by the black pool."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "Here. For the road. Black. I'm sorry. I did look for sugar.",
+       "action": {
+        "kind": "give",
+        "item": "black_coffee",
+        "count": 2
+       }
+      }
+     ],
+     "moira": [
+      {
+       "id": "a",
+       "speaker": "Moira of the Moss",
+       "text": "Don't lean over the black pool, love. Not unless you're ready."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Ready for what?"
+      },
+      {
+       "id": "c",
+       "speaker": "Moira of the Moss",
+       "text": "It shows you who you're missing. The bog's honest like that. Rude, but honest."
+      }
+     ],
+     "moira_rain": [
+      {
+       "id": "a",
+       "text": "Rain arrives over the bog, soft and sideways, the way it does here."
+      },
+      {
+       "id": "b",
+       "speaker": "Moira of the Moss",
+       "text": "There it is. Here, take the umbrella. I've only ever had the one. Seems that's all anyone needs."
+      },
+      {
+       "id": "c",
+       "speaker": "Bo",
+       "text": "Lio. We should go look at that tree. Over there. Far away."
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "Love that tree. Big fan of that tree."
+      },
+      {
+       "id": "e",
+       "text": "Sol stands alone at the edge of the black pool, holding one umbrella over the water."
+      },
+      {
+       "id": "f",
+       "text": "In the water: Sol. And next to Sol, holding the other side of the handle, Rae."
+      },
+      {
+       "id": "g",
+       "text": "Sol looks up. Nobody there. Rain on his left shoulder. He looks down again."
+      },
+      {
+       "id": "h",
+       "speaker": "Rae (reflection)",
+       "text": "...You're getting wet."
+      },
+      {
+       "id": "i",
+       "speaker": "Sol",
+       "text": "Raemin-hyung...",
+       "action": {
+        "kind": "cutscene",
+        "trope": "shared_umbrella",
+        "title": "Trope: The Shared Umbrella",
+        "caption": [
+         "In the reflection, he tilts the umbrella toward Sol.",
+         "Only one of them is really there.",
+         "The rain stops on both sides anyway."
+        ],
+        "still": "still_shared_umbrella",
+        "video": "shared_umbrella",
+        "then": "umbrella_done"
+       }
+      }
+     ],
+     "umbrella_done": [
+      {
+       "id": "a",
+       "text": "The water goes still. Just Sol now. The rain isn't falling on him anymore.",
+       "set": "umbrella_done",
+       "meter": 3
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "He tilted it toward me. He always does that. He gets the wet shoulder and says nothing."
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "Sol. Everybody knows. LOOSE ENDS knows."
+      },
+      {
+       "id": "d",
+       "speaker": "Bo",
+       "text": "So next time you see him for real, don't think. Lift. Say it."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "...Okay. Next time. For real."
+      },
+      {
+       "id": "f",
+       "speaker": "Moira of the Moss",
+       "text": "Keep the umbrella. Bog's done with you, in the good way. Mind how you go.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch6"
+       }
+      }
+     ],
+     "moira_end": [
+      {
+       "id": "a",
+       "speaker": "Moira of the Moss",
+       "text": "Still here? Go on. Someone's holding the other side."
+      }
+     ],
+     "turfcutter": [
+      {
+       "id": "a",
+       "text": "A man is cutting turf, humming a work song. No words. Just the shape of one."
+      },
+      {
+       "id": "b",
+       "speaker": "Turf-Cutter Seamus-ish",
+       "text": "Two hundred years of peat in this bank, and the newest thing in it is this. Blank paper. Dry, somehow. It wants writing on."
+      },
+      {
+       "id": "c",
+       "text": "'Raemin-hyung. There's a pool here that shows you who you miss. I didn't look. I already know. -S' ... Quokka Note 5 written.",
+       "set": "note_5",
+       "meter": 2
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "Quokka. Cheek storage. Take it to him. Don't read it. ...You can't read. Okay. Go."
+      },
+      {
+       "id": "e",
+       "text": "Sol Quokka tucks the note in its cheek, dives into the moss, and pops back out with empty cheeks."
+      }
+     ],
+     "turfcutter_again": [
+      {
+       "id": "a",
+       "speaker": "Turf-Cutter Seamus-ish",
+       "text": "Back to the work. The song keeps the spade honest."
+      }
+     ],
+     "unearth_intro": [
+      {
+       "id": "a",
+       "text": "Stone. Mushrooms that glow like they know something. Far above, a purple sky turns slowly."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "The Unreal Unearth. Nine circles, stacked like plates. They've folded into one hall for us. Polite of them."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "Nine. Circles. Of HELL? We're doing a whole Dante? I didn't stretch!"
+      },
+      {
+       "id": "d",
+       "speaker": "Hosier",
+       "text": "Only the first three are awake tonight. Talk to who's waiting. Each one is a circle. I'll name them as we pass."
+      }
+     ],
+     "hosier_guide": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "The first circle is Limbo, by the left wall. Nobody's punished there. They're only waiting."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "The second is the whirlwind, by the right. Lovers, blown about. Go gently with them. And with yourself."
+      },
+      {
+       "id": "c",
+       "speaker": "Hosier",
+       "text": "The third is down the arch. A banquet. Don't sit at the table."
+      }
+     ],
+     "hosier_circles": [
+      {
+       "id": "a",
+       "speaker": "Hosier",
+       "text": "You've crossed three. Shall I name the rest as we climb? It's quicker than walking them."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "Four, the hoarders. Five, the angry, in the mud. Six, the ones who were sure. Seven, the ones who lashed out."
+      },
+      {
+       "id": "c",
+       "speaker": "Hosier",
+       "text": "Eight, the liars, which is very crowded. Nine is ice. I never go in winter."
+      },
+      {
+       "id": "d",
+       "speaker": "Bo",
+       "text": "That's a full split. Glad we skipped legs."
+      },
+      {
+       "id": "e",
+       "speaker": "Hosier",
+       "text": "Go on up. It'll be raining. It always rains after. Moira will be at the black pool."
+      }
+     ],
+     "limbo": [
+      {
+       "id": "a",
+       "speaker": "The Waiting Man",
+       "text": "Circle one. Limbo. Nothing bad happens here. Nothing at all happens here."
+      },
+      {
+       "id": "b",
+       "speaker": "The Waiting Man",
+       "text": "I meant to say something, once. I thought I had time. So now I have time."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "...That's a lot of time.",
+       "set": "circle_1"
+      },
+      {
+       "id": "d",
+       "speaker": "Hosier",
+       "text": "Circle one. Passed. Keep moving. It's the moving that matters."
+      }
+     ],
+     "limbo_again": [
+      {
+       "id": "a",
+       "speaker": "The Waiting Man",
+       "text": "Still waiting. Don't you."
+      }
+     ],
+     "lovers": [
+      {
+       "id": "a",
+       "text": "Circle two. Wind howls in a hall with no windows. Two souls turn in it, never quite touching."
+      },
+      {
+       "id": "b",
+       "speaker": "Francesca-ish",
+       "text": "We were reading a book together. One chapter. We never finished it. He was right there."
+      },
+      {
+       "id": "c",
+       "speaker": "Francesca-ish",
+       "text": "I meant to tell him. Then the wind. Then always the wind."
+      },
+      {
+       "id": "d",
+       "text": "Sol stops walking."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "That's us. That's exactly us. I keep ALMOST saying it, and then a ferry leaves, or a floor opens, or a demon shows up."
+      },
+      {
+       "id": "f",
+       "speaker": "Sol",
+       "text": "What if that's it? What if we just get blown past each other forever, and I never say it, and he never knows?"
+      },
+      {
+       "id": "g",
+       "text": "Nobody says anything for a moment. Even the wind."
+      },
+      {
+       "id": "h",
+       "speaker": "Bo",
+       "text": "Hey. Look at me.",
+       "choices": [
+        {
+         "text": "\"Then we'll just have to out-lift the wind.\"",
+         "next": "i",
+         "meter": 1
+        },
+        {
+         "text": "\"You'll say it. And we'll be standing right there.\"",
+         "next": "j",
+         "meter": 2
+        }
+       ]
+      },
+      {
+       "id": "i",
+       "speaker": "Bo",
+       "text": "Wind's just air doing cardio. You're stronger than cardio.",
+       "next": "k"
+      },
+      {
+       "id": "j",
+       "speaker": "Lio",
+       "text": "Right there. Both of us. With brownies."
+      },
+      {
+       "id": "k",
+       "speaker": "Sol",
+       "text": "...Okay. Okay. Sorry. I'm fine. I'm actually, a little bit, fine."
+      },
+      {
+       "id": "l",
+       "speaker": "Francesca-ish",
+       "text": "Say it while there's still floor under you. That's all we'd tell you, if the wind let us.",
+       "set": "circle_2"
+      },
+      {
+       "id": "m",
+       "text": "Down the arch, a table sets itself. Cutlery scrapes. Something is hungry."
+      }
+     ],
+     "lovers_again": [
+      {
+       "id": "a",
+       "speaker": "Francesca-ish",
+       "text": "Go. While there's floor. We'll be fine. We have the wind."
+      }
+     ],
+     "paolo": [
+      {
+       "id": "a",
+       "text": "He opens his mouth to speak. The wind takes the words before they're made."
+      },
+      {
+       "id": "b",
+       "text": "He points at Francesca-ish. Then at Sol. Then at his own mouth. Then he just looks sad."
+      }
+     ],
+     "paolo_again": [
+      {
+       "id": "a",
+       "text": "He gives Sol a thumbs-up. The wind takes that too, but Sol saw it."
+      }
+     ],
+     "ghoul": [
+      {
+       "id": "a",
+       "speaker": "The Banquet Ghoul",
+       "text": "Guests! Sit, sit. Tonight's menu: everything you were saving for later. Why wait? Eat it now."
+      },
+      {
+       "id": "b",
+       "speaker": "Hosier",
+       "text": "That's the one who'd eat your young, if you let him. Every tomorrow, served tonight. The shard's his centrepiece."
+      },
+      {
+       "id": "c",
+       "speaker": "Bo",
+       "text": "Nobody eats my tomorrow. I meal-prep my tomorrow."
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "And there's no dessert on your table. That's a crime. I'm reporting you."
+      },
+      {
+       "id": "e",
+       "text": "The Banquet Ghoul pushes back his chair!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "banquet_ghoul"
+        ],
+        "music": "boss",
+        "then": "ghoul_won"
+       }
+      }
+     ],
+     "ghoul_won": [
+      {
+       "id": "a",
+       "speaker": "The Banquet Ghoul",
+       "text": "But... the courses... I was saving room..."
+      },
+      {
+       "id": "b",
+       "text": "The table folds into the floor. The candles go out one by one. Something glows on the empty plate."
+      },
+      {
+       "id": "c",
+       "text": "Got the fifth Lightstick Shard!",
+       "set": "shard_5"
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "Five down. Two to go. And I'm leaving a brownie on the plate. Everyone deserves dessert."
+      },
+      {
+       "id": "e",
+       "text": "Circle three is quiet now.",
+       "set": "ghoul_done",
+       "meter": 2
+      }
+     ]
+    }
+   },
+   "ch6": {
+    "id": "ch6",
+    "title": "Chapter 6: Hamilsung",
+    "party": [
+     "m3",
+     "m5",
+     "m1"
+    ],
+    "start": {
+     "map": "street",
+     "x": 5,
+     "y": 9
+    },
+    "speakers": {
+     "Aaron Burr-sung": "burrsung",
+     "King Geor-Gwi": "georgwi"
+    },
+    "enemies": [
+     {
+      "id": "redcoat",
+      "name": "Redcoat",
+      "art": "enemy_redcoat",
+      "stats": {
+       "hp": 52,
+       "mp": 0,
+       "atk": 14,
+       "def": 7,
+       "mag": 4,
+       "spd": 10
+      },
+      "stayPoints": 26,
+      "color": 10496554,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "marches in perfect formation",
+       "fires a strongly worded volley"
+      ]
+     },
+     {
+      "id": "clause",
+      "name": "Fine-Print Clause",
+      "art": "enemy_clause",
+      "stats": {
+       "hp": 44,
+       "mp": 0,
+       "atk": 12,
+       "def": 6,
+       "mag": 12,
+       "spd": 13
+      },
+      "stayPoints": 28,
+      "color": 3816018,
+      "width": 64,
+      "height": 48,
+      "lines": [
+       "subsections at you",
+       "adds an asterisk"
+      ]
+     },
+     {
+      "id": "burrsung",
+      "name": "Aaron Burr-sung",
+      "art": "boss_burrsung_boss",
+      "stats": {
+       "hp": 200,
+       "mp": 20,
+       "atk": 14,
+       "def": 9,
+       "mag": 10,
+       "spd": 12
+      },
+      "stayPoints": 140,
+      "color": 3026490,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "says fewer words, harder",
+       "keeps his options open",
+       "smiles in a way that says nothing"
+      ]
+     },
+     {
+      "id": "georgwi",
+      "name": "King Geor-Gwi",
+      "art": "boss_georgwi_boss",
+      "stats": {
+       "hp": 300,
+       "mp": 40,
+       "atk": 15,
+       "def": 10,
+       "mag": 14,
+       "spd": 11
+      },
+      "stayPoints": 220,
+      "color": 6957706,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "sends an armed battalion of feelings",
+       "sings a breakup ballad at you",
+       "promises you'll be back"
+      ]
+     }
+    ],
+    "maps": {
+     "street": {
+      "id": "street",
+      "name": "Hamilsung, Wall-ish Street",
+      "backdrop": "backdrop_hamilsung_street",
+      "battle": "hamilsung_battle",
+      "music": "hamilsung",
+      "placeholder": 5917252,
+      "grid": [
+       "####################",
+       "#N.#################",
+       "##.#..##############",
+       "##..P..#############",
+       "##......############",
+       "###....T############",
+       "###......###########",
+       "###........#########",
+       "###......B..###^####",
+       "####........#.R.####",
+       "#####............###"
+      ],
+      "onEnter": "street_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "redcoat"
+        ],
+        [
+         "clause"
+        ],
+        [
+         "redcoat",
+         "clause"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "mulgun",
+        "name": "Hercules Mul-gun",
+        "figure": "npc_tavern",
+        "glyph": "T",
+        "dialogue": "mulgun",
+        "variants": [
+         {
+          "when": "burr_done",
+          "dialogue": "mulgun_after"
+         },
+         {
+          "when": "heard_room",
+          "dialogue": "mulgun_again"
+         }
+        ]
+       },
+       {
+        "id": "peggy",
+        "name": "Peggy Sky-ler",
+        "figure": "npc_colonial_woman",
+        "glyph": "P",
+        "dialogue": "peggy",
+        "variants": [
+         {
+          "when": "burr_done",
+          "dialogue": "peggy_after"
+         }
+        ]
+       },
+       {
+        "id": "courier",
+        "name": "The Post Rider",
+        "figure": "npc_courier",
+        "glyph": "N",
+        "dialogue": "courier",
+        "variants": [
+         {
+          "when": "note_6",
+          "dialogue": "courier_after"
+         }
+        ]
+       },
+       {
+        "id": "burrsung",
+        "name": "Aaron Burr-sung",
+        "figure": "npc_burrsung",
+        "glyph": "B",
+        "dialogue": "burrsung",
+        "variants": [
+         {
+          "when": "heard_room",
+          "dialogue": "burrsung_challenge"
+         }
+        ],
+        "hiddenWhen": "burr_done"
+       },
+       {
+        "id": "redcoat",
+        "name": "Redcoat Sergeant",
+        "figure": "npc_redcoat",
+        "glyph": "R",
+        "dialogue": "redcoat",
+        "variants": [
+         {
+          "when": "burr_done",
+          "dialogue": "redcoat_summons"
+         }
+        ],
+        "facing": "left",
+        "hiddenWhen": "door_open"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "^",
+        "map": "room",
+        "requires": "door_open",
+        "x": 15,
+        "y": 10
+       }
+      ]
+     },
+     "room": {
+      "id": "room",
+      "name": "The Room Where It Happens",
+      "backdrop": "backdrop_hamilsung_room",
+      "battle": "hamilsung_battle",
+      "music": "hamilsung",
+      "placeholder": 3810328,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "#...#########.######",
+       "....#########B.K..##",
+       "....#########.....##",
+       ".....#######......##",
+       "........#........v##"
+      ],
+      "onEnter": "room_intro",
+      "npcs": [
+       {
+        "id": "georgwi",
+        "name": "King Geor-Gwi",
+        "figure": "npc_georgwi",
+        "glyph": "K",
+        "dialogue": "georgwi"
+       },
+       {
+        "id": "burrsung_room",
+        "name": "Aaron Burr-sung",
+        "figure": "npc_burrsung",
+        "glyph": "B",
+        "dialogue": "burrsung_room",
+        "facing": "right",
+        "shownWhen": "burr_done"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "street",
+        "x": 15,
+        "y": 9
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "street_intro": [
+      {
+       "id": "a",
+       "text": "Cobblestones. Candle smoke. Somewhere down the street, a man in a tricorne is rhyming at a horse."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Dae-hyung? Bobo-hyung? It's THE TRIAD! We're together! ...Why am I wearing a cravat?"
+      },
+      {
+       "id": "c",
+       "speaker": "Bo",
+       "text": "It's a strong cravat. Chin up. Don't think. Lift."
+      },
+      {
+       "id": "d",
+       "speaker": "Dae",
+       "text": "You okay, guys? Good. Yeon-jinx said the Contract gets signed in the room where it happens. This is the place."
+      },
+      {
+       "id": "e",
+       "speaker": "A Townsman",
+       "text": "Good morrow, strangers, welcome to our street! / The King signs something tonight. Please wipe your feet."
+      },
+      {
+       "id": "f",
+       "speaker": "Sol",
+       "text": "Everyone RHYMES here. I can't rhyme on command! I mean I can. Professionally. Just not ON COMMAND!"
+      },
+      {
+       "id": "g",
+       "text": "(Find a way into the Room Where It Happens. The tavern keeper hears everything.)"
+      }
+     ],
+     "mulgun": [
+      {
+       "id": "a",
+       "speaker": "Hercules Mul-gun",
+       "text": "Welcome to my tavern, sit and have a drink! / The King is in the Room. That's bad, I think."
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "How do we get in?"
+      },
+      {
+       "id": "c",
+       "speaker": "Hercules Mul-gun",
+       "text": "One man holds the summons: black hat, careful face. / Aaron Burr-sung. He's been standing in one place."
+      },
+      {
+       "id": "d",
+       "speaker": "Bo",
+       "text": "So we take it off him. Politely. With bars."
+      },
+      {
+       "id": "e",
+       "speaker": "Hercules Mul-gun",
+       "text": "A freckled boy left brownies, said 'good morning' at midnight. / Take them for the fight. He'd want you fed. That's right."
+      },
+      {
+       "id": "f",
+       "text": "Got 2 Lio's Brownies! (Lio is baking somewhere in the Dramaverse. Of course he is.)",
+       "set": "heard_room",
+       "action": {
+        "kind": "give",
+        "item": "brownie",
+        "count": 2
+       }
+      }
+     ],
+     "mulgun_again": [
+      {
+       "id": "a",
+       "speaker": "Hercules Mul-gun",
+       "text": "Burr-sung's down the street, still waiting for his chance. / Beat him with your words. Or, failing that, a dance."
+      }
+     ],
+     "mulgun_after": [
+      {
+       "id": "a",
+       "speaker": "Hercules Mul-gun",
+       "text": "You beat him? Well done! I'd raise a glass to that. / I'd raise two glasses, but I only have one hat."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "That doesn't— you know what, I respect it."
+      }
+     ],
+     "peggy": [
+      {
+       "id": "a",
+       "speaker": "Peggy Sky-ler",
+       "text": "I'm the third sister! The other two get all the attention. / I mostly get a passing mention."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "I won't forget you. I forget my own lines, my own phone, my own NAME, but I won't forget you."
+      },
+      {
+       "id": "c",
+       "speaker": "Peggy Sky-ler",
+       "text": "Sweet boy. A letter came for a 'Solho' at the post. / The redcoats took it. They read everyone's. They read the most."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "A letter. For me. From... no. No, don't spiral. I'm fine! Totally fine!"
+      }
+     ],
+     "peggy_after": [
+      {
+       "id": "a",
+       "speaker": "Peggy Sky-ler",
+       "text": "You're going in the Room? Tell them the third sister says hi. / They won't know who that is. I'll live. I'll get by."
+      }
+     ],
+     "courier": [
+      {
+       "id": "a",
+       "speaker": "The Post Rider",
+       "text": "Post rider! Letters carried, near and far! / The King reads every one. That's how things are."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Could you carry one the King won't read? It's for someone. A hyung. A very specific hyung."
+      },
+      {
+       "id": "c",
+       "speaker": "The Post Rider",
+       "text": "Fold it small and write it plain. / I'll ride it through the King's own rain."
+      },
+      {
+       "id": "d",
+       "text": "Sol writes fast, crosses out twice, and folds the paper into the shape of a quokka."
+      },
+      {
+       "id": "e",
+       "text": "'Raemin-hyung. Everyone here says what they mean in rhyme. I'm going to say it in plain words. Soon. -S' ... Quokka Note 6 collected.",
+       "set": "note_6",
+       "meter": 2
+      },
+      {
+       "id": "f",
+       "speaker": "Bo",
+       "text": "...I'm not crying. It's the candle smoke. This whole city is candle smoke."
+      }
+     ],
+     "courier_after": [
+      {
+       "id": "a",
+       "speaker": "The Post Rider",
+       "text": "Your quokka's on its way. Don't ask how I know who it's for. Everyone knows. LOOSE ENDS knows."
+      }
+     ],
+     "burrsung": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "Strangers. Loud ones. Say fewer words. Ideally none. / Then no one can quote you when it's done."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "That's terrible advice. And also, technically, a lot of words."
+      },
+      {
+       "id": "c",
+       "speaker": "Aaron Burr-sung",
+       "text": "Hm."
+      }
+     ],
+     "burrsung_challenge": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "The summons? Mine. I've waited years for this. / You want it? Rap for it. And try not to miss."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "A rap battle. In a tricorne. My whole life has been leading to this exact hat."
+      },
+      {
+       "id": "c",
+       "speaker": "Dae",
+       "text": "Sol, Bin, take the verses. I'll hold the beat. Just like the old studio nights."
+      },
+      {
+       "id": "d",
+       "speaker": "Bo",
+       "text": "Every verse gets faster. Breathe from the gut. Don't think. Lift."
+      },
+      {
+       "id": "e",
+       "text": "MY SHOT: press the arrow on each beat as it reaches the line. Four verses, each one denser.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "rhythm",
+         "id": "my_shot",
+         "title": "My Shot vs Burr-sung",
+         "bpm": 96,
+         "pattern": [
+          "L",
+          ".",
+          ".",
+          ".",
+          "R",
+          ".",
+          ".",
+          ".",
+          "U",
+          ".",
+          "D",
+          ".",
+          "L",
+          ".",
+          "R",
+          ".",
+          "L",
+          "R",
+          ".",
+          "U",
+          "D",
+          ".",
+          "L",
+          "R",
+          "U",
+          "D",
+          "L",
+          "R",
+          "U",
+          "D",
+          "L",
+          "R"
+         ],
+         "passScore": 0.7
+        },
+        "onWin": "burr_won",
+        "onLose": "burr_lost"
+       }
+      }
+     ],
+     "burr_lost": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "Too many words, and half of them late. / Fewer words, better words. Go on. I can wait."
+      },
+      {
+       "id": "b",
+       "speaker": "Bo",
+       "text": "Shake it off. That was a warm-up set. Again."
+      },
+      {
+       "id": "c",
+       "text": "MY SHOT, take two.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "rhythm",
+         "id": "my_shot",
+         "title": "My Shot vs Burr-sung",
+         "bpm": 96,
+         "pattern": [
+          "L",
+          ".",
+          ".",
+          ".",
+          "R",
+          ".",
+          ".",
+          ".",
+          "U",
+          ".",
+          "D",
+          ".",
+          "L",
+          ".",
+          "R",
+          ".",
+          "L",
+          "R",
+          ".",
+          "U",
+          "D",
+          ".",
+          "L",
+          "R",
+          "U",
+          "D",
+          "L",
+          "R",
+          "U",
+          "D",
+          "L",
+          "R"
+         ],
+         "passScore": 0.7
+        },
+        "onWin": "burr_won",
+        "onLose": "burr_lost"
+       }
+      }
+     ],
+     "burr_won": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "Every bar landed. How dare you be good. / We settle this properly, the way gentlemen should."
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "...He means a fight. Okay. Nobody gets hurt that doesn't have to."
+      },
+      {
+       "id": "c",
+       "text": "Aaron Burr-sung draws a very polite sword!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "burrsung"
+        ],
+        "music": "boss",
+        "then": "burr_beaten"
+       }
+      }
+     ],
+     "burr_beaten": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "Take the summons. Go. I only ever wanted to be in the room."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "...Then what are you going to do?",
+       "choices": [
+        {
+         "text": "Come with us. Nobody should wait outside forever.",
+         "next": "kind",
+         "meter": 2
+        },
+        {
+         "text": "Come with us. Bring snacks. Say fewer words.",
+         "next": "funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "kind",
+       "speaker": "Aaron Burr-sung",
+       "text": "...No one's ever held the door for me before. I'll follow. Quietly.",
+       "next": "d"
+      },
+      {
+       "id": "funny",
+       "speaker": "Aaron Burr-sung",
+       "text": "Fewer words. Finally, someone who listens. I'll follow. Quietly.",
+       "next": "d"
+      },
+      {
+       "id": "d",
+       "speaker": "Dae",
+       "text": "There's a redcoat on the Room's door. Summons first, then the King.",
+       "set": "burr_done"
+      }
+     ],
+     "redcoat": [
+      {
+       "id": "a",
+       "speaker": "Redcoat Sergeant",
+       "text": "Halt! No summons, no entry, by the King's decree! / That rhymes. I'm proud of it. You can't come in. Whee."
+      }
+     ],
+     "redcoat_summons": [
+      {
+       "id": "a",
+       "speaker": "Redcoat Sergeant",
+       "text": "A summons. Signed. Fine. But orders are clear: / Search every visitor. No feelings in here."
+      },
+      {
+       "id": "b",
+       "speaker": "Redcoat Sergeant",
+       "text": "And what's this? A letter we lifted at the post. / 'For Solho.' The King likes these the most."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "That's mine. That's MINE. Give it back. GIVE IT BACK!"
+      },
+      {
+       "id": "d",
+       "text": "The redcoats close ranks around the letter!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "redcoat",
+         "redcoat"
+        ],
+        "then": "redcoat_won"
+       }
+      }
+     ],
+     "redcoat_won": [
+      {
+       "id": "a",
+       "text": "The sergeant drops the letter. Sol catches it before it touches the cobbles."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "It's his handwriting. It's Raemin-hyung's handwriting.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "intercepted_letter",
+        "title": "Trope: The Intercepted Letter",
+        "caption": [
+         "A letter that was never meant for a king.",
+         "Sol reads it twice.",
+         "Then a third time, slower."
+        ],
+        "still": "still_intercepted_letter",
+        "video": "intercepted_letter",
+        "then": "letter_read"
+       }
+      }
+     ],
+     "letter_read": [
+      {
+       "id": "a",
+       "text": "'Solho-ah. I don't write letters. This is a letter. Don't make it weird.'"
+      },
+      {
+       "id": "b",
+       "text": "'The cats are fine. I'm fine. I'm not going anywhere. I'm good at waiting. So wait for me. -Raemin'"
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "He said don't make it weird. I'm going to make it SO weird. I'm going to frame it. In GOLD.",
+       "choices": [
+        {
+         "text": "Fold it into the pocket over your heart.",
+         "next": "kind",
+         "meter": 2
+        },
+        {
+         "text": "Make Bo guard it.",
+         "next": "funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "kind",
+       "speaker": "Sol",
+       "text": "...Left pocket. Closest one. That's where it lives now.",
+       "next": "d"
+      },
+      {
+       "id": "funny",
+       "speaker": "Bo",
+       "text": "I'll guard it with my life. With my traps. Nobody touches the letter.",
+       "next": "d"
+      },
+      {
+       "id": "d",
+       "speaker": "Dae",
+       "text": "He's always been the one who waits for it. Let's not make him wait longer. The door's open.",
+       "set": "door_open",
+       "meter": 3
+      }
+     ],
+     "room_intro": [
+      {
+       "id": "a",
+       "text": "Candles. A long table. A contract with the quill already dipped. The Room Where It Happens."
+      },
+      {
+       "id": "b",
+       "text": "By the fire stands a man in a crown so large it has its own weather."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "Okay. We're in the room. What happens in the room? Please say it's not signing."
+      },
+      {
+       "id": "d",
+       "speaker": "Aaron Burr-sung",
+       "text": "It's signing."
+      }
+     ],
+     "burrsung_room": [
+      {
+       "id": "a",
+       "speaker": "Aaron Burr-sung",
+       "text": "I'm in the room. It's smaller than I pictured. / It smells of wax and paperwork. I feel... depicted."
+      }
+     ],
+     "georgwi": [
+      {
+       "id": "a",
+       "speaker": "King Geor-Gwi",
+       "text": "Ah, little subjects, come to watch me sign? / How loyal. How lovely. Please form a line."
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "We came to stop it. Nobody signs away anybody's feelings."
+      },
+      {
+       "id": "c",
+       "speaker": "King Geor-Gwi",
+       "text": "Feelings? Oh, darling, I'm the king of the sad. / I write breakup ballads. The good ones. And bad."
+      },
+      {
+       "id": "d",
+       "speaker": "King Geor-Gwi",
+       "text": "You'll leave, then you'll miss me, then you'll come crawling. / You'll be back. I've pre-written the bawling."
+      },
+      {
+       "id": "e",
+       "speaker": "Bo",
+       "text": "I hate that that almost rhymed. Sol. Dae-hyung. Positions."
+      },
+      {
+       "id": "f",
+       "text": "King Geor-Gwi rises in a swirl of ermine and minor chords!",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "georgwi"
+        ],
+        "music": "boss",
+        "then": "georgwi_won"
+       }
+      }
+     ],
+     "georgwi_won": [
+      {
+       "id": "a",
+       "speaker": "King Geor-Gwi",
+       "text": "No... you can't just leave... you'll be BACK..."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "We'll be back. Just not for you."
+      },
+      {
+       "id": "c",
+       "text": "Then the candles un-melt. The quill lifts out of the ink. The room is rewinding."
+      },
+      {
+       "id": "d",
+       "text": "<< REWIND << That last turn again, from the other side of the table. The final blow lands. The King flinches."
+      },
+      {
+       "id": "e",
+       "text": "And from here you see what you missed: a long grey hand on the King's shoulder, steadying the quill."
+      },
+      {
+       "id": "f",
+       "speaker": "Director Gwi",
+       "text": "Clause 9(c). A king may sign on behalf of every heart in his room. He was never the signer. Only the pen."
+      },
+      {
+       "id": "g",
+       "text": ">> PLAY >> Back to now. The hand is gone. So is the Contract, out the window, toward a far-off bassline."
+      },
+      {
+       "id": "h",
+       "speaker": "King Geor-Gwi",
+       "text": "...Was I a puppet? I was a puppet. That's going in the ballad."
+      },
+      {
+       "id": "i",
+       "text": "Where the Contract lay, something glows. Got the sixth Lightstick Shard!",
+       "set": "shard_6"
+      },
+      {
+       "id": "j",
+       "speaker": "Sol",
+       "text": "Gwi's taking it somewhere with a stage. I can feel the bass from here. And Raemin-hyung's waiting."
+      },
+      {
+       "id": "k",
+       "speaker": "Dae",
+       "text": "Then we don't keep him waiting. THE TRIAD, let's go.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch7"
+       }
+      }
+     ]
+    }
+   },
+   "ch7": {
+    "id": "ch7",
+    "title": "Chapter 7: KPop Demon Hunters",
+    "party": [
+     "m2",
+     "m4",
+     "m6"
+    ],
+    "start": {
+     "map": "stage",
+     "x": 9,
+     "y": 9
+    },
+    "items": [
+     {
+      "id": "soda_pop",
+      "name": "Soda Pop",
+      "heal": 30,
+      "line": "cracks open a Soda Pop. It fizzes"
+     }
+    ],
+    "enemies": [
+     {
+      "id": "demon_fan",
+      "name": "Demon Fan",
+      "art": "enemy_demon_fan",
+      "stats": {
+       "hp": 52,
+       "mp": 0,
+       "atk": 14,
+       "def": 6,
+       "mag": 7,
+       "spd": 13
+      },
+      "stayPoints": 30,
+      "color": 6957690,
+      "width": 64,
+      "height": 64,
+      "lines": [
+       "screams a stranger's name at",
+       "swings a wrong-coloured lightstick at"
+      ]
+     },
+     {
+      "id": "saja_leader",
+      "name": "Saja Boyz Leader",
+      "art": "boss_saja_leader_boss",
+      "stats": {
+       "hp": 200,
+       "mp": 30,
+       "atk": 15,
+       "def": 9,
+       "mag": 12,
+       "spd": 13
+      },
+      "stayPoints": 240,
+      "color": 1710638,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "throws a move the Contract wrote at",
+       "holds a note that pulls at"
+      ]
+     }
+    ],
+    "speakers": {
+     "Roomie": "hunter"
+    },
+    "maps": {
+     "stage": {
+      "id": "stage",
+      "name": "The Solmoon Arena",
+      "backdrop": "backdrop_kpdh_stage",
+      "battle": "kpdh_battle",
+      "music": "kpdh",
+      "placeholder": 2759230,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "######M..R..S..#####",
+       "####...........Z####",
+       "###C...#############"
+      ],
+      "onEnter": "stage_intro",
+      "encounters": {
+       "rate": 0.03,
+       "groups": [
+        [
+         "demon_fan"
+        ],
+        [
+         "demon_fan",
+         "demon_fan"
+        ],
+        [
+         "demon_fan",
+         "fancam"
+        ]
+       ]
+      },
+      "npcs": [
+       {
+        "id": "roomie",
+        "name": "Roomie",
+        "figure": "npc_hunter_roomie",
+        "glyph": "R",
+        "dialogue": "roomie",
+        "variants": [
+         {
+          "when": "shard_7",
+          "dialogue": "roomie_after"
+         },
+         {
+          "when": "met_hunters",
+          "dialogue": "roomie_again"
+         }
+        ]
+       },
+       {
+        "id": "meera",
+        "name": "Meera",
+        "figure": "npc_hunter_meera",
+        "glyph": "M",
+        "dialogue": "meera",
+        "variants": [
+         {
+          "when": "saja_turned",
+          "dialogue": "meera_after"
+         }
+        ]
+       },
+       {
+        "id": "zooey",
+        "name": "Zoo-ey",
+        "figure": "npc_hunter_zooey",
+        "glyph": "Z",
+        "dialogue": "zooey",
+        "variants": [
+         {
+          "when": "got_soda",
+          "dialogue": "zooey_again"
+         }
+        ]
+       },
+       {
+        "id": "saja_leader",
+        "name": "Saja Boyz Leader",
+        "figure": "npc_saja_leader",
+        "glyph": "S",
+        "dialogue": "saja_wait",
+        "variants": [
+         {
+          "when": "saja_turned",
+          "dialogue": "saja_after"
+         },
+         {
+          "when": "met_hunters",
+          "dialogue": "saja_challenge"
+         }
+        ]
+       },
+       {
+        "id": "stagehand",
+        "name": "Stagehand",
+        "figure": "npc_stagehand",
+        "glyph": "C",
+        "dialogue": "stagehand",
+        "variants": [
+         {
+          "when": "note_7",
+          "dialogue": "stagehand_after"
+         },
+         {
+          "when": "duet_done",
+          "dialogue": "stagehand_note"
+         }
+        ]
+       }
+      ],
+      "warps": []
+     }
+    },
+    "dialogues": {
+     "stage_intro": [
+      {
+       "id": "a",
+       "text": "A stadium stage at the edge of the Dramaverse. A tiger the size of a building glows on the screen."
+      },
+      {
+       "id": "b",
+       "text": "Ten thousand lightsticks in the dark. Every one of them flickering."
+      },
+      {
+       "id": "c",
+       "speaker": "Lio",
+       "text": "Good morning, arena! ...Why is nobody cheering? They're just staring."
+      },
+      {
+       "id": "d",
+       "speaker": "Ari",
+       "text": "Gold spots, violet haze, a giant tiger. Whoever lit this has taste. And a secret."
+      },
+      {
+       "id": "e",
+       "speaker": "Rae",
+       "text": "...The fans aren't blinking."
+      },
+      {
+       "id": "f",
+       "text": "(Three hunters are arguing at the back of the stage. Ask them what's going on.)"
+      }
+     ],
+     "roomie": [
+      {
+       "id": "a",
+       "speaker": "Roomie",
+       "text": "Oh! Civilians on stage? Thank you so much for coming tonight! Please exit in an orderly fashion!"
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "No."
+      },
+      {
+       "id": "c",
+       "speaker": "Roomie",
+       "text": "...Okay. Honest answer. We're hunters. The band on next, the Saja Boyz? Demons. Every song drinks the crowd."
+      },
+      {
+       "id": "d",
+       "speaker": "Roomie",
+       "text": "Hearts. Memories. Whatever makes a fan a fan. It pours into a crack in the Solmoon. Enough, and it breaks."
+      },
+      {
+       "id": "e",
+       "speaker": "Lio",
+       "text": "The Solmoon? That's Sol's! It's made of his songs!"
+      },
+      {
+       "id": "f",
+       "speaker": "Roomie",
+       "text": "Then you know what we lose. We dance them off this stage tonight. Who are you dancing for?",
+       "choices": [
+        {
+         "text": "...Someone who isn't here.",
+         "next": "kind",
+         "meter": 2
+        },
+        {
+         "text": "Whoever lets me pet the tiger.",
+         "next": "funny",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "kind",
+       "speaker": "Rae",
+       "text": "...Someone who isn't here. That's all."
+      },
+      {
+       "id": "kind_b",
+       "speaker": "Roomie",
+       "text": "That's the best reason there is.",
+       "next": "end"
+      },
+      {
+       "id": "funny",
+       "speaker": "Rae",
+       "text": "Whoever lets me pet the tiger."
+      },
+      {
+       "id": "funny_b",
+       "speaker": "Roomie",
+       "text": "Durpy? Durpy lets everyone pet him. He has no standards."
+      },
+      {
+       "id": "end",
+       "speaker": "Roomie",
+       "text": "Talk to Meera and Zoo-ey. When you're ready, challenge their leader. Center stage.",
+       "set": "met_hunters"
+      }
+     ],
+     "roomie_again": [
+      {
+       "id": "a",
+       "speaker": "Roomie",
+       "text": "Center stage. And don't hold his eyes too long. That's how they get you."
+      },
+      {
+       "id": "b",
+       "text": "(Rae decides to hold his eyes too long, out of spite.)"
+      }
+     ],
+     "roomie_after": [
+      {
+       "id": "a",
+       "speaker": "Roomie",
+       "text": "The Solmoon's holding. Golden, all the way round. Thank you for your hard work today!"
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "That's the last shard, right? Seven! We can go home!"
+      },
+      {
+       "id": "c",
+       "speaker": "Roomie",
+       "text": "Through one more stage. Gwi will be at the last concert. Bring all eight of you. Bring the quokka."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "...Obviously."
+      },
+      {
+       "id": "e",
+       "speaker": "Ari",
+       "text": "Then let's go. Final concert. Our lighting this time.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "finale"
+       }
+      }
+     ],
+     "meera": [
+      {
+       "id": "a",
+       "speaker": "Meera",
+       "text": "You three dance? Show me. ...No. Don't actually show me. We're on in five."
+      },
+      {
+       "id": "b",
+       "speaker": "Meera",
+       "text": "Their leader picks the beat. You match it, arrow for arrow. Hit three in four or he keeps the crowd."
+      },
+      {
+       "id": "c",
+       "text": "A huge blue tiger with a goofy grin flops down across Rae's feet."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "...Hi."
+      },
+      {
+       "id": "e",
+       "speaker": "Meera",
+       "text": "That's Durpy. He doesn't like anybody. ...Apparently he likes you. Gross."
+      }
+     ],
+     "meera_after": [
+      {
+       "id": "a",
+       "speaker": "Meera",
+       "text": "Never thought I'd see a Saja walk away from his king. I'm not crying. It's the haze."
+      }
+     ],
+     "zooey": [
+      {
+       "id": "a",
+       "speaker": "Zoo-ey",
+       "text": "Hiii! Before you go up, hydrate! Sussy, the drinks, please!"
+      },
+      {
+       "id": "b",
+       "text": "A magpie in a tiny hat drops three cans at your feet with enormous ceremony."
+      },
+      {
+       "id": "c",
+       "speaker": "Zoo-ey",
+       "text": "Soda Pop! Hunter recipe. It puts the fizz back in you when you're running on empty."
+      },
+      {
+       "id": "d",
+       "text": "Got 3 Soda Pop!",
+       "set": "got_soda",
+       "action": {
+        "kind": "give",
+        "item": "soda_pop",
+        "count": 3
+       }
+      }
+     ],
+     "zooey_again": [
+      {
+       "id": "a",
+       "speaker": "Zoo-ey",
+       "text": "Sussy says one more can and you'll float. Sussy lies. But she's fun about it."
+      },
+      {
+       "id": "b",
+       "speaker": "Zoo-ey",
+       "text": "Psst. Their leader keeps looking out at the crowd like he owes it an apology. Weird, right?"
+      }
+     ],
+     "saja_wait": [
+      {
+       "id": "a",
+       "speaker": "Saja Boyz Leader",
+       "text": "We're on in five. Autographs after the show. Souls during."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "...Pass."
+      }
+     ],
+     "saja_challenge": [
+      {
+       "id": "a",
+       "speaker": "Saja Boyz Leader",
+       "text": "The hunters sent backup? Three boys and a lot of hair."
+      },
+      {
+       "id": "b",
+       "speaker": "Ari",
+       "text": "Thank you."
+      },
+      {
+       "id": "c",
+       "speaker": "Saja Boyz Leader",
+       "text": "A dance battle, then. My beat, your feet. Lose, and your fans are ours too."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "We don't lose at dancing."
+      },
+      {
+       "id": "e",
+       "text": "The house lights drop. The tiger on the screen roars. The beat kicks in.",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "rhythm",
+         "id": "saja_dance",
+         "title": "Dance Battle vs the Saja Boyz",
+         "bpm": 120,
+         "pattern": [
+          "L",
+          ".",
+          ".",
+          ".",
+          "R",
+          ".",
+          ".",
+          ".",
+          "U",
+          ".",
+          ".",
+          ".",
+          "D",
+          ".",
+          ".",
+          ".",
+          "L",
+          ".",
+          "R",
+          ".",
+          "U",
+          ".",
+          "D",
+          ".",
+          "R",
+          ".",
+          "L",
+          ".",
+          "D",
+          ".",
+          "U",
+          ".",
+          "L",
+          "R",
+          ".",
+          "U",
+          "D",
+          ".",
+          "L",
+          "R",
+          "U",
+          ".",
+          "D",
+          "R",
+          ".",
+          "L",
+          "U",
+          "D"
+         ],
+         "passScore": 0.75
+        },
+        "onWin": "dance_won",
+        "onLose": "dance_lost"
+       }
+      }
+     ],
+     "dance_lost": [
+      {
+       "id": "a",
+       "speaker": "Saja Boyz Leader",
+       "text": "Close. Not close enough. Again? I've got all night. I've got everyone's nights."
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "Hyung, we've got this. On the beat, not ahead of it!",
+       "action": {
+        "kind": "minigame",
+        "spec": {
+         "kind": "rhythm",
+         "id": "saja_dance",
+         "title": "Dance Battle vs the Saja Boyz",
+         "bpm": 120,
+         "pattern": [
+          "L",
+          ".",
+          ".",
+          ".",
+          "R",
+          ".",
+          ".",
+          ".",
+          "U",
+          ".",
+          ".",
+          ".",
+          "D",
+          ".",
+          ".",
+          ".",
+          "L",
+          ".",
+          "R",
+          ".",
+          "U",
+          ".",
+          "D",
+          ".",
+          "R",
+          ".",
+          "L",
+          ".",
+          "D",
+          ".",
+          "U",
+          ".",
+          "L",
+          "R",
+          ".",
+          "U",
+          "D",
+          ".",
+          "L",
+          "R",
+          "U",
+          ".",
+          "D",
+          "R",
+          ".",
+          "L",
+          "U",
+          "D"
+         ],
+         "passScore": 0.75
+        },
+        "onWin": "dance_won",
+        "onLose": "dance_lost"
+       }
+      }
+     ],
+     "dance_won": [
+      {
+       "id": "a",
+       "text": "Out in the dark, the lightsticks blink back on. One by one, then all at once.",
+       "set": "dance_won"
+      },
+      {
+       "id": "b",
+       "speaker": "Saja Boyz Leader",
+       "text": "...They're cheering. For you. I forgot what that sounds like."
+      },
+      {
+       "id": "c",
+       "text": "A red seal burns on his wrist. His chin jerks up, like a puppet's on a string."
+      },
+      {
+       "id": "d",
+       "speaker": "Saja Boyz Leader",
+       "text": "Get back. The Contract says I fight you now. I don't get a vote.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "saja_leader"
+        ],
+        "music": "boss",
+        "then": "saja_beaten"
+       }
+      }
+     ],
+     "saja_beaten": [
+      {
+       "id": "a",
+       "speaker": "Saja Boyz Leader",
+       "text": "...Stop. I'm done. I'm done fighting for him."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "Him."
+      },
+      {
+       "id": "c",
+       "speaker": "Saja Boyz Leader",
+       "text": "I signed for a voice, a long time ago. Everyone I sang to forgot me after. I called it the price of a stage."
+      },
+      {
+       "id": "d",
+       "speaker": "Saja Boyz Leader",
+       "text": "I'm sorry. To every fan in this room. I'm not singing for him again.",
+       "set": "saja_turned",
+       "meter": 1
+      },
+      {
+       "id": "e",
+       "text": "The tiger on the screen flickers out. A face takes its place. A face from a rooftop, a lifetime ago."
+      },
+      {
+       "id": "f",
+       "speaker": "Director Gwi",
+       "text": "Clause Nine. A band belongs to its king. Defection voids the performer. Never the contract."
+      },
+      {
+       "id": "g",
+       "speaker": "Lio",
+       "text": "Director Gwi?! You're their... you're the demon king?!"
+      },
+      {
+       "id": "h",
+       "speaker": "Director Gwi",
+       "text": "Clause One. I am always the king. The agency. The Saja Boyz. Every stage in the Dramaverse."
+      },
+      {
+       "id": "i",
+       "speaker": "Director Gwi",
+       "text": "Final Clause. The Contract is signed at the last concert. Eight seats are reserved. Front row."
+      },
+      {
+       "id": "j",
+       "text": "Static. Above the stage, the air splits: the Solmoon, cracking wide."
+      },
+      {
+       "id": "k",
+       "speaker": "Roomie",
+       "text": "It's breaking! The barrier needs a song! Two voices, together, right now!"
+      },
+      {
+       "id": "l",
+       "speaker": "Ari",
+       "text": "Then sing, Raemin."
+      },
+      {
+       "id": "m",
+       "speaker": "Rae",
+       "text": "...It needs two. The other one isn't here."
+      },
+      {
+       "id": "n",
+       "speaker": "Fan",
+       "text": "WAIT! Up here! Someone's video-calling my phone from nowhere! He says he's 'a quokka, sort of'!"
+      },
+      {
+       "id": "o",
+       "text": "In the front row, a fan holds her phone up as high as it goes."
+      },
+      {
+       "id": "o2",
+       "speaker": "Stagehand",
+       "text": "Keep it up there! I'm patching you into the mains! GO!"
+      },
+      {
+       "id": "p",
+       "speaker": "Sol",
+       "text": "Hello? Why is there an echo? Am I on a SPEAKER? Is that... Raemin-hyung? Is that you?"
+      },
+      {
+       "id": "q",
+       "speaker": "Rae",
+       "text": "...Sol. Sing with me."
+      },
+      {
+       "id": "r",
+       "speaker": "Sol",
+       "text": "Now?! Here?! In front of... okay. Yes. Yes. Always yes.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "duet",
+        "title": "Trope: The Duet",
+        "caption": [
+         "One phone held high in a sea of lightsticks.",
+         "Rae sings his half toward a voice a world away.",
+         "For one verse, it feels like Sol is right beside him."
+        ],
+        "still": "still_duet",
+        "video": "duet",
+        "then": "duet_done"
+       }
+      }
+     ],
+     "duet_done": [
+      {
+       "id": "a",
+       "text": "The last note hangs in the air. The lightsticks blaze gold. The crack above the stage stitches shut.",
+       "set": "duet_done",
+       "meter": 3
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "Hyung? The signal's going... I'll see you at the..."
+      },
+      {
+       "id": "c",
+       "text": "The call drops."
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "He sounded so close."
+      },
+      {
+       "id": "e",
+       "speaker": "Ari",
+       "text": "Ten thousand people just watched that. LOOSE ENDS knows. Everyone knows."
+      },
+      {
+       "id": "f",
+       "text": "A sliver of light drifts down into Rae's hands, warm and humming. Got the Lightstick Shard 'Golden'!",
+       "set": "shard_7"
+      },
+      {
+       "id": "g",
+       "speaker": "Roomie",
+       "text": "Golden. That's what you two sounded like. Find me when you're ready to go."
+      }
+     ],
+     "saja_after": [
+      {
+       "id": "a",
+       "speaker": "Saja Boyz Leader",
+       "text": "The others ran back to him. I'm staying. The hunters say I can sweep this stage until I'm forgiven."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "...You'll be sweeping a long time."
+      },
+      {
+       "id": "c",
+       "speaker": "Saja Boyz Leader",
+       "text": "Good. I'd like that."
+      }
+     ],
+     "stagehand": [
+      {
+       "id": "a",
+       "speaker": "Stagehand",
+       "text": "Who left a tray of brownies in the monitor booth? Smells amazing. Also a fire hazard."
+      },
+      {
+       "id": "b",
+       "speaker": "Lio",
+       "text": "Good morning! That's me. Have one. Have two."
+      },
+      {
+       "id": "c",
+       "speaker": "Stagehand",
+       "text": "...These are incredible. Fine. They stay. Mind the cables."
+      }
+     ],
+     "stagehand_note": [
+      {
+       "id": "a",
+       "speaker": "Stagehand",
+       "text": "Funny thing. Right after your song, a paper plane flew out of the speaker stack. Speakers don't do that."
+      },
+      {
+       "id": "b",
+       "text": "It's addressed in messy handwriting: 'Raemin-hyung'."
+      },
+      {
+       "id": "c",
+       "text": "'I heard you. Through a stranger's phone, a whole world away. Next time, no phones. -S' ... Quokka Note 7 collected.",
+       "set": "note_7",
+       "meter": 2
+      },
+      {
+       "id": "d",
+       "speaker": "Ari",
+       "text": "Lio. Lio, look. He's smiling."
+      },
+      {
+       "id": "e",
+       "speaker": "Rae",
+       "text": "I'm not."
+      }
+     ],
+     "stagehand_after": [
+      {
+       "id": "a",
+       "speaker": "Stagehand",
+       "text": "Mind the cables. And the brownies are gone. Professional hazard."
+      }
+     ]
+    }
+   },
+   "finale": {
+    "id": "finale",
+    "title": "Finale: The Solmoon Concert",
+    "party": [
+     "m1",
+     "m2"
+    ],
+    "enemies": [
+     {
+      "id": "contract",
+      "name": "Dating Ban Contract",
+      "stats": {
+       "hp": 200,
+       "mp": 0,
+       "atk": 15,
+       "def": 9,
+       "mag": 12,
+       "spd": 10
+      },
+      "stayPoints": 0,
+      "art": "boss_contract_boss",
+      "color": 15260864,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "reads Clause 4 at",
+       "staples a footnote to"
+      ]
+     },
+     {
+      "id": "gwi_final",
+      "name": "Director Gwi",
+      "stats": {
+       "hp": 240,
+       "mp": 40,
+       "atk": 16,
+       "def": 10,
+       "mag": 14,
+       "spd": 13
+      },
+      "stayPoints": 0,
+      "art": "boss_gwi_demon_boss",
+      "color": 1706798,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "reads Clause 7 aloud at",
+       "signs something in red near"
+      ]
+     },
+     {
+      "id": "gwi_true",
+      "name": "Gwi, True Form",
+      "stats": {
+       "hp": 260,
+       "mp": 60,
+       "atk": 18,
+       "def": 10,
+       "mag": 16,
+       "spd": 14
+      },
+      "stayPoints": 0,
+      "art": "boss_gwi_demon_boss",
+      "tint": 16740464,
+      "artScale": 1.6,
+      "color": 9048080,
+      "width": 96,
+      "height": 96,
+      "lines": [
+       "roars every hidden feeling at",
+       "opens a mouth of fine print at"
+      ]
+     }
+    ],
+    "start": {
+     "map": "stage",
+     "x": 9,
+     "y": 9
+    },
+    "maps": {
+     "stage": {
+      "id": "stage",
+      "name": "The Solmoon Concert",
+      "backdrop": "backdrop_finale_concert",
+      "battle": "concert_battle",
+      "music": "title",
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "##.......G........##",
+       "#..C............I..#",
+       "#...X.Y.....Z.S....#"
+      ],
+      "placeholder": 723738,
+      "onEnter": "finale_intro",
+      "npcs": [
+       {
+        "id": "gwi",
+        "name": "Director Gwi",
+        "figure": "npc_gwi",
+        "glyph": "G",
+        "dialogue": "gwi",
+        "shownWhen": "party_picked",
+        "hiddenWhen": "finale_won",
+        "facing": "down"
+       },
+       {
+        "id": "m3",
+        "name": "Dae",
+        "figure": "m3",
+        "glyph": "C",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m3"
+         }
+        ],
+        "hiddenWhen": "pick_a"
+       },
+       {
+        "id": "m6",
+        "name": "Lio",
+        "figure": "m6",
+        "glyph": "X",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m6"
+         }
+        ],
+        "hiddenWhen": "pick_a"
+       },
+       {
+        "id": "m4",
+        "name": "Ari",
+        "figure": "m4",
+        "glyph": "Y",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m4"
+         }
+        ],
+        "hiddenWhen": "pick_b"
+       },
+       {
+        "id": "m5",
+        "name": "Bo",
+        "figure": "m5",
+        "glyph": "Z",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m5"
+         }
+        ],
+        "hiddenWhen": "pick_b"
+       },
+       {
+        "id": "m7",
+        "name": "Jun",
+        "figure": "m7",
+        "glyph": "S",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m7"
+         }
+        ],
+        "hiddenWhen": "pick_c"
+       },
+       {
+        "id": "m8",
+        "name": "Nico",
+        "figure": "m8",
+        "glyph": "I",
+        "dialogue": "note_9_find",
+        "variants": [
+         {
+          "when": "note_9",
+          "dialogue": "member_m8"
+         }
+        ],
+        "hiddenWhen": "pick_c"
+       }
+      ],
+      "warps": []
+     }
+    },
+    "dialogues": {
+     "finale_intro": [
+      {
+       "id": "a",
+       "text": "The seventh shard clicks into the lightstick. Light pours out of it like a song finding its key."
+      },
+      {
+       "id": "b",
+       "text": "One by one, the Dramaverse lets them go. A seaside town. A playground. A palace. A studio. A bog. A tavern. A stage."
+      },
+      {
+       "id": "c",
+       "speaker": "Dae",
+       "text": "Everyone okay? Head count. ...Eight. EIGHT! Group hug. Now. That's an order from your leader."
+      },
+      {
+       "id": "d",
+       "speaker": "Lio",
+       "text": "I brought brownies. I carried them through seven worlds. They're a bit squashed. They're still brownies."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "text": "Hyung. I wrote you seven notes."
+      },
+      {
+       "id": "f",
+       "speaker": "Rae",
+       "text": "I know. I read them all. In order. Twice."
+      },
+      {
+       "id": "g",
+       "speaker": "Sol",
+       "text": "...You did?",
+       "choices": [
+        {
+         "text": "Sol: 'Then you know what I was going to say.'",
+         "next": "h1",
+         "meter": 2
+        },
+        {
+         "text": "Sol: 'Even the one with the drawing of a cat?'",
+         "next": "h2",
+         "meter": 1
+        }
+       ]
+      },
+      {
+       "id": "h1",
+       "speaker": "Rae",
+       "text": "I know what you were going to say. Say it anyway. Later. When nobody's holding a contract.",
+       "next": "i"
+      },
+      {
+       "id": "h2",
+       "speaker": "Rae",
+       "text": "Especially the cat. It was anatomically insulting. I kept it.",
+       "next": "i"
+      },
+      {
+       "id": "i",
+       "text": "Rae presses a folded note into Sol's hand. His handwriting. 'Took you long enough. -R' ... Quokka Note 8 collected.",
+       "set": "note_8",
+       "meter": 2
+      },
+      {
+       "id": "j",
+       "text": "The stage lights snap to red. A voice from every speaker, reading carefully: 'Clause 7. Final paragraph.'"
+      },
+      {
+       "id": "k",
+       "speaker": "Director Gwi",
+       "text": "Idols shall not. Shall not WHAT, Mr. Sol? You never finished. I'll wait. I'm very patient. I'm a contract."
+      },
+      {
+       "id": "l",
+       "speaker": "Dae",
+       "text": "Two of us go up with Solho and Raemin. The rest of us hold the Solmoon. Who's going?",
+       "choices": [
+        {
+         "text": "Dae and Lio: the sunny line.",
+         "next": "pa",
+         "set": "pick_a"
+        },
+        {
+         "text": "Ari and Bo: beautiful, and very loud.",
+         "next": "pb",
+         "set": "pick_b"
+        },
+        {
+         "text": "Jun and Nico: the fine print and the maknae.",
+         "next": "pc",
+         "set": "pick_c"
+        }
+       ]
+      },
+      {
+       "id": "pa",
+       "speaker": "Lio",
+       "text": "Good morning, Director. It's night. I don't care. Let's go.",
+       "set": "party_picked",
+       "action": {
+        "kind": "party",
+        "members": [
+         "m1",
+         "m2",
+         "m3",
+         "m6"
+        ]
+       }
+      },
+      {
+       "id": "pb",
+       "speaker": "Ari",
+       "text": "Bo and I will make this beautiful. And loud. Mostly loud.",
+       "set": "party_picked",
+       "action": {
+        "kind": "party",
+        "members": [
+         "m1",
+         "m2",
+         "m4",
+         "m5"
+        ]
+       }
+      },
+      {
+       "id": "pc",
+       "speaker": "Jun",
+       "text": "Nico and I read the whole contract. It has a typo. We're going to exploit it.",
+       "set": "party_picked",
+       "action": {
+        "kind": "party",
+        "members": [
+         "m1",
+         "m2",
+         "m7",
+         "m8"
+        ]
+       }
+      }
+     ],
+     "note_9_find": [
+      {
+       "id": "a",
+       "text": "During the group hug, someone slipped a folded paper into Sol's pocket. It's Rae's handwriting again."
+      },
+      {
+       "id": "b",
+       "text": "'I kept every note. All seven. They're in the cat food tin. Don't tell anyone. -R' ... Quokka Note 9 collected.",
+       "set": "note_9",
+       "meter": 2
+      }
+     ],
+     "member_m3": [
+      {
+       "id": "a",
+       "speaker": "Dae",
+       "text": "You okay? ...Yeah. Me too. Go win this. We've got the Solmoon."
+      }
+     ],
+     "member_m6": [
+      {
+       "id": "a",
+       "speaker": "Lio",
+       "text": "Good morning! It's night. I don't care. Brownie for the road?"
+      }
+     ],
+     "member_m4": [
+      {
+       "id": "a",
+       "speaker": "Ari",
+       "text": "Look at this lighting. Someone in this concert is about to confess. I can feel it."
+      }
+     ],
+     "member_m5": [
+      {
+       "id": "a",
+       "speaker": "Bo",
+       "text": "Don't think. Lift. And by lift I mean the whole Dramaverse."
+      }
+     ],
+     "member_m7": [
+      {
+       "id": "a",
+       "speaker": "Jun",
+       "text": "I read Clause 7. There's a typo. I'm telling everyone. Loudly."
+      }
+     ],
+     "member_m8": [
+      {
+       "id": "a",
+       "speaker": "Nico",
+       "text": "If anything goes wrong, I'm the maknae. Legally not my fault."
+      }
+     ],
+     "gwi": [
+      {
+       "id": "a",
+       "speaker": "Director Gwi",
+       "text": "Seven shards and one very loud boy. Charming. Clause 1: the house always wins."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "We're not playing your game. We're playing ours."
+      },
+      {
+       "id": "c",
+       "speaker": "Rae",
+       "text": "Solho. That was cheesy."
+      },
+      {
+       "id": "d",
+       "speaker": "Sol",
+       "text": "It was GOOD."
+      },
+      {
+       "id": "e",
+       "text": "The Dating Ban Contract unrolls itself across the stage like a red carpet nobody asked for.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "contract"
+        ],
+        "music": "final_boss_1",
+        "then": "phase1_won"
+       }
+      }
+     ],
+     "phase1_won": [
+      {
+       "id": "a",
+       "text": "The Contract tears down the middle. Paper confetti snows over the crowd."
+      },
+      {
+       "id": "b",
+       "speaker": "Director Gwi",
+       "text": "Clause 2: if the contract fails, the Director enforces it personally.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "gwi_final"
+        ],
+        "music": "final_boss_2",
+        "then": "phase2_won"
+       }
+      }
+     ],
+     "phase2_won": [
+      {
+       "id": "a",
+       "speaker": "Director Gwi",
+       "text": "You think a suit is all I am? Clause 3: the Director has no feelings. Only appetite."
+      },
+      {
+       "id": "b",
+       "text": "The suit splits. Something enormous and red unfolds out of it, made of every feeling anyone was told to hide."
+      },
+      {
+       "id": "c",
+       "text": "Out in the dark, eight hundred thousand lightsticks flicker, and hold.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "gwi_true"
+        ],
+        "music": "final_boss_3",
+        "then": "phase3_won"
+       }
+      }
+     ],
+     "phase3_won": [
+      {
+       "id": "a",
+       "speaker": "Director Gwi",
+       "text": "Hidden feelings taste best. Hide it, Mr. Sol. Hide it like you always do."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "text": "No."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "I'm done hiding it. Raemin-hyung..."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "Together. On three. Like the duet. Like the bridge. Like all of it."
+      },
+      {
+       "id": "e",
+       "text": "One. Two.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "unison",
+        "title": "Minsung Unison",
+        "caption": [
+         "Sol and Rae share one microphone.",
+         "Six voices behind them. Eight hundred thousand lights in front.",
+         "The Solmoon comes back together, louder than before."
+        ],
+        "still": "backdrop_finale_concert",
+        "video": "finale_concert",
+        "then": "unison_done"
+       }
+      }
+     ],
+     "unison_done": [
+      {
+       "id": "a",
+       "text": "Director Gwi comes apart into a shower of unsigned paper. The Dating Ban Contract is just paper now.",
+       "set": "finale_won",
+       "meter": 3
+      },
+      {
+       "id": "b",
+       "text": "The concert ends. The Dramaverse folds itself away. Home: the dorm rooftop, the night after the comeback. It's raining.",
+       "ending": {
+        "A": "end_a",
+        "B": "end_b"
+       }
+      },
+      {
+       "id": "end_a",
+       "text": "Sol waits under the rooftop's one umbrella. Rae walks out into the rain and stands under it with him.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "confession",
+        "title": "Ending: The Confession",
+        "caption": [
+         "The rooftop. The rain. One umbrella.",
+         "Sol finally finishes the sentence.",
+         "Rae: 'I know. Me too. Took you long enough.'"
+        ],
+        "still": "still_confession",
+        "video": "confession",
+        "then": "epilogue_a"
+       }
+      },
+      {
+       "id": "end_b",
+       "text": "Sol turns to Rae. Opens his mouth. The rain picks up.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "moon_pan",
+        "title": "Ending: The Moon Pan",
+        "caption": [
+         "Sol opens his mouth to say it.",
+         "The camera, very dramatically, pans up to the moon.",
+         "Somewhere below, someone is definitely holding hands."
+        ],
+        "still": "still_moon_pan",
+        "video": "moon_pan",
+        "then": "epilogue_b"
+       }
+      }
+     ],
+     "epilogue_a": [
+      {
+       "id": "a",
+       "speaker": "Dae",
+       "text": "Are you two coming in or... oh. OH. Okay! Okay. I'm taking the cats for a walk. All of them."
+      },
+      {
+       "id": "b",
+       "speaker": "Rae",
+       "text": "We don't walk the cats."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "text": "Hyung. Thank you for carrying me. Across all of it."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "...Anytime, Solho.",
+       "action": {
+        "kind": "credits"
+       }
+      }
+     ],
+     "epilogue_b": [
+      {
+       "id": "a",
+       "speaker": "Ari",
+       "text": "You saw that, right? You saw it. He definitely said it. LOOSE ENDS knows."
+      },
+      {
+       "id": "b",
+       "speaker": "Jun",
+       "text": "Ari. Who are you talking to?"
+      },
+      {
+       "id": "c",
+       "speaker": "Ari",
+       "text": "The audience.",
+       "action": {
+        "kind": "credits"
+       }
+      }
+     ]
+    }
+   },
+   "prologue": {
+    "id": "prologue",
+    "title": "Prologue: The Rooftop",
+    "party": [
+     "m1",
+     "m2",
+     "m3"
+    ],
+    "start": {
+     "map": "dorm",
+     "x": 10,
+     "y": 9
+    },
+    "maps": {
+     "dorm": {
+      "id": "dorm",
+      "name": "The Dorm",
+      "backdrop": "backdrop_dorm",
+      "music": "overworld",
+      "placeholder": 4862758,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "#########^##########",
+       "######S.....B#######",
+       "######F..###.C..####",
+       "######...###....####",
+       "######...###....####",
+       "######.I........H.##",
+       "####################"
+      ],
+      "onEnter": "dorm_intro",
+      "npcs": [
+       {
+        "id": "m7",
+        "name": "Jun",
+        "figure": "m7",
+        "glyph": "S",
+        "dialogue": "m7_dorm"
+       },
+       {
+        "id": "m6",
+        "name": "Lio",
+        "figure": "m6",
+        "glyph": "F",
+        "dialogue": "m6_dorm",
+        "variants": [
+         {
+          "when": "got_brownies",
+          "dialogue": "m6_dorm_again"
+         }
+        ]
+       },
+       {
+        "id": "m5",
+        "name": "Bo",
+        "figure": "m5",
+        "glyph": "C",
+        "dialogue": "m5_dorm"
+       },
+       {
+        "id": "m4",
+        "name": "Ari",
+        "figure": "m4",
+        "glyph": "H",
+        "dialogue": "m4_dorm"
+       },
+       {
+        "id": "m8",
+        "name": "Nico",
+        "figure": "m8",
+        "glyph": "I",
+        "dialogue": "m8_dorm"
+       },
+       {
+        "id": "m3",
+        "name": "Dae",
+        "figure": "m3",
+        "glyph": "B",
+        "dialogue": "m3_dorm",
+        "variants": [
+         {
+          "when": "m3_dorm_done",
+          "dialogue": "m3_dorm_again"
+         }
+        ]
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "^",
+        "map": "rooftop",
+        "x": 9,
+        "y": 8
+       }
+      ]
+     },
+     "rooftop": {
+      "id": "rooftop",
+      "name": "The Rooftop",
+      "backdrop": "backdrop_rooftop",
+      "battle": "rooftop_battle",
+      "music": "title",
+      "placeholder": 1450302,
+      "grid": [
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####################",
+       "####......L.#.###.##",
+       "#...........#.###..#",
+       "#..................#",
+       "#..................#",
+       "#.........v........#",
+       "####################"
+      ],
+      "onEnter": "rooftop_live",
+      "npcs": [
+       {
+        "id": "m2",
+        "name": "Rae",
+        "figure": "m2",
+        "glyph": "L",
+        "dialogue": "m2_roof",
+        "facing": "down"
+       }
+      ],
+      "warps": [
+       {
+        "glyph": "v",
+        "map": "dorm",
+        "x": 10,
+        "y": 9
+       }
+      ]
+     }
+    },
+    "dialogues": {
+     "dorm_intro": [
+      {
+       "id": "a",
+       "text": "The night before the comeback. The dorm smells like brownies and dread."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "Tonight. I'm telling him tonight. On the rooftop. On the livestream. In front of everyone."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "...Okay maybe not in front of everyone."
+      },
+      {
+       "id": "d",
+       "text": "(Arrow keys or the D-pad to walk. Z, Enter or A to talk. Head up the stairs when you're ready.)"
+      }
+     ],
+     "m7_dorm": [
+      {
+       "id": "a",
+       "speaker": "Jun",
+       "text": "Sol, you've been pacing for forty minutes. The floor is going to file a complaint."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "I'm WARMING UP."
+      },
+      {
+       "id": "c",
+       "speaker": "Jun",
+       "text": "For what, a marathon of bad decisions?"
+      }
+     ],
+     "m6_dorm": [
+      {
+       "id": "a",
+       "speaker": "Lio",
+       "text": "Brownies are done! Take some. For courage. Or for Rae. Or both."
+      },
+      {
+       "id": "b",
+       "text": "Got 2 Lio's Brownies.",
+       "set": "got_brownies",
+       "action": {
+        "kind": "give",
+        "item": "brownie",
+        "count": 2
+       }
+      }
+     ],
+     "m6_dorm_again": [
+      {
+       "id": "a",
+       "speaker": "Lio",
+       "text": "Good morning. (It's 11pm.)"
+      }
+     ],
+     "m5_dorm": [
+      {
+       "id": "a",
+       "speaker": "Bo",
+       "text": "Confessions are like deadlifts. Don't think. Lift. Scream a little."
+      }
+     ],
+     "m4_dorm": [
+      {
+       "id": "a",
+       "speaker": "Ari",
+       "text": "I painted the mood of this evening. It's mostly orange. You're welcome."
+      }
+     ],
+     "m8_dorm": [
+      {
+       "id": "a",
+       "speaker": "Nico",
+       "text": "As the maknae I legally cannot be blamed for whatever happens tonight."
+      }
+     ],
+     "m3_dorm": [
+      {
+       "id": "a",
+       "speaker": "Dae",
+       "text": "You okay, Solho? The stream starts in five. I'll be right there on the roof.",
+       "set": "m3_dorm_done"
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "I'm fine! Totally fine! Why does everyone keep asking if I'm fine!",
+       "choices": [
+        {
+         "text": "Because you're sweating.",
+         "next": "c",
+         "meter": 1
+        },
+        {
+         "text": "Because we love you.",
+         "next": "d",
+         "meter": 2
+        }
+       ]
+      },
+      {
+       "id": "c",
+       "speaker": "Dae",
+       "text": "It's November."
+      },
+      {
+       "id": "d",
+       "speaker": "Dae",
+       "text": "...Go get him."
+      }
+     ],
+     "m3_dorm_again": [
+      {
+       "id": "a",
+       "speaker": "Dae",
+       "text": "Five minutes, Solho. Breathe. I'm right behind you."
+      }
+     ],
+     "rooftop_live": [
+      {
+       "id": "a",
+       "text": "The city hums. A phone on a tripod blinks red. 2.4 million LOOSE ENDS are watching."
+      },
+      {
+       "id": "b",
+       "speaker": "Dae",
+       "text": "Hi, everyone! Welcome to the roof. The boys have something to... Sol? Sol's walking over."
+      },
+      {
+       "id": "c",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "Raemin-hyung. I... there's something I've wanted to say for a really, really long time."
+      },
+      {
+       "id": "d",
+       "speaker": "Rae",
+       "text": "If it's about the cats, they're fine. Waffle ate your sock."
+      },
+      {
+       "id": "e",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "It's not about the cats. It's about-"
+      },
+      {
+       "id": "f",
+       "text": "The stream stutters. The sky goes the colour of a contract. A man in a black suit steps out of a glitch."
+      },
+      {
+       "id": "g",
+       "speaker": "Director Gwi",
+       "text": "Clause 7, paragraph 2. 'Idols shall not.' Shall not WHAT, Mr. Sol? Go on. Say it on camera."
+      },
+      {
+       "id": "h",
+       "speaker": "Dae",
+       "text": "Stay behind me, both of you. We've handled worse than a suit."
+      },
+      {
+       "id": "i",
+       "text": "Director Gwi draws a fountain pen. The Dating Ban Contract unfurls like a banner.",
+       "action": {
+        "kind": "battle",
+        "enemies": [
+         "director_gwi"
+        ],
+        "scripted": "lose",
+        "music": "boss",
+        "then": "after_gwi"
+       }
+      }
+     ],
+     "after_gwi": [
+      {
+       "id": "a",
+       "speaker": "Director Gwi",
+       "text": "Hidden feelings taste best. Thank you for the meal."
+      },
+      {
+       "id": "b",
+       "speaker": "Sol",
+       "portrait": "portrait_m1",
+       "text": "Raemin... hyung..."
+      },
+      {
+       "id": "c",
+       "speaker": "Rae",
+       "text": "Solho, don't you DARE finish that sentence while he's-"
+      },
+      {
+       "id": "d",
+       "text": "Gwi flicks the pen. The Solmoon, the barrier woven from every song Sol ever wrote, cracks like glass.",
+       "action": {
+        "kind": "cutscene",
+        "trope": "shatter",
+        "title": "The Solmoon Shatters",
+        "still": "still_shatter",
+        "video": "shatter",
+        "caption": [
+         "Eight boys, flung into eight stories.",
+         "Seven Lightstick Shards, scattered across the Dramaverse.",
+         "One confession, interrupted."
+        ],
+        "then": "to_chapter_one"
+       }
+      }
+     ],
+     "to_chapter_one": [
+      {
+       "id": "a",
+       "text": "Somewhere, a ferry horn. Somewhere, camellias.",
+       "action": {
+        "kind": "chapter",
+        "chapter": "ch1"
+       }
+      }
+     ],
+     "m2_roof": [
+      {
+       "id": "a",
+       "speaker": "Rae",
+       "text": "...What."
+      }
+     ]
+    }
+   }
+  },
+  "order": [
+   "prologue",
+   "ch1",
+   "ch2",
+   "ch3",
+   "ch4",
+   "ch5",
+   "ch6",
+   "ch7",
+   "finale"
+  ],
+  "battle": {
+   "defeat": "Game over. LOOSE ENDS will wait for you.",
+   "currency": "Loose Change"
+  },
+  "credits": {
+   "fallbackDedication": "For our favourite LOOSE ENDS",
+   "endingNames": {
+    "A": "Ending A: The Confession",
+    "B": "Ending B: LOOSE ENDS Knows"
+   },
+   "starring": [
+    "Dae",
+    "Rae",
+    "Bo",
+    "Ari",
+    "Sol",
+    "Lio",
+    "Jun",
+    "Nico"
+   ],
+   "apologies": [
+    "When the Camellia Blooms",
+    "Squid Game",
+    "Scarlet Heart Ryeo",
+    "The Glory",
+    "Hamilton",
+    "KPop Demon Hunters"
+   ],
+   "footer": "No lyrics were harmed in the making of this game.",
+   "postCredits": "...Bopig mops the stage.\nLio is still baking.\n\nTHE END"
+  }
+ },
+ "meter": {
+  "name": "Minsung",
+  "max": 70,
+  "endingA": 50,
+  "hud": false,
+  "stampSample": "Drama Album +1    Minsung 10/70"
+ },
+ "members": {
+  "m1": {
+   "id": "m1",
+   "name": "Sol",
+   "job": "Quokka Bard",
+   "stats": {
+    "hp": 70,
+    "mp": 30,
+    "atk": 11,
+    "def": 6,
+    "mag": 12,
+    "spd": 12
+   },
+   "skills": [
+    "m1_a",
+    "m1_b"
+   ],
+   "portrait": "portrait_m1"
+  },
+  "m2": {
+   "id": "m2",
+   "name": "Rae",
+   "job": "Cat Ninja",
+   "stats": {
+    "hp": 72,
+    "mp": 20,
+    "atk": 14,
+    "def": 7,
+    "mag": 8,
+    "spd": 16
+   },
+   "skills": [
+    "m2_a",
+    "m2_b"
+   ]
+  },
+  "m3": {
+   "id": "m3",
+   "name": "Dae",
+   "job": "Wolf Paladin",
+   "stats": {
+    "hp": 95,
+    "mp": 24,
+    "atk": 13,
+    "def": 10,
+    "mag": 9,
+    "spd": 9
+   },
+   "skills": [
+    "m3_a",
+    "m3_b"
+   ]
+  },
+  "m4": {
+   "id": "m4",
+   "name": "Ari",
+   "job": "Pictomancer",
+   "stats": {
+    "hp": 68,
+    "mp": 36,
+    "atk": 9,
+    "def": 6,
+    "mag": 15,
+    "spd": 11
+   },
+   "skills": [
+    "m4_a",
+    "m4_b"
+   ]
+  },
+  "m5": {
+   "id": "m5",
+   "name": "Bo",
+   "job": "Gym Monk",
+   "stats": {
+    "hp": 88,
+    "mp": 16,
+    "atk": 16,
+    "def": 9,
+    "mag": 5,
+    "spd": 10
+   },
+   "skills": [
+    "m5_a"
+   ]
+  },
+  "m6": {
+   "id": "m6",
+   "name": "Lio",
+   "job": "Sunshine White Mage",
+   "stats": {
+    "hp": 66,
+    "mp": 40,
+    "atk": 8,
+    "def": 6,
+    "mag": 16,
+    "spd": 11
+   },
+   "skills": [
+    "m6_a",
+    "m6_b"
+   ]
+  },
+  "m7": {
+   "id": "m7",
+   "name": "Jun",
+   "job": "Puppy Scholar",
+   "stats": {
+    "hp": 70,
+    "mp": 32,
+    "atk": 10,
+    "def": 7,
+    "mag": 13,
+    "spd": 12
+   },
+   "skills": [
+    "m7_a"
+   ]
+  },
+  "m8": {
+   "id": "m8",
+   "name": "Nico",
+   "job": "Fox Thief",
+   "stats": {
+    "hp": 65,
+    "mp": 22,
+    "atk": 12,
+    "def": 6,
+    "mag": 9,
+    "spd": 15
+   },
+   "skills": [
+    "m8_a"
+   ]
+  }
+ },
+ "companions": {
+  "m1": "quokka",
+  "m2": "bunny",
+  "m3": "wolf",
+  "m4": "ferret",
+  "m5": "pig_rabbit",
+  "m6": "chick",
+  "m7": "puppy",
+  "m8": "fox"
+ },
+ "skills": {
+  "m1_a": {
+   "id": "m1_a",
+   "name": "Confession Song",
+   "mp": 6,
+   "power": 1.6,
+   "kind": "attack",
+   "school": "magic",
+   "target": "enemy",
+   "line": "sings a confession at"
+  },
+  "m1_b": {
+   "id": "m1_b",
+   "name": "Panic!",
+   "mp": 4,
+   "power": 2.2,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "panics wildly at",
+   "self": {
+    "status": "panic",
+    "turns": 2
+   }
+  },
+  "m2_a": {
+   "id": "m2_a",
+   "name": "Side Door",
+   "mp": 5,
+   "power": 1.8,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "slips behind"
+  },
+  "m2_b": {
+   "id": "m2_b",
+   "name": "Tsundere Taunt",
+   "mp": 4,
+   "power": 1.3,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "pretends not to care about",
+   "inflict": {
+    "status": "roasted",
+    "turns": 2
+   }
+  },
+  "m3_a": {
+   "id": "m3_a",
+   "name": "You Okay, Guys?",
+   "mp": 8,
+   "power": 2,
+   "kind": "heal",
+   "target": "ally",
+   "line": "checks on",
+   "inflict": {
+    "status": "shield",
+    "turns": 2
+   }
+  },
+  "m3_b": {
+   "id": "m3_b",
+   "name": "Rolling Thunder",
+   "mp": 7,
+   "power": 1.9,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "drums thunder onto"
+  },
+  "m4_a": {
+   "id": "m4_a",
+   "name": "Dramatic Hair Flip",
+   "mp": 5,
+   "power": 1.5,
+   "kind": "attack",
+   "school": "magic",
+   "target": "enemy",
+   "line": "flips hair at",
+   "inflict": {
+    "status": "charm",
+    "turns": 1
+   }
+  },
+  "m4_b": {
+   "id": "m4_b",
+   "name": "East Wind",
+   "mp": 9,
+   "power": 2.3,
+   "kind": "attack",
+   "school": "magic",
+   "target": "enemy",
+   "line": "summons a wind against"
+  },
+  "m5_a": {
+   "id": "m5_a",
+   "name": "Speed Rap",
+   "mp": 6,
+   "power": 2.1,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "raps at"
+  },
+  "m6_a": {
+   "id": "m6_a",
+   "name": "Brownie",
+   "mp": 6,
+   "power": 1.8,
+   "kind": "heal",
+   "target": "ally",
+   "line": "bakes for"
+  },
+  "m6_b": {
+   "id": "m6_b",
+   "name": "Deep Voice",
+   "mp": 5,
+   "power": 1.7,
+   "kind": "attack",
+   "school": "magic",
+   "target": "enemy",
+   "line": "says 'good morning' to",
+   "inflict": {
+    "status": "stun",
+    "turns": 1
+   }
+  },
+  "m7_a": {
+   "id": "m7_a",
+   "name": "Roast",
+   "mp": 5,
+   "power": 1.9,
+   "kind": "attack",
+   "school": "magic",
+   "target": "enemy",
+   "line": "roasts",
+   "inflict": {
+    "status": "roasted",
+    "turns": 2
+   }
+  },
+  "m8_a": {
+   "id": "m8_a",
+   "name": "Maknae Privilege",
+   "mp": 3,
+   "power": 1.4,
+   "kind": "attack",
+   "target": "enemy",
+   "line": "gets away with hitting",
+   "self": {
+    "status": "haste",
+    "turns": 2
+   }
+  }
+ },
+ "encores": {
+  "m1": {
+   "id": "m1_enc",
+   "name": "Chef's Special",
+   "summon": "quokka",
+   "kind": "attack_all",
+   "power": 2.6,
+   "line": "cooks up a full course for everyone"
+  },
+  "m3": {
+   "id": "m3_enc",
+   "name": "Wolf Dae",
+   "summon": "wolf",
+   "kind": "shield_party",
+   "power": 1.2,
+   "status": "shield",
+   "statusTurns": 2,
+   "line": "howls; the pack closes ranks"
+  },
+  "m2": {
+   "id": "m2_enc",
+   "name": "Pickle, Noodle, Waffle",
+   "summon": "bunny",
+   "kind": "attack_multi",
+   "power": 1.4,
+   "hits": 3,
+   "line": "unleashes three very unbothered cats on"
+  },
+  "m4": {
+   "id": "m4_enc",
+   "name": "Masterpiece",
+   "summon": "ferret",
+   "kind": "status_enemies",
+   "power": 1,
+   "status": "charm",
+   "statusTurns": 2,
+   "line": "paints something so beautiful the enemies switch sides"
+  },
+  "m5": {
+   "id": "m5_enc",
+   "name": "Bopig Slam",
+   "summon": "pig_rabbit",
+   "kind": "attack_all",
+   "power": 2.2,
+   "line": "drops the beat and a pig-rabbit on everyone"
+  },
+  "m6": {
+   "id": "m6_enc",
+   "name": "Sunshine",
+   "summon": "chick",
+   "kind": "heal_all",
+   "power": 2,
+   "line": "says 'good morning' and the whole party believes it"
+  },
+  "m7": {
+   "id": "m7_enc",
+   "name": "Long Walk",
+   "summon": "puppy",
+   "kind": "status_enemies",
+   "power": 1,
+   "status": "roasted",
+   "statusTurns": 2,
+   "line": "reads the enemies' entire history out loud"
+  },
+  "m8": {
+   "id": "m8_enc",
+   "name": "Nicofox",
+   "summon": "fox",
+   "kind": "steal_all",
+   "power": 1,
+   "line": "pickpockets the entire battlefield"
+  }
+ },
+ "items": {
+  "brownie": {
+   "id": "brownie",
+   "name": "Lio's Brownie",
+   "heal": 40,
+   "line": "eats a brownie"
+  },
+  "banana_milk": {
+   "id": "banana_milk",
+   "name": "Banana Milk",
+   "heal": 20,
+   "line": "drinks banana milk"
+  },
+  "black_coffee": {
+   "id": "black_coffee",
+   "name": "Hosier's Black Coffee",
+   "heal": 35,
+   "line": "drinks it black, makes a face, feels better"
+  },
+  "soda_pop": {
+   "id": "soda_pop",
+   "name": "Soda Pop",
+   "heal": 30,
+   "line": "cracks open a Soda Pop. It fizzes"
+  }
+ },
+ "enemies": {
+  "anti": {
+   "id": "anti",
+   "name": "Anti",
+   "art": "enemy_anti",
+   "stats": {
+    "hp": 28,
+    "mp": 0,
+    "atk": 9,
+    "def": 3,
+    "mag": 2,
+    "spd": 8
+   },
+   "stayPoints": 12,
+   "color": 8010575,
+   "width": 48,
+   "height": 48,
+   "lines": [
+    "types in all caps",
+    "posts a flop take"
+   ]
+  },
+  "commenter": {
+   "id": "commenter",
+   "name": "Malicious Commenter",
+   "art": "enemy_commenter",
+   "stats": {
+    "hp": 36,
+    "mp": 0,
+    "atk": 11,
+    "def": 4,
+    "mag": 3,
+    "spd": 9
+   },
+   "stayPoints": 18,
+   "color": 5192570,
+   "width": 64,
+   "height": 48,
+   "lines": [
+    "leaves a 'just my opinion'",
+    "quote-tweets with a sigh"
+   ]
+  },
+  "fancam": {
+   "id": "fancam",
+   "name": "Feral Fancam",
+   "art": "enemy_fancam",
+   "stats": {
+    "hp": 40,
+    "mp": 0,
+    "atk": 12,
+    "def": 5,
+    "mag": 6,
+    "spd": 14
+   },
+   "stayPoints": 22,
+   "color": 3895162,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "zooms in too close",
+    "loops a four-second clip"
+   ]
+  },
+  "director_gwi": {
+   "id": "director_gwi",
+   "name": "Director Gwi",
+   "art": "boss_gwi_demon_boss",
+   "stats": {
+    "hp": 999,
+    "mp": 99,
+    "atk": 48,
+    "def": 40,
+    "mag": 30,
+    "spd": 14
+   },
+   "stayPoints": 0,
+   "color": 1706798,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "reads Clause 7 aloud",
+    "signs something in red"
+   ]
+  },
+  "jester": {
+   "id": "jester",
+   "name": "The Jester",
+   "art": "boss_jester_boss",
+   "stats": {
+    "hp": 150,
+    "mp": 20,
+    "atk": 13,
+    "def": 8,
+    "mag": 10,
+    "spd": 11
+   },
+   "stayPoints": 120,
+   "color": 9054762,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "leaves a riddle on a napkin",
+    "laughs from somewhere behind you"
+   ]
+  },
+  "pink_guard": {
+   "id": "pink_guard",
+   "name": "Pink Guard",
+   "stats": {
+    "hp": 44,
+    "mp": 0,
+    "atk": 13,
+    "def": 6,
+    "mag": 3,
+    "spd": 10
+   },
+   "stayPoints": 26,
+   "art": "enemy_pink_guard",
+   "color": 14249114,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "points a triangle at",
+    "says 'Player eliminated' to"
+   ]
+  },
+  "algorithm_wisp": {
+   "id": "algorithm_wisp",
+   "name": "Algorithm Wisp",
+   "stats": {
+    "hp": 38,
+    "mp": 0,
+    "atk": 12,
+    "def": 4,
+    "mag": 10,
+    "spd": 15
+   },
+   "stayPoints": 24,
+   "art": "enemy_algorithm",
+   "color": 5926105,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "recommends something terrible to",
+    "buries the post of"
+   ]
+  },
+  "front_manager": {
+   "id": "front_manager",
+   "name": "The Front Manager",
+   "stats": {
+    "hp": 180,
+    "mp": 30,
+    "atk": 15,
+    "def": 9,
+    "mag": 11,
+    "spd": 12
+   },
+   "stayPoints": 160,
+   "art": "boss_front_manager_boss",
+   "color": 2236962,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "adjusts the schedule against",
+    "files a complaint about",
+    "says 'the game is fair' to"
+   ]
+  },
+  "palace_guard": {
+   "id": "palace_guard",
+   "name": "Palace Guard",
+   "art": "enemy_palace_guard",
+   "stats": {
+    "hp": 40,
+    "mp": 0,
+    "atk": 12,
+    "def": 5,
+    "mag": 3,
+    "spd": 10
+   },
+   "stayPoints": 20,
+   "color": 9054762,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "asks for your hall pass",
+    "blocks the gate with a very long spear"
+   ]
+  },
+  "yoohoo": {
+   "id": "yoohoo",
+   "name": "Queen Mother Yoo-hoo",
+   "art": "boss_yoohoo_boss",
+   "stats": {
+    "hp": 200,
+    "mp": 30,
+    "atk": 13,
+    "def": 8,
+    "mag": 12,
+    "spd": 11
+   },
+   "stayPoints": 160,
+   "color": 5906286,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "issues a decree against joy",
+    "smiles at you. It's worse.",
+    "pours poisoned flattery"
+   ]
+  },
+  "glory_weather_sprite": {
+   "id": "glory_weather_sprite",
+   "name": "Weather Sprite",
+   "art": "enemy_weather_sprite",
+   "stats": {
+    "hp": 46,
+    "mp": 0,
+    "atk": 13,
+    "def": 5,
+    "mag": 10,
+    "spd": 13
+   },
+   "stayPoints": 26,
+   "color": 7317724,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "drizzles on your snacks",
+    "rolls in like a cold front"
+   ]
+  },
+  "glory_sasaeng": {
+   "id": "glory_sasaeng",
+   "name": "Sasaeng Shade",
+   "art": "enemy_sasaeng",
+   "stats": {
+    "hp": 52,
+    "mp": 0,
+    "atk": 14,
+    "def": 6,
+    "mag": 4,
+    "spd": 15
+   },
+   "stayPoints": 30,
+   "color": 4013404,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "peeks out from behind a pillar",
+    "knows your schedule better than you"
+   ]
+  },
+  "yeonjinx": {
+   "id": "yeonjinx",
+   "name": "Park Yeon-jinx",
+   "art": "boss_yeonjinx_boss",
+   "stats": {
+    "hp": 230,
+    "mp": 30,
+    "atk": 15,
+    "def": 9,
+    "mag": 13,
+    "spd": 12
+   },
+   "stayPoints": 200,
+   "color": 14251935,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "clicks to the next slide",
+    "forecasts your bad day",
+    "smiles for camera two"
+   ]
+  },
+  "bog_wisp": {
+   "id": "bog_wisp",
+   "name": "Bog Wisp",
+   "art": "enemy_bog_wisp",
+   "stats": {
+    "hp": 38,
+    "mp": 0,
+    "atk": 12,
+    "def": 5,
+    "mag": 9,
+    "spd": 13
+   },
+   "stayPoints": 24,
+   "color": 7319178,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "flickers just out of reach",
+    "hums a note too low to hear"
+   ]
+  },
+  "banquet_ghoul": {
+   "id": "banquet_ghoul",
+   "name": "The Banquet Ghoul",
+   "art": "boss_ghoul_boss",
+   "stats": {
+    "hp": 190,
+    "mp": 24,
+    "atk": 14,
+    "def": 8,
+    "mag": 11,
+    "spd": 10
+   },
+   "stayPoints": 160,
+   "color": 5909050,
+   "width": 128,
+   "height": 128,
+   "lines": [
+    "serves tomorrow on a silver plate",
+    "asks if you'll finish that",
+    "rings for dessert"
+   ]
+  },
+  "redcoat": {
+   "id": "redcoat",
+   "name": "Redcoat",
+   "art": "enemy_redcoat",
+   "stats": {
+    "hp": 52,
+    "mp": 0,
+    "atk": 14,
+    "def": 7,
+    "mag": 4,
+    "spd": 10
+   },
+   "stayPoints": 26,
+   "color": 10496554,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "marches in perfect formation",
+    "fires a strongly worded volley"
+   ]
+  },
+  "clause": {
+   "id": "clause",
+   "name": "Fine-Print Clause",
+   "art": "enemy_clause",
+   "stats": {
+    "hp": 44,
+    "mp": 0,
+    "atk": 12,
+    "def": 6,
+    "mag": 12,
+    "spd": 13
+   },
+   "stayPoints": 28,
+   "color": 3816018,
+   "width": 64,
+   "height": 48,
+   "lines": [
+    "subsections at you",
+    "adds an asterisk"
+   ]
+  },
+  "burrsung": {
+   "id": "burrsung",
+   "name": "Aaron Burr-sung",
+   "art": "boss_burrsung_boss",
+   "stats": {
+    "hp": 200,
+    "mp": 20,
+    "atk": 14,
+    "def": 9,
+    "mag": 10,
+    "spd": 12
+   },
+   "stayPoints": 140,
+   "color": 3026490,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "says fewer words, harder",
+    "keeps his options open",
+    "smiles in a way that says nothing"
+   ]
+  },
+  "georgwi": {
+   "id": "georgwi",
+   "name": "King Geor-Gwi",
+   "art": "boss_georgwi_boss",
+   "stats": {
+    "hp": 300,
+    "mp": 40,
+    "atk": 15,
+    "def": 10,
+    "mag": 14,
+    "spd": 11
+   },
+   "stayPoints": 220,
+   "color": 6957706,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "sends an armed battalion of feelings",
+    "sings a breakup ballad at you",
+    "promises you'll be back"
+   ]
+  },
+  "demon_fan": {
+   "id": "demon_fan",
+   "name": "Demon Fan",
+   "art": "enemy_demon_fan",
+   "stats": {
+    "hp": 52,
+    "mp": 0,
+    "atk": 14,
+    "def": 6,
+    "mag": 7,
+    "spd": 13
+   },
+   "stayPoints": 30,
+   "color": 6957690,
+   "width": 64,
+   "height": 64,
+   "lines": [
+    "screams a stranger's name at",
+    "swings a wrong-coloured lightstick at"
+   ]
+  },
+  "saja_leader": {
+   "id": "saja_leader",
+   "name": "Saja Boyz Leader",
+   "art": "boss_saja_leader_boss",
+   "stats": {
+    "hp": 200,
+    "mp": 30,
+    "atk": 15,
+    "def": 9,
+    "mag": 12,
+    "spd": 13
+   },
+   "stayPoints": 240,
+   "color": 1710638,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "throws a move the Contract wrote at",
+    "holds a note that pulls at"
+   ]
+  },
+  "contract": {
+   "id": "contract",
+   "name": "Dating Ban Contract",
+   "stats": {
+    "hp": 200,
+    "mp": 0,
+    "atk": 15,
+    "def": 9,
+    "mag": 12,
+    "spd": 10
+   },
+   "stayPoints": 0,
+   "art": "boss_contract_boss",
+   "color": 15260864,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "reads Clause 4 at",
+    "staples a footnote to"
+   ]
+  },
+  "gwi_final": {
+   "id": "gwi_final",
+   "name": "Director Gwi",
+   "stats": {
+    "hp": 240,
+    "mp": 40,
+    "atk": 16,
+    "def": 10,
+    "mag": 14,
+    "spd": 13
+   },
+   "stayPoints": 0,
+   "art": "boss_gwi_demon_boss",
+   "color": 1706798,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "reads Clause 7 aloud at",
+    "signs something in red near"
+   ]
+  },
+  "gwi_true": {
+   "id": "gwi_true",
+   "name": "Gwi, True Form",
+   "stats": {
+    "hp": 260,
+    "mp": 60,
+    "atk": 18,
+    "def": 10,
+    "mag": 16,
+    "spd": 14
+   },
+   "stayPoints": 0,
+   "art": "boss_gwi_demon_boss",
+   "tint": 16740464,
+   "artScale": 1.6,
+   "color": 9048080,
+   "width": 96,
+   "height": 96,
+   "lines": [
+    "roars every hidden feeling at",
+    "opens a mouth of fine print at"
+   ]
+  }
+ },
+ "figures": [
+  "m1",
+  "m2",
+  "m3",
+  "m4",
+  "m5",
+  "m6",
+  "m7",
+  "m8",
+  "npc_woman",
+  "npc_cop",
+  "npc_ajumma",
+  "npc_jester",
+  "npc_pink_guard",
+  "npc_grandpa",
+  "m1_143",
+  "npc_front_manager",
+  "ch3_head_lady",
+  "ch3_m8_prince",
+  "ch3_court_lady",
+  "ch3_palace_guard",
+  "ch3_servant",
+  "ch3_sooo",
+  "ch3_queen_mother",
+  "npc_dongun",
+  "npc_yeonjinx",
+  "npc_camera",
+  "npc_floor",
+  "npc_intern",
+  "npc_hosier",
+  "npc_bogwoman",
+  "npc_turfcutter",
+  "npc_soul_limbo",
+  "npc_soul_f",
+  "npc_soul_m",
+  "npc_ghoul",
+  "npc_tavern",
+  "npc_colonial_woman",
+  "npc_courier",
+  "npc_burrsung",
+  "npc_redcoat",
+  "npc_georgwi",
+  "npc_hunter_roomie",
+  "npc_hunter_meera",
+  "npc_hunter_zooey",
+  "npc_saja_leader",
+  "npc_stagehand",
+  "npc_gwi",
+  "ch3_m1_hanbok",
+  "ch3_m4_prince",
+  "ch3_m7_prince"
+ ],
+ "creditsA": [
+  {
+   "text": "Loose Orphans: Legend of Minsung",
+   "kind": "title"
+  },
+  {
+   "text": "Ending A: The Confession",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "For our favourite LOOSE ENDS",
+   "kind": "head"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Starring",
+   "kind": "head"
+  },
+  {
+   "text": "Dae",
+   "kind": "body"
+  },
+  {
+   "text": "Rae",
+   "kind": "body"
+  },
+  {
+   "text": "Bo",
+   "kind": "body"
+  },
+  {
+   "text": "Ari",
+   "kind": "body"
+  },
+  {
+   "text": "Sol",
+   "kind": "body"
+  },
+  {
+   "text": "Lio",
+   "kind": "body"
+  },
+  {
+   "text": "Jun",
+   "kind": "body"
+  },
+  {
+   "text": "Nico",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Made by",
+   "kind": "head"
+  },
+  {
+   "text": "Anonymous",
+   "kind": "body"
+  },
+  {
+   "text": "with Claude",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Pictures",
+   "kind": "head"
+  },
+  {
+   "text": "Drawn with PixelLab",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Character sprites",
+   "kind": "head"
+  },
+  {
+   "text": "The Liberated Pixel Cup artists",
+   "kind": "body"
+  },
+  {
+   "text": "(full list in assets/sprites/CREDITS.md)",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Music",
+   "kind": "head"
+  },
+  {
+   "text": "Composed with Lyria",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Cutscenes",
+   "kind": "head"
+  },
+  {
+   "text": "Animated with Gemini",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "With love and apologies to",
+   "kind": "head"
+  },
+  {
+   "text": "When the Camellia Blooms",
+   "kind": "body"
+  },
+  {
+   "text": "Squid Game",
+   "kind": "body"
+  },
+  {
+   "text": "Scarlet Heart Ryeo",
+   "kind": "body"
+  },
+  {
+   "text": "The Glory",
+   "kind": "body"
+  },
+  {
+   "text": "Hamilton",
+   "kind": "body"
+  },
+  {
+   "text": "KPop Demon Hunters",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "No lyrics were harmed in the making of this game.",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Thank you for playing.",
+   "kind": "head"
+  }
+ ],
+ "creditsB": [
+  {
+   "text": "Loose Orphans: Legend of Minsung",
+   "kind": "title"
+  },
+  {
+   "text": "Ending B: LOOSE ENDS Knows",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "For our favourite LOOSE ENDS",
+   "kind": "head"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Starring",
+   "kind": "head"
+  },
+  {
+   "text": "Dae",
+   "kind": "body"
+  },
+  {
+   "text": "Rae",
+   "kind": "body"
+  },
+  {
+   "text": "Bo",
+   "kind": "body"
+  },
+  {
+   "text": "Ari",
+   "kind": "body"
+  },
+  {
+   "text": "Sol",
+   "kind": "body"
+  },
+  {
+   "text": "Lio",
+   "kind": "body"
+  },
+  {
+   "text": "Jun",
+   "kind": "body"
+  },
+  {
+   "text": "Nico",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Made by",
+   "kind": "head"
+  },
+  {
+   "text": "Anonymous",
+   "kind": "body"
+  },
+  {
+   "text": "with Claude",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Pictures",
+   "kind": "head"
+  },
+  {
+   "text": "Drawn with PixelLab",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Character sprites",
+   "kind": "head"
+  },
+  {
+   "text": "The Liberated Pixel Cup artists",
+   "kind": "body"
+  },
+  {
+   "text": "(full list in assets/sprites/CREDITS.md)",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Music",
+   "kind": "head"
+  },
+  {
+   "text": "Composed with Lyria",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Cutscenes",
+   "kind": "head"
+  },
+  {
+   "text": "Animated with Gemini",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "With love and apologies to",
+   "kind": "head"
+  },
+  {
+   "text": "When the Camellia Blooms",
+   "kind": "body"
+  },
+  {
+   "text": "Squid Game",
+   "kind": "body"
+  },
+  {
+   "text": "Scarlet Heart Ryeo",
+   "kind": "body"
+  },
+  {
+   "text": "The Glory",
+   "kind": "body"
+  },
+  {
+   "text": "Hamilton",
+   "kind": "body"
+  },
+  {
+   "text": "KPop Demon Hunters",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "No lyrics were harmed in the making of this game.",
+   "kind": "body"
+  },
+  {
+   "text": "",
+   "kind": "gap"
+  },
+  {
+   "text": "Thank you for playing.",
+   "kind": "head"
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+# Every soundtrack cue: uv run python -m tools.media music (dry run) / --run. One Lyria call per track.
+# A track already under web/public/assets/music/ is never regenerated; delete its .ogg and .mp3 to encode it again
+# and its raw MP3 under .cache/media/music/ to compose it again (that spends).
+# model = "clip" is lyria-3-clip-preview (always 30 s); "song" is lyria-3.5 (length asked for in the prompt).
+# loop = true folds the tail over the head with a short crossfade; stings set loop = false.
+# loop_start / loop_end (seconds) trim the part that is kept; set them after listening.
+# Prompts name genres, instruments and moods only: never an artist, a band, a song or a show.
+
+# ---- shared themes --------------------------------------------------------------------------------------------
+
+[[track]]
+id = "title"
+group = "theme"
+model = "song"
+seconds = 90
+prompt = "Grand nostalgic title theme for a 16-bit era console role-playing game: soaring strings, a warm brass melody, harp arpeggios and a soft timpani roll, hopeful and bittersweet, slow build, orchestral chiptune hybrid."
+
+[[track]]
+id = "overworld"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Bright adventurous world-map theme for a classic 90s console role-playing game: bouncy woodwinds, pizzicato strings, a light marching snare, playful and curious, major key, mid tempo."
+
+[[track]]
+id = "battle"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Fast energetic combat theme for a 16-bit console role-playing game: a funky driving bass line, a punchy electric guitar riff, synth brass accents, rolling drums at 150 bpm, heroic and urgent."
+
+[[track]]
+id = "boss"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Tense orchestral boss battle theme: pounding timpani, ominous low choir-like synth pads, urgent string ostinato, brass fanfares, 140 bpm, minor key, 16-bit era game soundtrack feel."
+
+[[track]]
+id = "final_boss_1"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Final boss theme, first phase: brooding pipe organ and low strings, slow menacing pulse at 100 bpm, distant bells, dread building, minor key, retro game orchestral style."
+
+[[track]]
+id = "final_boss_2"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Final boss theme, second phase: faster and heavier, driving percussion at 130 bpm, choir-like synth pads, electric guitar power chords, brass fanfares, desperate and determined."
+
+[[track]]
+id = "final_boss_3"
+group = "theme"
+model = "song"
+seconds = 75
+prompt = "Final boss theme, last phase: frantic full orchestra with electric guitar and glittering synth arpeggios at 160 bpm, triumphant and desperate at once, key changes rising, epic 16-bit finale."
+
+[[track]]
+id = "victory"
+group = "sting"
+model = "clip"
+loop = false
+loop_end = 8.0   # the clip plays at full tilt for all 30 s; a sting wants the first phrase
+prompt = "A short triumphant chiptune fanfare: bright square-wave leads, bouncy arpeggios, a celebratory drum fill, like a band stepping onto a comeback stage, eight seconds of fanfare then a held final chord."
+
+[[track]]
+id = "ost_swell"
+group = "sting"
+model = "clip"
+loop = false
+loop_end = 17.0  # the swell peaks and falls quiet at about 16 s; the rest is a second verse
+prompt = "Emotional television drama soundtrack swell: a lone piano melody, then rising romantic strings and a soft snare build to a cinematic peak, slow, heartfelt, 30 seconds."
+
+# ---- one location theme per chapter ----------------------------------------------------------------------------
+
+[[track]]
+id = "ongsang"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Seaside acoustic town theme: gentle fingerpicked acoustic guitar, ukulele, soft shaker and a warm upright bass, relaxed small harbour town on a sunny afternoon, major key, slow tempo."
+
+[[track]]
+id = "squish"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Eerie music-box march: a toy music box melody over a slow marching snare drum and a deep bass pulse, a cheerful carnival tune twisted into something unsettling, minor key, uncanny and hollow."
+
+[[track]]
+id = "goryeo"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Traditional Korean court music for a palace: gayageum plucked strings, a haegeum melody and a slow janggu drum, stately and elegant with a hint of intrigue, slow tempo."
+
+[[track]]
+id = "glory"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Cold minimal piano theme: sparse icy piano notes, glassy string pads and a faint ticking clock, slow and calculating, the patience of a long revenge, minor key."
+
+[[track]]
+id = "bog"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Dreamy Irish folk over a deep hum: fiddle, tin whistle and bodhran drifting over a deep low drone, misty and mystical bog forest, slow waltz feel, haunting but gentle."
+
+[[track]]
+id = "hamilsung"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Hip-hop march with harpsichord: boom-bap drums and a marching snare under a baroque harpsichord riff, string stabs, revolutionary swagger, 95 bpm, instrumental."
+
+[[track]]
+id = "kpdh"
+group = "location"
+model = "song"
+seconds = 60
+prompt = "Glossy modern Korean pop synth anthem: bright synth leads, huge sidechained pads, trap hi-hats, a stadium-sized chorus hook with a demon-hunting edge, 128 bpm, instrumental."

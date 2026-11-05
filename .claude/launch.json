@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "web", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev", "--prefix", "web"], "port": 5173 },
+    { "name": "dist", "runtimeExecutable": "npx", "runtimeArgs": ["--prefix", "web", "vite", "preview", "web", "--port", "4174", "--host", "127.0.0.1"], "port": 4174 }
+  ]
+}

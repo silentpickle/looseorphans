@@ -1,0 +1,71 @@
+# Settings only. No secrets: those live in secrets.env.
+
+[game]
+width = 640          # internal resolution, scaled by integers
+height = 360
+debug_chapter_skip = false   # when true, ?chapter=N jumps to a chapter
+# title and dedication come from cast.toml [game] (cast.local.toml for your own)
+maker = "Anonymous"              # "Made by ..." in the credits
+
+[difficulty]
+level = "easy"   # "easy" or "normal": easy keeps fights and minigames out of the way of the story
+
+[difficulty.easy]
+enemy_hp = 0.6               # enemies start with this share of their HP
+enemy_damage = 0.6           # and hit for this share of their damage (never below 1)
+encounter_rate = 0.5         # random fights happen this often
+encore_charge = 1.5          # Encore gauges fill this much faster
+minigame_window = 1.4        # timing sweet spots are this much wider (danger zones this much narrower)
+minigame_extra_lives = 1     # one more miss, crack or wrong pane allowed
+rhythm_pass = 0.8            # the rhythm pass mark is scaled by this
+
+[difficulty.normal]
+enemy_hp = 1.0
+enemy_damage = 1.0
+encounter_rate = 1.0
+encore_charge = 1.0
+minigame_window = 1.0
+minigame_extra_lives = 0
+rhythm_pass = 1.0
+
+[audio]
+music_volume = 0.55   # 0..1, each track's own level
+start_volume = 0.3    # the volume slider's starting point (0..1) until she moves it; it scales all sound
+fade_ms = 600          # crossfade between tracks
+
+[budget]
+pixellab_pictures_cap = 200   # hard stop; the runner refuses a batch that would cross it (the whole game)
+music_usd_cap = 5.0           # Lyria
+cutscenes_usd_cap = 25.0      # Gemini Omni (Veo's replacement)
+media_usd_cap = 10.0          # music + cutscenes + images together; your own ceiling
+
+[art]
+backdrop_width = 320          # painted map screens, shown at 2x
+backdrop_height = 180
+portrait_size = 128
+lpc_frame = 64
+palette_colors = 128          # one shared palette for every PixelLab picture; 48 greyed the purples and greens
+
+[media]
+# Gemini API prices, checked at https://aistudio.google.com/docs/pricing on 2026-11-02. Paid tier, USD.
+lyria_clip_usd = 0.04             # lyria-3-clip-preview: one 30 s clip
+lyria_song_usd = 0.08             # lyria-3.5: one full song (a couple of minutes)
+omni_tokens_per_second = 5792     # gemini-omni-1.1-flash output video at 720p
+omni_usd_per_million_tokens = 17.5
+omni_input_usd = 0.01             # allowance for the still and the prompt on every video call
+# gemini-nano-banana-2.1, checked at https://aistudio.google.com/docs/pricing on 2026-11-03: a 1K picture is
+# 1120 output tokens at $30 per million ($0.0336), plus the prompt and two reference images at $1.50 per million.
+image_usd = 0.04                  # one Nano Banana picture with its references, rounded up
+audio_bitrate_kbps = 96           # ogg (opus) and mp3 encodes
+loop_crossfade_seconds = 1.5      # tail folded over the head of every looping track
+sting_fade_seconds = 1.0          # fade-out at the end of every track that does not loop
+video_fps = 12                    # sprite-animation feel
+video_colors = 48                 # every frame quantized to this many colours
+pixel_width = 320                 # the pixel-art pass ...
+pixel_height = 180
+video_width = 640                 # ... shown at 2x in the encodes
+video_height = 360
+
+[secrets]
+pixellab_ai_secret = "PIXELLAB_AI_SECRET  # PixelLab art generation"
+gemini_api_key = "GEMINI_API_KEY  # Lyria music + Veo cutscenes"

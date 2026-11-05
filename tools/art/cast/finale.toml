@@ -1,0 +1,7 @@
+# The finale: Director Gwi in his suit. uv run python -m tools.art cast
+[[figure]]
+id = "npc_gwi"
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/white", "torso/jacket/collared/male/black",
+          "hair/parted/male/black"]

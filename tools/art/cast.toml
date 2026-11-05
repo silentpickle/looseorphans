@@ -1,0 +1,76 @@
+# The cast, composed from LPC layers back to front: uv run python -m tools.art cast
+# Each member is told apart at 64px by hair style and colour, a signature outfit colour, and a companion-animal cue.
+[source]
+repo = "sanderfrenken/Universal-LPC-Spritesheet-Character-Generator"
+ref = "675e21e04aaff8486a3a24e09573b3d5af9d28b9"
+
+[[figure]]
+id = "m1"   # Quokka Bard: fluffy black hair, sunny orange hoodie
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/orange", "hat/cloth/hood/adult/orange",
+          "hair/messy1/male/black"]
+
+[[figure]]
+id = "m2"   # Cat Ninja: neat parted black hair, all black, cat ears and tail
+layers = ["body/tail/cat/adult/bg/black", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/black", "head/ears/cat/adult_back/black",
+          "hair/parted/male/black", "head/ears/cat/adult_front/black"]
+
+[[figure]]
+id = "m3"   # Wolf Paladin: short curls, grey wolf hoodie, wolf ears
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/navy",
+          "torso/clothes/longsleeve/longsleeve/male/charcoal", "hat/cloth/hood/adult/gray",
+          "head/ears/wolf/adult_back/dark_gray", "hair/curly_short/adult/black",
+          "head/ears/wolf/adult_front/dark_gray"]
+
+[[figure]]
+id = "m4"   # Pictomancer: long black hair, white shirt
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/white", "hair/long/male/black"]
+
+[[figure]]
+id = "m5"   # Gym Monk: buzzcut, black sleeveless
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/sleeveless/laced/male/black", "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "m6"   # Sunshine White Mage: blond fringe, yellow shirt
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/tan",
+          "torso/clothes/longsleeve/longsleeve/male/yellow", "hair/bangsshort/male/blonde"]
+
+[[figure]]
+id = "m7"   # Puppy Scholar: dark brown fringe, sky blue shirt, floppy puppy ears
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/slate",
+          "torso/clothes/longsleeve/longsleeve/male/sky", "hair/bangs/male/dark_brown",
+          "head/ears/down/adult/light"]
+
+[[figure]]
+id = "m8"   # Fox Thief: chestnut bedhead, pink shirt, a fox-orange tail
+layers = ["body/tail/cat/adult/bg/carrot", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/pink", "hair/bedhead/male/chestnut"]
+
+# Chapter 1 NPCs
+
+[[figure]]
+id = "npc_woman"
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown", "feet/shoes/female/black", "legs/skirts/plain/female/red", "torso/clothes/blouse/female/white", "hair/long/female/black"]
+
+[[figure]]
+id = "npc_cop"
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/navy", "torso/jacket/collared/male/navy", "hair/bangsshort/male/black"]
+
+[[figure]]
+id = "npc_ajumma"
+layers = ["body/bodies/female/light", "head/heads/human/female/light", "eyes/human/adult/brown", "feet/shoes/female/brown", "legs/pants/female/purple", "torso/clothes/blouse/female/purple", "hair/curly_short/adult/gray"]
+
+[[figure]]
+id = "npc_jester"
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown", "feet/shoes2/male/red", "legs/pants/male/green", "torso/clothes/longsleeve/longsleeve/male/purple", "hair/spiked/male/purple"]
