@@ -9,7 +9,7 @@ the last choice, else `main`). Choosing a different adventure reloads the page; 
 | id | Title (default cast) | Status | Campaign | Content | Story bible | Art / media manifests | Budget |
 |---|---|---|---|---|---|---|---|
 | `main` | Loose Orphans: Legend of Minsung | done, art and media drawn | `web/src/campaigns/main.ts` | `web/src/data/chapters/` | `docs/story-bible.md` | `tools/art/pixellab.toml`, `tools/art/cast.toml` + `cast/ch*.toml`, `tools/media/*.toml` | `config.toml [budget.main]` |
-| `stay` | The L-Team | playable; art, music and 6 of 7 cutscenes drawn; title backdrop to redo | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
+| `stay` | The L-Team | done: art, music and 6 of 7 cutscenes drawn | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
 
 `main` keeps the folders it had before there were adventures; every later adventure uses the `adventures/<id>/`
 layout below.
@@ -60,12 +60,11 @@ Each step ends on its **done when**. Work them in order; the human approves at s
     credits looks right, the console is clean, and the table above shows the adventure's status.
 
 ## The L-Team's art and media
-Drawn on 2026-11-05: 48 PixelLab pictures, 8 Nano Banana crew portraits, 5 Lyria tracks (ledgers in `docs/`).
+Drawn on 2026-11-05: 48 PixelLab pictures (53 with redraws), 8 Nano Banana crew portraits, 5 Lyria tracks (ledgers in `docs/`).
 Then 6 of 7 cutscenes ($3.78). Gemini Omni refused `stay_crew` twice ("prohibited content", nothing charged), so
 the crew reveal plays as its still with the slow zoom and `ch1.ts` names no video for it. To try again, soften the
 still or its prompt in `tools/media/adventures/stay/cutscenes.toml`, dry-run, ask, then put `video: "stay_crew"` back.
 The guard portraits `stay_kim` and `stay_kang` were hand-recoloured to drop collar insignia (`docs/art-notes.md`).
 Map grids were fitted to the painted backdrops on 2026-11-05. The van in the garage and the helicopter on the pad
 are painted in, so their NPCs are `hotspot: true` (talked to, not drawn).
-**Open:** `title/stay_title` has nonsense lettering and an empty frame painted into it. Its prompt now rules that out;
-it redraws once its PNG is deleted (1 picture).
+The title backdrop was redrawn once to drop painted lettering (53 PixelLab pictures in all).

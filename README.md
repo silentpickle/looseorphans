@@ -180,7 +180,7 @@ Honestly, this is the easy part. The L-Team was made this way, and it's the most
    plays the adventure through to check it.
 5. **Set the budget when it asks.** Before spending anything it runs the dry runs and shows how many pictures and how
    many dollars of music, cutscenes and portraits it wants. Nothing is generated until you say yes, and each adventure
-   gets its own caps in `config.toml [budget.<id>]`. For scale, the whole L-Team cost 52 PixelLab pictures and about
+   gets its own caps in `config.toml [budget.<id>]`. For scale, the whole L-Team cost 53 PixelLab pictures and about
    $4.50 of Gemini (music, portraits, six cutscenes).
 
 Then pick your adventure on the *Choose an adventure* screen. Keep the house rules in mind: fictional names in the

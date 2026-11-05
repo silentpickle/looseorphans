@@ -50,3 +50,4 @@
 | 2026-11-05 | portraits/stay_kang | 128x128 | 1 | pixen | stay |
 | 2026-11-05 | portraits/stay_kim | 128x128 | 1 | pixen | stay |
 | 2026-11-05 | title/stay_logo | 256x96 | 1 | pixen | stay |
+| 2026-11-05 | title/stay_title | 320x180 | 1 | pixen | stay |
