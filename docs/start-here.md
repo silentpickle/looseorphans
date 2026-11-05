@@ -30,6 +30,10 @@ first setup. After that, a new scene takes minutes and a whole adventure takes a
 | Free art with no account | character sprites are built from free LPC parts; anything not drawn yet shows as a simple placeholder | free |
 | Music, cutscenes, portraits (Google Gemini API) | none for these models: they need billing turned on | the L-Team used about $4.50 for 5 songs, 8 portraits and 6 cutscenes |
 
+**No endorsement:** PixelLab and Gemini are just what this project happened to use. Gemini is here because it's
+"ok" and it's the most widely available option, not because it's the best or because anyone sponsors this. Any tool
+that makes pictures, music or video files can stand in. Claude can help you switch.
+
 ### "Gemini" means two different things
 
 People say "Gemini" for two separate products with separate billing. This project only uses the second one.

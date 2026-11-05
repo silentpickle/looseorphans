@@ -133,6 +133,11 @@ as chaste as the original. Member ids (`m1` to `m8`) never change, so art, saves
 | Extra pictures from reference photos | Nano Banana on the Gemini API | `tools/media/` (`images.toml`; the L-Team's crew portraits) | Counts toward the media cap |
 | Game | Phaser 3, TypeScript, Vite; maps are an ASCII grid over a painted backdrop, no tilesets | `web/` | Free |
 
+**No endorsement.** These services are what I happened to use, not recommendations. Personally I don't love Gemini;
+it's here because it's "ok", and because its API is the best industrial-grade option a lot of people can get to
+cheaply or for free. Nobody sponsors this project. Any tool that makes a PNG, an MP3 or an MP4 can replace one of
+these: the game only reads the files.
+
 The working rules that made it affordable and repeatable:
 
 - **Dry run first.** Every runner prints what it would make and what it would cost, and does nothing until you add
