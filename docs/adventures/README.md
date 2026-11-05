@@ -9,7 +9,7 @@ the last choice, else `main`). Choosing a different adventure reloads the page; 
 | id | Title (default cast) | Status | Campaign | Content | Story bible | Art / media manifests | Budget |
 |---|---|---|---|---|---|---|---|
 | `main` | Loose Orphans: Legend of Minsung | done, art and media drawn | `web/src/campaigns/main.ts` | `web/src/data/chapters/` | `docs/story-bible.md` | `tools/art/pixellab.toml`, `tools/art/cast.toml` + `cast/ch*.toml`, `tools/media/*.toml` | `config.toml [budget.main]` |
-| `stay` | The L-Team | done: pictures, portraits, music and 6 of 7 cutscenes drawn | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
+| `stay` | The L-Team | playable; art, music and 6 of 7 cutscenes drawn; map grids not yet fitted to the backdrops | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
 
 `main` keeps the folders it had before there were adventures; every later adventure uses the `adventures/<id>/`
 layout below.
@@ -24,24 +24,40 @@ layout below.
 - One volume setting. Saves are per adventure (`saveKey`).
 
 ## Add an adventure (checklist)
-1. **Story first.** `docs/adventures/<id>/story-bible.md`: premise, tone rules, cast roles, chapters. Read
-   `docs/story-bible.md` and `docs/voice.md`; the eight sound the same everywhere.
-2. **Words.** New names, codenames and catchphrases as `<id>_*` keys in `cast.toml [terms]`, with fictional
-   defaults. Tell the maintainer which keys to override in their own `cast.local.toml`.
-3. **Chapters.** `web/src/data/adventures/<id>/ch1.ts` ... each exporting `CHAPTER` (shape: `web/src/data/types.ts`;
-   copy `web/src/data/adventures/stay/ch1.ts`). Chapter ids, enemy ids and item ids carry the adventure id
-   (`stay1`, `stay_goose`). An `index.ts` beside them lists the play order.
-4. **Campaign.** `web/src/campaigns/<id>.ts` (copy `stay.ts`): its own `id`, `saveKey`, meter and credits.
-5. **Register it.** One entry in `ADVENTURES` in `web/src/campaigns/index.ts` (blurb and card art), and one in
-   `CAMPAIGNS` in `web/tests/campaigns.ts`. The content, reachability, text-fit and meter tests then cover it.
-6. **Budget.** A `[budget.<id>]` table in `config.toml` (copy `[budget.stay]`). The human sets the numbers.
-7. **Manifests.** `tools/art/adventures/<id>/pixellab.toml`, `tools/art/cast/<id>.toml` (free LPC figures),
-   `tools/media/adventures/<id>/{music,cutscenes,images}.toml`. Prompts: no real names, bands, songs or shows.
-8. **Dry runs, then ask.** `uv run python -m tools.art pictures --adventure <id>` and
-   `uv run python -m tools.media music|cutscenes|image --adventure <id>`. Show the human the count and cost; add
-   `--run` (with `uv run --env-file secrets.env`) only after a yes. Stills before cutscenes: a clip animates its still.
-9. **Play it.** `scripts/hygiene.sh`, then the `web` preview: pick it on the select screen and play to the credits
-   (`web/qa/driver.js` can drive it with `?qa=1`). Keep the browser muted (volume slider to 0).
+Each step ends on its **done when**. Work them in order; the human approves at steps 1 and 8.
+
+1. **Clarify.** Ask the human a few questions (tone, who's in the party, how it ends, length, anything touching a
+   real person or institution), then show a short plan: chapters, minigames, bosses, what gets generated. Done when
+   the human approves the plan.
+2. **Story.** `docs/adventures/<id>/story-bible.md` (copy `stay/`'s): premise, tone rules, cast roles, chapters. Done
+   when every chapter has its maps, minigame, boss and story beat.
+3. **Words.** New names, codenames and catchphrases as `<id>_*` keys in `cast.toml [terms]`, fictional defaults only.
+   Done when no real name sits in a committed file, and the human has the `cast.local.toml` lines for theirs.
+4. **Chapters.** `web/src/data/adventures/<id>/ch1.ts` ... each exporting `CHAPTER` (shape: `web/src/data/types.ts`;
+   copy `web/src/data/adventures/stay/ch1.ts`), plus `index.ts` with the play order and `shared.ts` for music cues,
+   costumes and portraits. Chapter, enemy and item ids carry the adventure id (`stay1`, `stay_goose`). A map reusing
+   another adventure's backdrop reuses its grid too. Done when the content tests pass (step 6).
+5. **Campaign.** `web/src/campaigns/<id>.ts` (copy `stay.ts`): its own `id`, `saveKey`, meter and credits.
+6. **Register.** One entry in `ADVENTURES` (`web/src/campaigns/index.ts`) and one in `CAMPAIGNS`
+   (`web/tests/campaigns.ts`). Done when `scripts/hygiene.sh` passes: the content, reachability, text-fit and meter
+   tests now cover every chapter.
+7. **Play it with stand-ins.** Missing art draws as placeholder colours and boxes, so the adventure is playable
+   before anything is generated. Done when it plays from the menu to the credits (see CLAUDE.md, "Seeing the game").
+8. **Manifests, dry runs, ask.** `tools/art/adventures/<id>/pixellab.toml`, `tools/art/cast/<id>.toml` (LPC figures,
+   free: `uv run python -m tools.art cast`), `tools/media/adventures/<id>/{music,cutscenes,images}.toml`; ids
+   prefixed `<id>_`, and no id in two groups. Add `[budget.<id>]` to `config.toml`. Dry-run every runner with
+   `--adventure <id>`, show the counts and costs, and ask. Check the keys with `test -e secrets.env` (never open it).
+   Done when the human says yes.
+9. **Generate.** Pictures, music and portraits first; cutscenes last, since each clip animates its still. Run clips
+   one at a time (`--only <clip>`): a Gemini "prohibited content" refusal stops the batch but costs nothing. A
+   refused clip keeps its still; drop its `video` from the chapter.
+10. **Review.** `uv run python -m tools.art palette --only <id>_`, then `manifest`, then `sheets`, and look at every
+    contact sheet in `reports/art/`. Flag any picture with lettering, real-looking insignia, flags or logos, or the
+    wrong costume; the human deletes it, and you redraw it after a dry run. A small local pixel fix is fine instead of
+    a paid retry; record it in `docs/art-notes.md`. Done when every sheet has been looked at and every flag resolved.
+11. **Fit and wire.** Fit every map's grid to its painted backdrop (people on floor, walls on furniture), point the
+    music cues at the new tracks, and add portrait overrides to `speakers`. Done when a muted playthrough to the
+    credits looks right, the console is clean, and the table above shows the adventure's status.
 
 ## The L-Team's art and media
 Drawn on 2026-11-05: 48 PixelLab pictures, 8 Nano Banana crew portraits, 5 Lyria tracks (ledgers in `docs/`).
@@ -49,3 +65,6 @@ Then 6 of 7 cutscenes ($3.78). Gemini Omni refused `stay_crew` twice ("prohibite
 the crew reveal plays as its still with the slow zoom and `ch1.ts` names no video for it. To try again, soften the
 still or its prompt in `tools/media/adventures/stay/cutscenes.toml`, dry-run, ask, then put `video: "stay_crew"` back.
 The guard portraits `stay_kim` and `stay_kang` were hand-recoloured to drop collar insignia (`docs/art-notes.md`).
+**Open:** step 11's grid fit. The L-Team's map grids (except the dorm, which reuses the first game's) were written
+before their backdrops were painted, so people may stand on painted furniture. Fit each grid in `ch1.ts`–`ch5.ts` to
+its backdrop, then replay.
