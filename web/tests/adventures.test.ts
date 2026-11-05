@@ -5,6 +5,7 @@ import { ADVENTURES, DEFAULT_ADVENTURE, adventureById } from "../src/campaigns/i
 
 const MAIN = "main";
 const UNKNOWN = "no-such-adventure";
+const TITLE_ROW = 32; // characters of 14 px text that fit the select list beside the cursor
 const OTHER = ADVENTURES.at(-1)?.campaign.id ?? MAIN;
 
 describe("choosing an adventure", () => {
@@ -21,11 +22,14 @@ describe("choosing an adventure", () => {
   it("ignores an unknown id in the address and in memory", () => {
     expect(chooseAdventure(`?adventure=${UNKNOWN}`, UNKNOWN)).toBe(DEFAULT_ADVENTURE);
   });
-  it("gives every adventure its own id, save and volume key", () => {
+  it("gives every adventure its own id and save (the volume is one setting for them all)", () => {
     const ids = ADVENTURES.map((a) => a.campaign.id);
     const saves = ADVENTURES.map((a) => a.campaign.saveKey);
-    const volumes = ADVENTURES.map((a) => a.campaign.volumeKey);
-    for (const list of [ids, saves, volumes]) expect(new Set(list).size).toBe(list.length);
+    for (const list of [ids, saves]) expect(new Set(list).size).toBe(list.length);
     for (const id of ids) expect(adventureById(id)?.campaign.id).toBe(id);
+  });
+  it("fits every title on one row of the select list", () => {
+    for (const { campaign } of ADVENTURES)
+      expect(campaign.settings.title.length).toBeLessThanOrEqual(TITLE_ROW);
   });
 });

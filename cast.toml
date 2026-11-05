@@ -27,6 +27,18 @@ sk_m3_b = "Rolling Thunder"
 sk_m4_b = "East Wind"
 en_m1 = "Chef's Special"
 en_m7 = "Long Walk"
+# The second adventure (docs/adventures/stay/story-bible.md): the crew's name, codenames and catchphrases.
+stay_team = "the L-Team"          # the crew's name, as said in a sentence
+stay_meter = "Plan Meter"         # that adventure's story meter
+stay_catch = "Don't you love it when a plan snaps shut?"   # the planner's catchphrase
+stay_fool = "I got no time for fools."                     # the muscle's
+stay_m1 = "Cheeks"                # the heart (quokka)
+stay_m3 = "Hannidae"              # the planner (wolf)
+stay_m4 = "Faceret"               # the face (ferret)
+stay_m5 = "Boom-Bo"               # the builder (pig)
+stay_m6 = "B.A. Lioxus"           # the muscle and the driver (chick)
+stay_m7 = "Howlin' Jun"           # the pilot (puppy)
+stay_m8 = "Nico Nimble"           # the vents (fox)
 
 # name: shown everywhere; nick, given, initial: the nickname, the private first name and its initial used in notes;
 # pet: the companion character that trots after the member.

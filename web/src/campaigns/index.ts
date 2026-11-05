@@ -2,6 +2,7 @@
 // here plus its own campaign file; docs/adventures/README.md is the checklist.
 import { fmtDeep } from "../cast";
 import { CAMPAIGN as MAIN } from "./main";
+import { CAMPAIGN as STAY } from "./stay";
 import type { Campaign } from "./types";
 
 export interface Adventure {
@@ -17,6 +18,12 @@ export const ADVENTURES: readonly Adventure[] = fmtDeep([
     campaign: MAIN,
     blurb: "Eight idols flung across the Dramaverse. One rooftop confession, interrupted for 70 minutes.",
     card: MAIN.title.backdrop,
+  },
+  {
+    campaign: STAY,
+    blurb:
+      "Early 2027. {m2} is in a training camp in the pines. Seven idols, seven onesies, one van, no plan.",
+    card: STAY.title.backdrop,
   },
 ]);
 

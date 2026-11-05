@@ -1,5 +1,6 @@
 // The game with the tables its build has, so the whole-content tests check every chapter.
 import { CAMPAIGN as MAIN } from "../src/campaigns/main";
+import { CAMPAIGN as STAY } from "../src/campaigns/stay";
 import type { Campaign } from "../src/campaigns/types";
 import { speakerTable } from "../src/data/art";
 import { enemyTable } from "../src/data/enemies";
@@ -17,7 +18,7 @@ export interface ChapterIn extends CampaignTables {
   chapter: Chapter;
 }
 
-export const CAMPAIGNS: readonly CampaignTables[] = [MAIN].map((campaign) => ({
+export const CAMPAIGNS: readonly CampaignTables[] = [MAIN, STAY].map((campaign) => ({
   campaign,
   enemies: enemyTable(campaign.chapters),
   items: itemTable(campaign.chapters),
