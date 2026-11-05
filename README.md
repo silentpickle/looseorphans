@@ -7,6 +7,8 @@ generated cutscenes, and every spend capped and logged.
 
 **TL;DR**
 
+- **New to coding?** Start with [`docs/start-here.md`](docs/start-here.md): set up, make it yours and build an
+  adventure by talking to Claude, with honest costs and free options.
 - **Two games in one:** *Legend of Minsung* (the 70-minute drama RPG) and *The L-Team* (a 45-minute caper: seven
   idols in onesies spring the eighth from army camp). Pick one on the **Choose an adventure** screen.
 - **Play:** `cd web && npm install && npm run dev`, open http://127.0.0.1:5173. Add `?adventure=stay` to jump straight
@@ -201,6 +203,11 @@ You don't need pixellab if you have a different way to generate art, but I will 
 |---|---|---|
 | `PIXELLAB_AI_SECRET` | PixelLab art | Create an account at [pixellab.ai](https://pixellab.ai) and open its API / API keys section to generate a token. The menu name has changed over time and I could not confirm it from PixelLab's own docs on 2026-11-05, so look for "API". It is sent as `Authorization: Bearer ...` to `https://api.pixellab.ai/v2`. |
 | `GEMINI_API_KEY` | Lyria music, Gemini Omni cutscenes, Nano Banana pictures | Sign in to [Google AI Studio](https://aistudio.google.com/apikey), choose "Create API key", pick or create a project, and copy the key (it usually starts with `AIza`). Generation is paid: set up billing and check the [pricing page](https://aistudio.google.com/docs/pricing). |
+
+**The Gemini app is not the Gemini API.** A Gemini subscription (Google AI Plus or Pro, the chatbot at
+gemini.google.com, including the free student offer) gives no API credit. The tools here need an API key from Google
+AI Studio with billing turned on. PixelLab offers a small free trial, enough for a handful of key pictures; check
+its site for the current numbers.
 
 **Where to put them.** One file at the repo root, which git ignores:
 
