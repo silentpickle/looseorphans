@@ -1,5 +1,8 @@
-secrets.env
-.env
+# secrets: the file, any copy or backup of it (secrets.env.bak, secrets.env.txt from a text editor), any .env
+secrets.env*
+*.env
+.env*
+!docs/secrets.env.example
 .venv/
 __pycache__/
 .pytest_cache/

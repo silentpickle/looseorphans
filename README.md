@@ -218,14 +218,28 @@ no secret and is committed.
 uv run --env-file secrets.env python -m tools.art pictures --run --only portraits
 ```
 
-**Keeping them safe.**
+**Keeping them safe.** Several locks, so one slip doesn't leak a key:
 
-- `.gitignore` lists `secrets.env`, `.env` and `cast.local.toml` from the first commit.
-- A test (`tests/test_repo_secrets.py`) fails the commit if one of those files is tracked, or if a tracked file holds a
-  key-shaped string. The pre-commit hook and CI both run it.
-- Never paste a key into a prompt, an issue, a chat with an AI helper, or a screenshot. If one leaks, revoke it at
-  the provider right away and create a new one; deleting the file from git history is not enough.
-- The caps in `config.toml [budget]` bound what a batch can spend, and the dry run shows the cost before you commit.
+| Layer | What it stops | Set up |
+|---|---|---|
+| `.gitignore` | `secrets.env`, any copy of it (`secrets.env.txt` from a text editor, `.bak`), any `.env`, `cast.local.toml` | automatic |
+| Key-value scan (`tools/secrets_scan.py`) | your **actual** keys, pasted anywhere in a file you're about to commit or in the built site, whatever they look like | runs in every commit check |
+| Shape test (`tests/test_repo_secrets.py`) | anything shaped like a Google key or a `NAME_KEY=...` line, and any secrets file that got tracked | runs in every commit check |
+| Commit check (`.githooks/pre-commit`) | a commit that fails any of the above | switched on by `npm install` in `web/` |
+| Agent guard (`.claude/settings.json`) | an AI agent opening, printing, searching or copying `secrets.env`; it may only hand it to a runner | automatic in Claude Code |
+
+**Steps only you can take:**
+
+1. **Cap the spend at the provider.** In Google Cloud, set a budget alert on the key's project, and use
+   *API restrictions* to allow the key the Generative Language API only. PixelLab is prepaid credit, so only buy
+   what you're happy to lose. If you're under 18, have a parent or guardian own the billing.
+2. **On GitHub, turn on secret scanning and push protection** (repo Settings, then Code security). These are free for
+   public repos, and GitHub refuses a push that contains a known key format.
+3. **Never paste a key** into a prompt, an issue, Discord, a chat with an AI helper, or a screenshot.
+4. **If one leaks anyway, revoke it at the provider right away** and make a new one. Deleting the file, or even
+   rewriting git history, doesn't take back a key someone already copied.
+
+The caps in `config.toml [budget.<id>]` bound what each batch can spend, and the dry run shows the cost first.
 
 ## Prompts
 

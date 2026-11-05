@@ -27,9 +27,25 @@ def tracked_files() -> list[Path]:
     return [ROOT / name for name in listing.stdout.split("\0") if name]
 
 
+TEMPLATE = "secrets.env.example"
+
+
+def is_secret_file(name: str) -> bool:
+    """A secrets file, a copy of one (secrets.env.bak, secrets.env.txt) or a .env file; the template is not."""
+    return name != TEMPLATE and (name in NEVER_TRACKED or name.startswith("secrets.env") or name.endswith(".env"))
+
+
 def test_secret_files_are_not_tracked() -> None:
-    names = {path.name for path in tracked_files()}
-    assert not names & NEVER_TRACKED
+    assert not [path.name for path in tracked_files() if is_secret_file(path.name)]
+
+
+@pytest.mark.parametrize(
+    ("name", "secret"),
+    [("secrets.env", True), ("secrets.env.txt", True), ("prod.env", True), (TEMPLATE, False), ("cast.toml", False)],
+    ids=["S1_secrets_file", "S2_editor_copy", "S3_other_env", "S4_template_allowed", "S5_ordinary_file"],
+)
+def test_is_secret_file(name: str, secret: bool) -> None:
+    assert is_secret_file(name) is secret
 
 
 @pytest.mark.parametrize("shape", KEY_SHAPES, ids=["google_key", "named_secret"])

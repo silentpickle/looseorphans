@@ -25,6 +25,8 @@ It lists every adventure, its folders and its budget table.
   `secrets.env` (a template is `docs/secrets.env.example`). Never ask for a key in chat, and never put one in code,
   config, a prompt or a commit message.
 - Run tools with `uv run --env-file secrets.env python -m tools.art ...` so a key only reaches the process that needs it.
+- A hook (`.claude/settings.json`, `tools/secrets_guard.py`) denies any shell command whose text names that file,
+  except `--env-file` and `test -e`. To edit a source file that mentions it, use the file-editing tool, not a shell.
 
 ## Rules of the road
 - **Budgets.** Each adventure has its own caps in `config.toml [budget.<id>]`; every runner takes `--adventure <id>`

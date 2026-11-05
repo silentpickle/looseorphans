@@ -3,6 +3,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+echo "== secrets"
+uv run python -m tools.secrets_scan --also web/dist
+
 echo "== python"
 uv run ruff check .
 uv run ruff format --check .
