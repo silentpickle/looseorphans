@@ -23,16 +23,18 @@ generated cutscenes, and every spend capped and logged.
 > from prompts that name only genres, instruments and moods. Do not add any, and do not put a real person's,
 > artist's, band's, song's or show's name into a generation prompt. See [Disclaimer](#disclaimer).
 
-- [Play it](#play-it)
-- [Run it yourself](#run-it-yourself)
-- [Make it yours: the cast file](#make-it-yours-the-cast-file)
-- [How it was made](#how-it-was-made)
-- [API keys: a short how-to](#api-keys-a-short-how-to)
-- [Prompts](#prompts)
-- [Agent and MCP setup](#agent-and-mcp-setup)
-- [Repo layout](#repo-layout)
-- [Checks](#checks)
-- [Disclaimer](#disclaimer)
+- [Loose Orphans: Legend of Minsung](#loose-orphans-legend-of-minsung)
+  - [Play it](#play-it)
+  - [Run it yourself](#run-it-yourself)
+    - [Publish your own copy](#publish-your-own-copy)
+  - [Make it yours: the cast file](#make-it-yours-the-cast-file)
+  - [How it was made](#how-it-was-made)
+  - [API keys: a short how-to](#api-keys-a-short-how-to)
+  - [Prompts](#prompts)
+  - [Agent and MCP setup](#agent-and-mcp-setup)
+  - [Repo layout](#repo-layout)
+  - [Checks](#checks)
+  - [Disclaimer](#disclaimer)
 
 ## Play it
 
@@ -160,9 +162,11 @@ uv run python -m tools.media cutscenes                      # dry run for the cu
 
 ## API keys: a short how-to
 
-**Why.** The game itself needs no keys; players and Pages visitors never see one. Keys are only for the *tools* that
+**Why.** Keys are only for the *tools* that
 draw new pictures (PixelLab) or make new music, cutscenes and extra pictures (the Gemini API). If you only want to play,
-change the cast, or edit the story, skip this section.
+change the cast, or edit the story, skip this section.  If you want to bust-out claude/openai and make your own, read-on.
+
+You don't need pixellab if you have a different way to generate art, but I will suggest that having an LLM generate art itself is heartache, pain, and quota drain.
 
 **Which keys, and where to get them.** The two names are listed in [`config.toml`](config.toml) `[secrets]`:
 
