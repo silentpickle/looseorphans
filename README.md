@@ -34,6 +34,14 @@ important. A demon executive, Director Gwi, enforces the Dating Ban Contract, sh
 songs, and flings all eight members into pocket worlds that each wink at a famous drama. To get home they must win back
 seven Lightstick Shards. The full outline is in [`docs/story-bible.md`](docs/story-bible.md).
 
+**A second adventure: The L-Team.** A shorter caper on the same engine (about 45 minutes). Early 2027, one member is
+doing his military service at a fictional camp in the pines, and the other seven, in plush animal onesies and a yellow
+van, decide to break him out. Outline: [`docs/adventures/stay/story-bible.md`](docs/adventures/stay/story-bible.md).
+
+**Choosing an adventure.** After loading, the game shows *Choose an adventure*; the title screen's **Adventures** row
+goes back to it. A link can skip the menu: `?adventure=main` or `?adventure=stay`. The game remembers your last
+choice. Every adventure is listed in [`docs/adventures/README.md`](docs/adventures/README.md).
+
 **Controls**
 
 | Action | Keyboard | Touch / mouse |
@@ -43,8 +51,9 @@ seven Lightstick Shards. The full outline is in [`docs/story-bible.md`](docs/sto
 | Back, cancel | X or Esc | B button |
 | Pick a target in battle | Arrows, then confirm | Click or tap the enemy |
 
-**Saving.** The game saves in your browser (`localStorage`), under the keys `legend-minsung.save` and
-`legend-minsung.volume`. Clearing site data clears the save. There is no account and nothing leaves your machine.
+**Saving.** The game saves in your browser (`localStorage`): one save per adventure (`legend-minsung.save`,
+`legend-minsung.stay.save`), one volume (`legend-minsung.volume`) and the last adventure chosen
+(`loose-orphans.adventure`). Clearing site data clears the save. There is no account and nothing leaves your machine.
 
 **Difficulty.** The game starts on `easy` (fewer random fights, softer enemies, wider minigame windows) because the
 story is the point. Switch to `normal` by editing `level` in [`config.toml`](config.toml) `[difficulty]`; every number
@@ -92,7 +101,8 @@ cd web && npm run dev
 ```
 
 `cast.local.toml` is merged over `cast.toml` key by key, so a short file works. `CAST_DEFAULTS=1 npm test` ignores it
-and tests the defaults. Make the game about people who know you made it and are happy about it, and keep the romance
+and tests the defaults. The L-Team's codenames and catchphrases are keys of their own (`stay_team`, `stay_m3`,
+`stay_catch` and so on, in `[terms]`). Make the game about people who know you made it and are happy about it, and keep the romance
 as chaste as the original. Member ids (`m1` to `m8`) never change, so art, saves and tests stay valid.
 
 ## How it was made
@@ -104,7 +114,7 @@ as chaste as the original. Member ids (`m1` to `m8`) never change, so art, saves
 | One shared palette | Quantizer over every picture | `tools/art/palette.py` | Free |
 | Soundtrack | Lyria on the Gemini API | `tools/media/` (`music.toml`) | Dollar caps |
 | Cutscenes | Gemini Omni, image-to-video from the stills, then an ffmpeg pixel pass | `tools/media/` (`cutscenes.toml`) | Dollar caps |
-| Extra pictures from reference photos | Nano Banana on the Gemini API | `tools/media/` (`images.toml`, empty here) | Counts toward the media cap |
+| Extra pictures from reference photos | Nano Banana on the Gemini API | `tools/media/` (`images.toml`; the L-Team's crew portraits) | Counts toward the media cap |
 | Game | Phaser 3, TypeScript, Vite; maps are an ASCII grid over a painted backdrop, no tilesets | `web/` | Free |
 
 The working rules that made it affordable and repeatable:
@@ -184,6 +194,8 @@ The prompts that made the game are all in the repo, and the lessons behind them 
 - **Music:** `tools/media/music.toml`: genres, instruments, mood and tempo; no names of any artist, band, song or show.
 - **Cutscenes:** `tools/media/cutscenes.toml`: the motion to add to a still, in a sentence or two.
 - **Sprites:** `tools/art/cast.toml`: not prompts but a list of LPC layers per character.
+- **The L-Team:** the same files under `tools/art/adventures/stay/` and `tools/media/adventures/stay/` (plus
+  `images.toml` for the Nano Banana portraits), and `tools/art/cast/stay.toml` for the onesies.
 
 The shortest useful lessons: ask for "completely empty ... nothing on the ground and no people" so you can place the
 characters yourself; fix the camera ("steeply down", "side view"); end every prompt with the same style sentence; keep
@@ -212,14 +224,16 @@ which checks must pass.
 web/                 the game: Vite + TypeScript + Phaser 3
   src/scenes/        title, overworld, dialogue, battle, minigame, cutscene, credits
   src/systems/       battle, encore (limit break), meter, status, save, state
+  src/campaigns/     one file per adventure, the registry (index.ts) and the active pick (active.ts)
   src/data/          the story as typed data: chapters, members, skills, enemies
+  src/data/adventures/<id>/   a later adventure's chapters (the first game's are in src/data/chapters/)
   src/cast.ts        fills {tokens} from cast.toml
   public/assets/     pictures, sprites, music, video
 tools/art/           PixelLab runner, LPC composer, palette quantizer
 tools/media/         Lyria music, Gemini Omni cutscenes, Nano Banana pictures, ffmpeg post
 config.toml          every setting and budget cap (no secrets)
 cast.toml            names, pets and in-jokes (fictional defaults)
-docs/                design notes, story bible, prompts, licences
+docs/                design notes, story bible, prompts, licences; docs/adventures/ indexes the adventures
 scripts/hygiene.sh   every check, run by the pre-commit hook and CI
 ```
 
