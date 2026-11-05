@@ -237,10 +237,11 @@ export class OverworldScene extends Phaser.Scene {
     this.refreshActors();
   }
 
-  /** A person is an LPC figure; a pictured NPC (a cat on a step) is a still image. */
+  /** A person is an LPC figure; a pictured NPC (a cat on a step) is a still image; a hotspot draws nothing. */
   private npcSprite(npc: Npc, cell: Cell): Phaser.GameObjects.Sprite {
     if (npc.figure !== undefined) return this.figureSprite(npc.figure, cell, npc.facing ?? "down");
     const { x, y } = cellCenter(cell);
+    if (npc.hotspot === true) return this.add.sprite(x, y, SPARK_KEY).setAlpha(0); // painted into the backdrop
     const drawn = npc.image !== undefined && this.textures.exists(npc.image);
     const sprite = this.add
       .sprite(x, y, drawn ? (npc.image ?? SPARK_KEY) : SPARK_KEY)

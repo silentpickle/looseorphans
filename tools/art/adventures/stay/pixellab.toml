@@ -460,7 +460,7 @@ width = 320
 height = 180
 seed = 2155
 view = "side"
-prompt = "pixel art title screen of a yellow delivery van with a steel rabbit grille parked on a hill above a pine valley at sunrise, seven small silhouettes in animal onesies with ears on their hoods standing on the van's roof, empty space in the upper middle for a logo, clean 16-bit JRPG pixel art, flat lighting"
+prompt = "pixel art title screen of a yellow delivery van with a steel rabbit grille parked on a hill above a pine valley at sunrise, seven small silhouettes in animal onesies with ears on their hoods standing on the van's roof, open sky in the upper left, absolutely no text, no letters, no signs, no frames or boxes, clean 16-bit JRPG pixel art, flat lighting"
 
 [[piece]]
 id = "stay_logo"

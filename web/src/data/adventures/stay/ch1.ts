@@ -23,19 +23,19 @@ const GARAGE_GRID: readonly string[] = [
   "####################",
   "####################",
   "####################",
-  "#####..........#####",
-  "####.....V......####",
-  "####............####",
-  "###..............###",
-  "###..O...........###",
-  "##................##",
-  "##................##",
-  "##.......<........##",
+  "####################",
+  "####################",
+  "#########V.......###",
+  "####.............###",
+  "######O..........###",
+  "###...............##",
+  "###...............##",
+  "#####...<.##########",
 ];
 
 const DORM_SPAWN = { x: 10, y: 9 };
 const DORM_FROM_GARAGE = { x: 9, y: 5 };
-const GARAGE_SPAWN = { x: 10, y: 8 };
+const GARAGE_SPAWN = { x: 9, y: 8 };
 const CREW_READY = "rec_m6&rec_m4&rec_m7&rec_m8";
 const SMALL = 48;
 const MEDIUM = 64;
@@ -169,6 +169,7 @@ export const CHAPTER: Chapter = {
           id: "van",
           name: "The Banana Van",
           image: VAN_IMAGE,
+          hotspot: true, // the van is painted into the garage
           glyph: "V",
           dialogue: "van",
           variants: [{ when: "minigame:stay_jump_start:won", dialogue: "van_running" }],

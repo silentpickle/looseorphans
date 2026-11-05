@@ -128,6 +128,8 @@ export interface Npc {
   figure?: string;
   /** A still picture's texture key (a cat on a step), for an NPC that isn't a person. */
   image?: string;
+  /** True when the thing is already painted into the backdrop (a parked van): you talk to it, nothing is drawn. */
+  hotspot?: boolean;
   glyph: string;
   dialogue: string;
   variants?: readonly Variant[];
