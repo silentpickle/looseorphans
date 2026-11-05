@@ -12,7 +12,7 @@ generated cutscenes, and every spend capped and logged.
 - **Play:** `cd web && npm install && npm run dev`, open http://127.0.0.1:5173. Add `?adventure=stay` to jump straight
   into the L-Team. Saves stay in your browser; no account, no keys.
 - **Make it yours:** copy `cast.toml` to `cast.local.toml` and change the names ([how](#make-it-yours-the-cast-file)).
-- **Add a third adventure:** follow the checklist in [`docs/adventures/README.md`](docs/adventures/README.md).
+- **Add your own adventure:** hand a premise to an AI coding agent with this repo open ([how](#make-your-own-adventure)).
 - **Make new art or music:** needs API keys in `secrets.env` ([how](#api-keys-a-short-how-to)); every tool dry-runs
   and shows the cost first.
 
@@ -29,6 +29,7 @@ generated cutscenes, and every spend capped and logged.
     - [Publish your own copy](#publish-your-own-copy)
   - [Make it yours: the cast file](#make-it-yours-the-cast-file)
   - [How it was made](#how-it-was-made)
+  - [Make your own adventure](#make-your-own-adventure)
   - [API keys: a short how-to](#api-keys-a-short-how-to)
   - [Prompts](#prompts)
   - [Agent and MCP setup](#agent-and-mcp-setup)
@@ -159,6 +160,32 @@ uv run python -m tools.media music                          # dry run for the so
 uv run --env-file secrets.env python -m tools.media music --run --only title
 uv run python -m tools.media cutscenes                      # dry run for the cutscenes
 ```
+
+## Make your own adventure
+
+Honestly, this is the easy part. The L-Team was made this way, and it's the most fun part of the project.
+
+1. **Get the repo onto your machine:** clone or download it.
+2. **Set up your API keys** so the agent can make art, music and cutscenes ([next section](#api-keys-a-short-how-to)).
+   You can skip this at first. Without keys the agent still writes a playable adventure, with stand-in boxes for art.
+3. **Open the repo in your favourite AI coding agent and give it a premise.** I use Claude Opus 5.5 in Claude Code, on
+   medium or high effort. One or two sentences is plenty, for example:
+
+   > Make a new adventure for this game: the band gets stuck in a haunted K-pop theme park on Halloween and has to win
+   > back their mascots from a ghost producer. Keep it about 30 minutes, add it to the adventure menu.
+
+4. **Answer its questions.** It reads `CLAUDE.md` and the
+   [adventure checklist](docs/adventures/README.md), then asks a few things (tone, who's in the party, how it ends),
+   shows you a plan, and then just goes. It writes the story bible and chapters and adds them to the menu. Then it
+   plays the adventure through to check it.
+5. **Set the budget when it asks.** Before spending anything it runs the dry runs and shows how many pictures and how
+   many dollars of music, cutscenes and portraits it wants. Nothing is generated until you say yes, and each adventure
+   gets its own caps in `config.toml [budget.<id>]`. For scale, the whole L-Team cost 52 PixelLab pictures and about
+   $4.50 of Gemini (music, portraits, six cutscenes).
+
+Then pick your adventure on the *Choose an adventure* screen. Keep the house rules in mind: fictional names in the
+committed files (your real ones go in `cast.local.toml`), chaste romance, and no real names, songs or shows in any
+generation prompt. The agent follows these from `CLAUDE.md`, but it's your game, so look over what it makes.
 
 ## API keys: a short how-to
 
