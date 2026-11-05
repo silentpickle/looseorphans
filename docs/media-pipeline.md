@@ -1,8 +1,11 @@
 # Media pipeline: Lyria soundtrack and Gemini Omni cutscenes
 
 `tools/media/` makes the soundtrack and the cutscenes the same way `tools/art/` makes the pictures: a TOML manifest,
-a dry run that prints the count and the cost, dollar caps in `config.toml [budget]` (one per kind and
-`media_usd_cap` over both) that the runner refuses to cross, every call appended to `docs/media-ledger.md`, and a file already on disk never regenerated.
+a dry run that prints the count and the cost, dollar caps in `config.toml [budget.<adventure>]` (one per kind and
+`media_usd_cap` over them all) that the runner refuses to cross, every call appended to `docs/media-ledger.md` with
+the adventure it was for, and a file already on disk never regenerated. `--adventure <id>` (default `main`) picks
+whose caps, ledger rows and manifests a run uses; any adventure but `main` keeps its manifests in
+`tools/media/adventures/<id>/`, and a missing manifest is an empty batch.
 
 ## Commands
 

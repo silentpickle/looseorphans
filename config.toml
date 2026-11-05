@@ -33,11 +33,21 @@ music_volume = 0.55   # 0..1, each track's own level
 start_volume = 0.3    # the volume slider's starting point (0..1) until she moves it; it scales all sound
 fade_ms = 600          # crossfade between tracks
 
-[budget]
-pixellab_pictures_cap = 200   # hard stop; the runner refuses a batch that would cross it (the whole game)
+# One table per adventure: the runners take --adventure <id> (default main) and count only that adventure's
+# ledger rows (a row without an adventure column is main's).
+[budget.main]
+pixellab_pictures_cap = 200   # hard stop; the runner refuses a batch that would cross it (the whole adventure)
 music_usd_cap = 5.0           # Lyria
 cutscenes_usd_cap = 25.0      # Gemini Omni (Veo's replacement)
+images_usd_cap = 10.0         # Nano Banana; the same as the media total, so only that total binds here
 media_usd_cap = 10.0          # music + cutscenes + images together; your own ceiling
+
+[budget.stay]
+pixellab_pictures_cap = 200
+music_usd_cap = 1.0
+cutscenes_usd_cap = 6.0
+images_usd_cap = 8.0
+media_usd_cap = 15.0
 
 [art]
 backdrop_width = 320          # painted map screens, shown at 2x

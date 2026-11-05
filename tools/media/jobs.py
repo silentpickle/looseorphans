@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+from tools.adventure import MAIN
 from tools.media import budget
 
 
@@ -45,10 +46,12 @@ def batch_cents(jobs: list[Job]) -> int:
     return sum(job.cost_cents for job in jobs)
 
 
-def dry_run(jobs: list[Job], kind: str, cap_cents: int, total_cap_cents: int, ledger: Path) -> str:
-    """What a run would make and cost, without making anything."""
+def dry_run(  # noqa: PLR0913 - the batch, its two caps and the ledger, plus whose budget it is
+    jobs: list[Job], kind: str, cap_cents: int, total_cap_cents: int, ledger: Path, *, adventure: str = MAIN
+) -> str:
+    """What a run would make and cost against one adventure's caps, without making anything."""
     cost = batch_cents(jobs)
-    used_kind, used_all = budget.spent(ledger, kind), budget.spent(ledger)
+    used_kind, used_all = budget.spent(ledger, kind, adventure=adventure), budget.spent(ledger, adventure=adventure)
     lines = [f"{job.id}: {job.summary}  ${budget.usd(job.cost_cents)}" for job in jobs]
     lines.append(
         f"{len(jobs)} job(s) = ${budget.usd(cost)}; {kind} ${budget.usd(used_kind)} + ${budget.usd(cost)}"

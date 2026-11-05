@@ -10,12 +10,12 @@ before any call is made.
 
 from __future__ import annotations
 
-import tomllib
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.adventure import read_manifest
 from tools.media import budget, gemini, post
 from tools.media.jobs import Job, batch_cents
 from tools.media.settings import ART_DIR, CUTSCENES_SPEC, MEDIA_LEDGER, RAW_DIR, VIDEO_DIR, MediaSettings
@@ -90,7 +90,7 @@ def check_unique(clips: list[Clip]) -> None:
 
 def load_clips(path: Path = CUTSCENES_SPEC) -> list[Clip]:
     """Every clip in the manifest, checked."""
-    clips = [clip_from(raw) for raw in tomllib.loads(path.read_text()).get("clip", [])]
+    clips = [clip_from(raw) for raw in read_manifest(path).get("clip", [])]
     for clip in clips:
         check_clip(clip)
     check_unique(clips)
@@ -121,7 +121,7 @@ def animate(clip: Clip, key: str, animator: Animator, ledger: Path, settings: Me
     clip.raw.write_bytes(animator(clip.full_prompt(), clip.still.read_bytes(), clip.resolution, key))
     seconds = post.duration(clip.raw)
     note = f"{gemini.VIDEO_MODEL} {clip.resolution} {seconds:.1f}s"
-    budget.record(ledger, budget.LedgerRow(KIND, clip.id, settings.video_cents(seconds), note))
+    budget.record(ledger, budget.LedgerRow(KIND, clip.id, settings.video_cents(seconds), note, settings.adventure))
 
 
 def encode(clip: Clip, settings: MediaSettings) -> None:
@@ -138,7 +138,14 @@ def run(
 ) -> list[Path]:
     """Bring every clip given to disk, after the budget check; the files made."""
     jobs = [job_for(clip, settings) for clip in clips]
-    budget.check(ledger, KIND, batch_cents(jobs), settings.cutscenes_cap_cents, settings.media_cap_cents)
+    budget.check(
+        ledger,
+        KIND,
+        batch_cents(jobs),
+        settings.cutscenes_cap_cents,
+        settings.media_cap_cents,
+        adventure=settings.adventure,
+    )
     made: list[Path] = []
     for clip in clips:
         if not clip.raw.exists():

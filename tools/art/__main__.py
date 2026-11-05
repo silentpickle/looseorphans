@@ -3,6 +3,7 @@
 uv run --env-file secrets.env python -m tools.art balance
 uv run python -m tools.art pictures                 # dry run: what would be drawn and what it costs
 uv run --env-file secrets.env python -m tools.art pictures --run [--only portraits|m1_portrait]
+uv run python -m tools.art pictures --adventure stay  # another adventure: its own cap, ledger rows and manifest
 uv run python -m tools.art cast                     # compose the LPC figures (free)
 uv run python -m tools.art palette [--only m1_]     # snap every PixelLab picture (or those ids) to the shared palette
 uv run python -m tools.art manifest                 # rewrite web/public/assets/art/manifest.json from disk
@@ -13,8 +14,9 @@ from __future__ import annotations
 
 import argparse
 
+from tools.adventure import MAIN, checked_id
 from tools.art import lpc, palette, pictures, pixellab, sheets
-from tools.art.settings import ART_DIR, load_settings
+from tools.art.settings import ART_DIR, credits_path, load_settings, pictures_spec
 
 
 def cmd_balance(_args: argparse.Namespace) -> None:
@@ -24,17 +26,18 @@ def cmd_balance(_args: argparse.Namespace) -> None:
 
 
 def cmd_pictures(args: argparse.Namespace) -> None:
-    """Dry-run or draw the missing pieces."""
-    settings = load_settings()
-    pieces = pictures.missing(pictures.load_pieces(), args.only)
-    print(pictures.dry_run(pieces, settings.pictures_cap))
+    """Dry-run or draw one adventure's missing pieces."""
+    settings = load_settings(adventure=args.adventure)
+    spec = pictures_spec(args.adventure)
+    pieces = pictures.missing(pictures.load_pieces(spec), args.only)
+    print(pictures.dry_run(pieces, settings.pictures_cap, adventure=args.adventure))
     if not args.run or not pieces:
         return
     key = pixellab.api_key()
     before = pixellab.balance(key)
-    drawn = pictures.run(pieces, settings.pictures_cap, key)
+    drawn = pictures.run(pieces, settings.pictures_cap, key, adventure=args.adventure)
     after = pixellab.balance(key)
-    (ART_DIR / "CREDITS.md").write_text(pictures.credits_markdown(pictures.load_pieces()))
+    credits_path(args.adventure).write_text(pictures.credits_markdown(pictures.load_pieces(spec)))
     pictures.write_manifest()
     print(f"drew {len(drawn)}; generations {before.generations} -> {after.generations}")
 
@@ -73,6 +76,7 @@ def main() -> None:
     pics = commands.add_parser("pictures")
     pics.add_argument("--run", action="store_true", help="draw; without it, only report")
     pics.add_argument("--only", help="one group or one piece id")
+    pics.add_argument("--adventure", type=checked_id, default=MAIN, help="whose cap and manifest (default main)")
     pics.set_defaults(func=cmd_pictures)
     commands.add_parser("cast").set_defaults(func=cmd_cast)
     shared = commands.add_parser("palette")

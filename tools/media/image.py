@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import io
 import math
-import tomllib
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -23,6 +22,7 @@ from typing import Any
 
 from PIL import Image, ImageColor
 
+from tools.adventure import read_manifest
 from tools.media import budget, gemini
 from tools.media.jobs import Job, batch_cents
 from tools.media.settings import ART_DIR, IMAGES_SPEC, MEDIA_LEDGER, RAW_DIR, ROOT, MediaSettings
@@ -126,7 +126,7 @@ def check_unique(pictures: list[Picture]) -> None:
 
 def load_pictures(path: Path = IMAGES_SPEC) -> list[Picture]:
     """Every picture in the manifest, checked."""
-    pictures = [picture_from(raw) for raw in tomllib.loads(path.read_text()).get("image", [])]
+    pictures = [picture_from(raw) for raw in read_manifest(path).get("image", [])]
     for picture in pictures:
         check_picture(picture)
     check_unique(pictures)
@@ -162,7 +162,7 @@ def draw(picture: Picture, key: str, drawer: Drawer, ledger: Path, settings: Med
     picture.raw.parent.mkdir(parents=True, exist_ok=True)
     Image.open(io.BytesIO(answer)).save(picture.raw, format="PNG")
     note = f"{gemini.IMAGE_MODEL} {gemini.IMAGE_SIZE} {picture.aspect_ratio}"
-    budget.record(ledger, budget.LedgerRow(KIND, picture.id, settings.image_cents, note))
+    budget.record(ledger, budget.LedgerRow(KIND, picture.id, settings.image_cents, note, settings.adventure))
 
 
 def crop_to_aspect(image: Image.Image, width: int, height: int) -> Image.Image:
@@ -215,7 +215,14 @@ def run(
     """Bring every picture given that is not on disk yet, after the budget check; the files made."""
     todo = [picture for picture in pictures if not picture.output.exists()]
     jobs = [job_for(picture, settings) for picture in todo]
-    budget.check(ledger, KIND, batch_cents(jobs), settings.media_cap_cents, settings.media_cap_cents)
+    budget.check(
+        ledger,
+        KIND,
+        batch_cents(jobs),
+        settings.images_cap_cents,
+        settings.media_cap_cents,
+        adventure=settings.adventure,
+    )
     for picture in todo:
         if not picture.raw.exists():
             draw(picture, key, drawer, ledger, settings)
