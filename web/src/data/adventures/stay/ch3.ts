@@ -1,6 +1,6 @@
 import type { MinigameSpec } from "../../../minigames/types";
 import type { Chapter, Enemy } from "../../types";
-import { TRACK, VAN_IMAGE } from "./shared";
+import { ONESIES, TRACK, VAN_IMAGE } from "./shared";
 
 // The pines outside the camp: the van parked in the trees, the rest of the crew around it, the path to the gate in
 // the bottom right corner.
@@ -76,7 +76,7 @@ const ENEMIES: readonly Enemy[] = [
   {
     id: "stay_honk",
     name: "Commander Honk",
-    art: "boss_stay_honk",
+    art: "boss_stay_honk_boss",
     stats: { hp: 220, mp: 20, atk: 16, def: 9, mag: 10, spd: 14 },
     stayPoints: 180,
     color: 0xffffff,
@@ -91,6 +91,7 @@ export const CHAPTER: Chapter = {
   title: "Part 3: The Gate",
   party: ["m4", "m8", "m7", "m1"],
   enemies: ENEMIES,
+  costumes: ONESIES,
   speakers: { "Guard Kang": "stay_kang" },
   start: { map: "pines", ...PINES_SPAWN },
   maps: {
@@ -107,13 +108,13 @@ export const CHAPTER: Chapter = {
         {
           id: "m3",
           name: "{m3}",
-          figure: "m3",
+          figure: "stay_m3",
           glyph: "D",
           dialogue: "dae_briefing",
           variants: [{ when: "honk_done", dialogue: "dae_go" }],
         },
-        { id: "m6", name: "{m6}", figure: "m6", glyph: "L", dialogue: "lio_van" },
-        { id: "m5", name: "{m5}", figure: "m5", glyph: "B", dialogue: "bo_stretch" },
+        { id: "m6", name: "{m6}", figure: "stay_m6", glyph: "L", dialogue: "lio_van" },
+        { id: "m5", name: "{m5}", figure: "stay_m5", glyph: "B", dialogue: "bo_stretch" },
         {
           id: "van",
           name: "The Banana Van",
@@ -124,7 +125,7 @@ export const CHAPTER: Chapter = {
         {
           id: "letter",
           name: "A letter on a pine",
-          image: "prop_letter",
+          image: "prop_stay_letter",
           glyph: "T",
           dialogue: "letter_3",
           hiddenWhen: "letter_3",
@@ -149,7 +150,7 @@ export const CHAPTER: Chapter = {
         {
           id: "kang",
           name: "Guard Kang",
-          figure: "npc_cop",
+          figure: "stay_soldier",
           glyph: "G",
           dialogue: "kang_ari",
           variants: [
@@ -169,7 +170,7 @@ export const CHAPTER: Chapter = {
         {
           id: "honk",
           name: "Commander Honk",
-          image: "boss_stay_honk",
+          image: "boss_stay_honk_boss",
           glyph: "H",
           dialogue: "honk",
           shownWhen: "goose_called",

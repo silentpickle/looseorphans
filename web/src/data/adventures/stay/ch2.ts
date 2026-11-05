@@ -1,6 +1,6 @@
 import type { MinigameSpec } from "../../../minigames/types";
 import type { Chapter, Enemy } from "../../types";
-import { TRACK, VAN_IMAGE } from "./shared";
+import { ONESIES, TRACK, VAN_IMAGE } from "./shared";
 
 // The scrapyard: Bo's welding bay and Mr. Rust's shed along the top, the van and the plan board in the middle, the
 // gate to the back yard bottom right.
@@ -76,7 +76,7 @@ const ENEMIES: readonly Enemy[] = [
   {
     id: "stay_hound",
     name: "Scrap Hound 3000",
-    art: "boss_stay_hound",
+    art: "boss_stay_hound_boss",
     stats: { hp: 190, mp: 10, atk: 15, def: 9, mag: 6, spd: 11 },
     stayPoints: 150,
     color: 0x6b6f7a,
@@ -91,6 +91,7 @@ export const CHAPTER: Chapter = {
   title: "Part 2: The Build",
   party: ["m3", "m1", "m6"],
   enemies: ENEMIES,
+  costumes: ONESIES,
   speakers: { "Mr. Rust": "stay_rust" },
   start: { map: "yard", ...YARD_SPAWN },
   maps: {
@@ -108,7 +109,7 @@ export const CHAPTER: Chapter = {
         {
           id: "m5",
           name: "{m5}",
-          figure: "m5",
+          figure: "stay_m5",
           glyph: "B",
           dialogue: "bo_weld",
           variants: [{ when: "weld_done", dialogue: "bo_after" }],
@@ -156,7 +157,7 @@ export const CHAPTER: Chapter = {
         {
           id: "hound",
           name: "Scrap Hound 3000",
-          image: "boss_stay_hound",
+          image: "boss_stay_hound_boss",
           glyph: "H",
           dialogue: "hound",
           hiddenWhen: "hound_done",

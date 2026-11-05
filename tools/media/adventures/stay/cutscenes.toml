@@ -1,0 +1,46 @@
+# The L-Team's cutscenes (adventure "stay"): uv run python -m tools.media cutscenes --adventure stay (dry run).
+# One Gemini Omni image-to-video call per clip, with the still (web/public/assets/art/stills/<id>.png) as the first
+# frame; a clip whose still is not drawn yet is reported and skipped, so draw the stills first. 6 s each.
+# Prompts describe camera, motion and light only: never a real person's name or a show title.
+
+[[clip]]
+id = "stay_crew"
+group = "caper"
+seconds = 6
+prompt = "The six figures in plush animal onesies step forward together and strike heroic poses, the bare bulb swings, dust drifts in the light, the camera slowly pushes in low."
+
+[[clip]]
+id = "stay_montage"
+group = "caper"
+seconds = 6
+prompt = "Bright sparks fly from the welding torch, the figure in the pig onesie lifts his goggles and grins, the other paints a banana with quick strokes, quick cuts of motion, warm workshop light."
+
+[[clip]]
+id = "stay_fence"
+group = "caper"
+seconds = 6
+prompt = "The yellow van bursts through the chain-link fence in slow motion, pine needles and fence wire fly, the goose on the barrier flaps its wings, the van rolls to a gentle stop among the clay pots, the camera shakes slightly."
+
+[[clip]]
+id = "stay_laugh"
+group = "caper"
+seconds = 6
+prompt = "The young soldier at the table throws his head back laughing, the figures in animal onesies grin and wave, the other recruits turn around one by one, warm light, the camera slowly pushes in on the laughing face."
+
+[[clip]]
+id = "stay_flight"
+group = "caper"
+seconds = 6
+prompt = "The small helicopter glides over the pine valley as the sky brightens from pink to gold, its rotor blurs, the figure in the chick onesie sleeps peacefully, the camera tracks alongside."
+
+[[clip]]
+id = "stay_reunion"
+group = "ending"
+seconds = 6
+prompt = "The sun rises over the pine valley, the two figures on the hill lean their shoulders together, the earphone wire sways in the breeze, grass ripples, the camera slowly pulls back and rises."
+
+[[clip]]
+id = "stay_gate_ending"
+group = "ending"
+seconds = 6
+prompt = "The crowd of recruits cheers and claps, the sergeant blows his whistle, the goose flaps, the two in the middle hug tighter, confetti-like petals blow across the hill, the camera circles gently."

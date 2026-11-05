@@ -1,0 +1,77 @@
+# The L-Team (adventure "stay"): plush onesies for the crew, fatigues for Rae, the camp's people.
+# Composed with: uv run python -m tools.art cast. A onesie is a hood, a long-sleeve top and trousers in the animal's
+# colour, over the member's own hair, with the ears or tail the first game already gives him.
+
+[[figure]]
+id = "stay_m1"   # quokka: brown onesie
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/brown",
+          "torso/clothes/longsleeve/longsleeve/male/brown", "hat/cloth/hood/adult/brown",
+          "hair/messy1/male/black"]
+
+[[figure]]
+id = "stay_m3"   # wolf: grey onesie, wolf ears
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/charcoal", "hat/cloth/hood/adult/gray",
+          "head/ears/wolf/adult_back/dark_gray", "hair/curly_short/adult/black",
+          "head/ears/wolf/adult_front/dark_gray"]
+
+[[figure]]
+id = "stay_m4"   # ferret: white onesie, long black hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/tan",
+          "torso/clothes/longsleeve/longsleeve/male/white", "hat/cloth/hood/adult/white",
+          "hair/long/male/black"]
+
+[[figure]]
+id = "stay_m5"   # pig: pink onesie
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/pink", "hat/cloth/hood/adult/pink",
+          "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "stay_m6"   # chick: yellow onesie, blond fringe
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/brown", "legs/pants/male/tan",
+          "torso/clothes/longsleeve/longsleeve/male/yellow", "hat/cloth/hood/adult/yellow",
+          "hair/bangsshort/male/blonde"]
+
+[[figure]]
+id = "stay_m7"   # puppy: cream onesie, floppy ears
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/tan",
+          "torso/clothes/longsleeve/longsleeve/male/white", "hat/cloth/hood/adult/white",
+          "hair/bangs/male/dark_brown", "head/ears/down/adult/light"]
+
+[[figure]]
+id = "stay_m8"   # fox: orange onesie, fox tail
+layers = ["body/tail/cat/adult/bg/carrot", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/charcoal",
+          "torso/clothes/longsleeve/longsleeve/male/orange", "hat/cloth/hood/adult/orange",
+          "hair/bedhead/male/chestnut"]
+
+[[figure]]
+id = "stay_m2_uniform"   # Rae in fatigues: green, short neat hair, still the cat tail
+layers = ["body/tail/cat/adult/bg/black", "body/bodies/male/light", "head/heads/human/male/light",
+          "eyes/human/adult/brown", "feet/shoes2/male/black", "legs/pants/male/forest",
+          "torso/clothes/longsleeve/longsleeve/male/forest", "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "stay_soldier"   # Private Kim and the camp's recruits
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/forest",
+          "torso/clothes/longsleeve/longsleeve/male/forest", "hair/buzzcut/adult/black"]
+
+[[figure]]
+id = "stay_sergeant"   # Sergeant Whistle: darker fatigues, spiky hair
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/black",
+          "torso/clothes/longsleeve/longsleeve/male/forest", "hair/spiked/male/black"]
+
+[[figure]]
+id = "stay_major"   # Major Bunker: grey hair, navy jacket
+layers = ["body/bodies/male/light", "head/heads/human/male/light", "eyes/human/adult/brown",
+          "feet/shoes2/male/black", "legs/pants/male/forest", "torso/jacket/collared/male/navy",
+          "hair/curly_short/adult/gray"]

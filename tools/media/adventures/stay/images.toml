@@ -1,0 +1,75 @@
+# The L-Team's Nano Banana pictures (adventure "stay"): uv run python -m tools.media image --adventure stay (dry run).
+# The crew in their onesies, redrawn from each member's portrait in the first game so the faces stay the same.
+# A picture already on disk is never redrawn. No real names in a prompt; the onesies are generic plush animals.
+
+[[image]]
+id = "stay_m1"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a cute young Korean man with fluffy black hair and round cheeks, wearing a brown plush quokka onesie with the hood up, small round ears on the hood. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m1.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m2"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a calm young Korean man with a short military buzzcut, neat features, a faint smile, wearing green army fatigues with no insignia. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m2.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m3"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a warm young Korean man with short dark curls, wearing a grey plush wolf onesie with pointed ears on the hood, holding a whiteboard marker. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m3.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m4"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: an elegant young Korean man with long black hair, wearing a white plush ferret onesie, a disguise kit moustache in one hand. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m4.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m5"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a strong young Korean man with a black buzzcut, wearing a pink plush pig onesie with welding goggles pushed up on the hood. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m5.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m6"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a sunny young Korean man with a blond fringe and freckles, wearing a yellow plush chick onesie, holding a brownie. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m6.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m7"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a sharp young Korean man with a dark brown fringe, wearing a cream plush puppy onesie with floppy ears, a toy pilot headset around his neck. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m7.png"]
+key = "#00ff00"
+
+[[image]]
+id = "stay_m8"
+group = "portraits"
+prompt = "Redraw this exact character as a pixel art portrait bust in the same style, same face and hair: a cheeky young Korean man with chestnut bedhead, wearing an orange plush fox onesie, holding a ring of keys. JRPG dialogue portrait, facing slightly left, clean 16-bit pixel art."
+width = 128
+height = 128
+references = ["web/public/assets/art/portraits/m8.png"]
+key = "#00ff00"

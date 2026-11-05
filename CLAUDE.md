@@ -14,6 +14,7 @@ systems. Romance stays chaste; no lyrics, logos or real audio anywhere.
 - `cast.toml` every name, pet and in-joke. Story text holds `{tokens}` (`{m1}`, `{m2.pet}`, `{meter}`) that
   `web/src/cast.ts` fills in; add a key there rather than writing a name into the story. `cast.local.toml` is the
   maintainer's gitignored override: never create it for them, never commit it.
+- `docs/adventures/README.md` the index of adventures (one engine, several games) and the checklist for adding one.
 - `docs/` every other Markdown file. The repo root holds only `README.md`, `CLAUDE.md` and `LICENSE`.
 
 ## Secrets

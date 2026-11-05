@@ -1,6 +1,6 @@
 import type { MinigameSpec } from "../../../minigames/types";
 import type { Chapter, Enemy } from "../../types";
-import { TRACK } from "./shared";
+import { ONESIES, TRACK } from "./shared";
 
 // The motor pool: the helicopter on its pad top left, Major Bunker's trolley in the middle, the rest of the crew
 // along the bottom.
@@ -65,7 +65,7 @@ const ENEMIES: readonly Enemy[] = [
   {
     id: "stay_bunker",
     name: "Major Bunker",
-    art: "boss_stay_bunker",
+    art: "boss_stay_bunker_boss",
     stats: { hp: 320, mp: 30, atk: 18, def: 11, mag: 10, spd: 10 },
     stayPoints: 260,
     color: 0x3b4a2f,
@@ -80,6 +80,7 @@ export const CHAPTER: Chapter = {
   title: "Part 5: The Getaway",
   party: ["m2", "m3", "m6", "m7"],
   enemies: ENEMIES,
+  costumes: ONESIES,
   speakers: { "Major Bunker": "stay_bunker", "Sergeant Whistle": "stay_whistle" },
   start: { map: "motor", ...MOTOR_SPAWN },
   maps: {
@@ -105,15 +106,15 @@ export const CHAPTER: Chapter = {
         {
           id: "bunker",
           name: "Major Bunker",
-          figure: "npc_georgwi",
+          figure: "stay_major",
           glyph: "U",
           dialogue: "bunker",
           hiddenWhen: "bunker_done",
         },
-        { id: "m4", name: "{m4}", figure: "m4", glyph: "A", dialogue: "ari_milk" },
-        { id: "m1", name: "{m1}", figure: "m1", glyph: "S", dialogue: "sol_motor" },
-        { id: "m5", name: "{m5}", figure: "m5", glyph: "B", dialogue: "bo_motor" },
-        { id: "m8", name: "{m8}", figure: "m8", glyph: "N", dialogue: "nico_motor" },
+        { id: "m4", name: "{m4}", figure: "stay_m4", glyph: "A", dialogue: "ari_milk" },
+        { id: "m1", name: "{m1}", figure: "stay_m1", glyph: "S", dialogue: "sol_motor" },
+        { id: "m5", name: "{m5}", figure: "stay_m5", glyph: "B", dialogue: "bo_motor" },
+        { id: "m8", name: "{m8}", figure: "stay_m8", glyph: "N", dialogue: "nico_motor" },
       ],
       warps: [],
     },
@@ -129,19 +130,19 @@ export const CHAPTER: Chapter = {
         {
           id: "m1",
           name: "{m1}",
-          figure: "m1",
+          figure: "stay_m1",
           glyph: "S",
           dialogue: "sol_hill",
           variants: [{ when: "pass_reveal", dialogue: "reunion" }],
         },
-        { id: "m3", name: "{m3}", figure: "m3", glyph: "D", dialogue: "dae_hill" },
-        { id: "m4", name: "{m4}", figure: "m4", glyph: "A", dialogue: "ari_hill" },
-        { id: "m6", name: "{m6}", figure: "m6", glyph: "L", dialogue: "lio_hill" },
-        { id: "m7", name: "{m7}", figure: "m7", glyph: "J", dialogue: "jun_hill" },
+        { id: "m3", name: "{m3}", figure: "stay_m3", glyph: "D", dialogue: "dae_hill" },
+        { id: "m4", name: "{m4}", figure: "stay_m4", glyph: "A", dialogue: "ari_hill" },
+        { id: "m6", name: "{m6}", figure: "stay_m6", glyph: "L", dialogue: "lio_hill" },
+        { id: "m7", name: "{m7}", figure: "stay_m7", glyph: "J", dialogue: "jun_hill" },
         {
           id: "major",
           name: "Major Bunker",
-          figure: "npc_georgwi",
+          figure: "stay_major",
           glyph: "M",
           dialogue: "major_pass",
           variants: [{ when: "pass_reveal", dialogue: "major_after" }],
@@ -359,8 +360,8 @@ export const CHAPTER: Chapter = {
             "{m2} hugs the quokka in front of all of them.",
             "The Sergeant blows the whistle. Everybody claps.",
           ],
-          still: "still_stay_gate",
-          video: "stay_gate",
+          still: "still_stay_gate_ending",
+          video: "stay_gate_ending",
           then: "epilogue_b",
         },
       },

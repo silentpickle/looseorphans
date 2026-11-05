@@ -138,6 +138,17 @@
     "npc_hunter_zooey": "npc_hunter_zooey.png",
     "npc_saja_leader": "npc_saja_leader.png",
     "npc_stagehand": "npc_stagehand.png",
-    "npc_gwi": "npc_gwi.png"
+    "npc_gwi": "npc_gwi.png",
+    "stay_m1": "stay_m1.png",
+    "stay_m3": "stay_m3.png",
+    "stay_m4": "stay_m4.png",
+    "stay_m5": "stay_m5.png",
+    "stay_m6": "stay_m6.png",
+    "stay_m7": "stay_m7.png",
+    "stay_m8": "stay_m8.png",
+    "stay_m2_uniform": "stay_m2_uniform.png",
+    "stay_soldier": "stay_soldier.png",
+    "stay_sergeant": "stay_sergeant.png",
+    "stay_major": "stay_major.png"
   }
 }

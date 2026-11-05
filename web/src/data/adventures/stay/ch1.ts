@@ -82,6 +82,7 @@ export const CHAPTER: Chapter = {
   title: "Part 1: The Letter",
   party: ["m3"],
   enemies: ENEMIES,
+  speakers: { "Ajumma Lee": "stay_ajumma_lee" },
   start: { map: "dorm", ...DORM_SPAWN },
   maps: {
     dorm: {

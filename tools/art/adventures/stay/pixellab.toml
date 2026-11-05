@@ -1,0 +1,472 @@
+# The L-Team's PixelLab pictures (adventure "stay"):
+#   uv run python -m tools.art pictures --adventure stay        (dry run)
+#   uv run --env-file secrets.env python -m tools.art pictures --adventure stay --run   (after the human says yes)
+# Pictures land in the shared web/public/assets/art/<group>/; every id starts with stay_ so none clashes with the
+# first game's. A piece already on disk is never redrawn. Never a real person's, band's or show's name in a prompt;
+# the onesies are generic plush animals. The game already plays with stand-ins for all of these.
+
+[[piece]]
+id = "stay_garage"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2101
+view = "high top-down"
+prompt = "pixel art of a cramped concrete garage under an apartment building at night, a yellow delivery van under a half-pulled tarp against the back wall, tool shelves, an oil stain, a roll-up door at the bottom edge, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_scrapyard"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2102
+view = "high top-down"
+prompt = "pixel art of a sunny scrapyard, stacks of rusty old cars along the top and sides, a welding bay with sparks marks on the floor, a small tin shed with a hand-painted sign, a rolling whiteboard on wheels, a gate in the bottom right corner, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_backyard"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2103
+view = "high top-down"
+prompt = "pixel art of the back lot of a scrapyard, towers of crushed cars on both sides, a giant dog kennel made from a shipping container at the top, tyre tracks in the dirt, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_pines"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2104
+view = "high top-down"
+prompt = "pixel art of a pine forest clearing at dusk, tall pine trees around the edges, a dirt track, a chain-link fence glimpsed through the trees at the top, a dirt path leaving through the bottom right corner, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_gate"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2105
+view = "high top-down"
+prompt = "pixel art of the main gate of a small rural army training camp at dusk, a striped barrier arm and a tiny guardhouse at the top, a chain-link fence with pine trees behind it, a metal vent cover low on a wall on the left, a grassy patch on the right, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_barracks"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2106
+view = "high top-down"
+prompt = "pixel art of a tidy army barracks room in the morning, rows of neatly made bunk beds along the top wall, footlockers, a pair of boots by one bunk, a door at the bottom middle, plain green walls, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_parade"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2107
+view = "high top-down"
+prompt = "pixel art of a dusty parade ground at a rural army training camp in the morning, a small wooden drill platform at the top, a flagpole with a plain flag, low buildings and pine trees around, a door to a mess hall in the top right, a door to the barracks at the bottom, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_mess"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2108
+view = "high top-down"
+prompt = "pixel art of an army mess hall interior, long tables with benches, a serving counter with big steaming pots along the top wall, beige trays, windows with pine trees outside, a door at the bottom middle, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_motor"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2109
+view = "high top-down"
+prompt = "pixel art of a camp motor pool at night, a small green helicopter on a painted helipad top left, parked trucks and a forklift along the sides, oil drums, floodlights, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_hill"
+group = "backdrops"
+kind = "scene"
+width = 320
+height = 180
+seed = 2110
+view = "high top-down"
+prompt = "pixel art of a grassy hilltop at sunrise above a small camp in a pine valley, pink and gold sky, wildflowers, a lone pine tree at the top, the camp's rooftops far below at the bottom edge, camera looking steeply down, completely empty floor with nothing on the ground and no people, the walkable floor fills the lower two thirds of the image, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_street_battle"
+group = "battles"
+kind = "scene"
+width = 320
+height = 180
+seed = 2111
+view = "side"
+prompt = "pixel art battle background of a quiet city street at night outside an apartment block, a garage door, streetlights and parked scooters, side view, flat ground in the bottom third, no people, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_scrapyard_battle"
+group = "battles"
+kind = "scene"
+width = 320
+height = 180
+seed = 2112
+view = "side"
+prompt = "pixel art battle background of a scrapyard at noon, stacked rusty cars, a crane magnet hanging overhead, dusty ground, side view, flat ground in the bottom third, no people, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_pines_battle"
+group = "battles"
+kind = "scene"
+width = 320
+height = 180
+seed = 2113
+view = "side"
+prompt = "pixel art battle background of a chain-link fence in a pine forest at dusk, a searchlight beam sweeping the sky, side view, flat ground in the bottom third, no people, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_camp_battle"
+group = "battles"
+kind = "scene"
+width = 320
+height = 180
+seed = 2114
+view = "side"
+prompt = "pixel art battle background of the yard of a small rural army training camp, low green buildings, pine trees, a flagpole, morning light, side view, flat ground in the bottom third, no people, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_crew"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2115
+view = "side"
+prompt = "pixel art cinematic scene, six young men in plush animal onesies standing in a row in a garage in front of a yellow delivery van, a grey wolf, a brown quokka, a yellow chick, a white ferret, a cream puppy and an orange fox, heroic poses, a single bare bulb overhead, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_montage"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2116
+view = "side"
+prompt = "pixel art cinematic scene, a young man in a pink pig onesie and welding goggles welding a steel rabbit-shaped grille onto the front of a yellow delivery van, bright sparks, a friend in a yellow chick onesie painting a banana on the side, a tiny painted heart, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_fence"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2117
+view = "side"
+prompt = "pixel art cinematic scene, a yellow delivery van with a steel rabbit grille bursting through a chain-link fence out of a pine forest, flying pine needles, clay kimchi pots in the foreground, a large white goose watching from a striped barrier arm, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_laugh"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2118
+view = "side"
+prompt = "pixel art cinematic scene, inside an army mess hall, a young soldier in green fatigues laughing out loud at a long table, across from him seven young men in plush animal onesies holding trays, other recruits turning to look, warm light, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_flight"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2119
+view = "side"
+prompt = "pixel art cinematic scene, a small green helicopter flying low over a pine valley at dawn, pink sky, inside the open door young men in animal onesies, one in a yellow chick onesie asleep against a friend's shoulder, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_reunion"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2120
+view = "side"
+prompt = "pixel art cinematic scene, two young men sitting side by side on a grassy hilltop at sunrise sharing one pair of wired earphones, one in green army fatigues and one in a brown quokka onesie with the hood down, golden light, a camp in the valley below, seen from behind, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_gate_ending"
+group = "stills"
+kind = "scene"
+width = 320
+height = 180
+seed = 2121
+view = "side"
+prompt = "pixel art cinematic scene, a hilltop at sunrise crowded with cheering recruits in green fatigues, a stern sergeant blowing a whistle and clapping, a large white goose, in the middle a young soldier hugging a young man in a brown quokka onesie, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_rust"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2130
+prompt = "pixel art portrait bust of a kind old scrapyard owner with a grey beard, oil-stained overalls and a flat cap, a cat on his shoulder, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_kang"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2131
+prompt = "pixel art portrait bust of a young gate guard in green army fatigues and a plain cap, eating a triangle rice ball, suspicious eyes, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_whistle"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2132
+prompt = "pixel art portrait bust of a stern drill sergeant in green fatigues and a plain round campaign hat, a silver whistle in his teeth, a huge moustache, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_kim"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2133
+prompt = "pixel art portrait bust of a cheerful young army private with a buzzcut and green fatigues, rosy cheeks, waving, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_oh"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2134
+prompt = "pixel art portrait bust of a kind middle-aged Korean cook in a white apron and headscarf, holding a ladle, warm smile, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_bunker"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2135
+prompt = "pixel art portrait bust of a round-faced middle-aged army major with grey hair and a navy jacket, red-faced and out of breath, holding a slip of paper, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_ajumma_lee"
+group = "portraits"
+kind = "object"
+width = 128
+height = 128
+seed = 2136
+prompt = "pixel art portrait bust of a nosy middle-aged Korean neighbour lady with permed hair, a purple cardigan and rubber gloves, pointing, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+
+[[piece]]
+id = "stay_hound_boss"
+group = "bosses"
+kind = "object"
+width = 192
+height = 128
+seed = 2137
+view = "side"
+prompt = "pixel art of a huge robot guard dog built from scrap metal, a fridge-sized body, hubcap paws, an exhaust pipe for a tail, one glowing red eye, friendly underneath, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_honk_boss"
+group = "bosses"
+kind = "object"
+width = 128
+height = 128
+seed = 2138
+view = "side"
+prompt = "pixel art of a giant angry white goose wearing a tiny plain beret, wings spread, honking, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_whistle_boss"
+group = "bosses"
+kind = "object"
+width = 128
+height = 128
+seed = 2139
+view = "side"
+prompt = "pixel art of a stern drill sergeant in green fatigues and a round campaign hat, blowing a silver whistle, one finger pointing, huge moustache, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_bunker_boss"
+group = "bosses"
+kind = "object"
+width = 192
+height = 128
+seed = 2140
+view = "side"
+prompt = "pixel art of a round army major in a navy jacket riding a huge steel soup trolley shaped like a cartoon tank, a ladle for a cannon, steam rising, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_drone"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2141
+view = "side"
+prompt = "pixel art of a small camera drone with one big flashing lens and propellers, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_complaint"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2142
+view = "side"
+prompt = "pixel art of an angry folded paper note with a frowning face and stomping feet, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_magnet"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2143
+view = "side"
+prompt = "pixel art of a red horseshoe magnet with angry eyes, bolts and nuts stuck to it, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_tyre"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2144
+view = "side"
+prompt = "pixel art of a bouncing old rubber tyre with a grumpy face, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_goose"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2145
+view = "side"
+prompt = "pixel art of a hissing white goose with its neck stretched out, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_searchlight"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2146
+view = "side"
+prompt = "pixel art of a floating ghostly searchlight wisp with a bright beam for a face, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_ladle"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2147
+view = "side"
+prompt = "pixel art of a runaway steel soup ladle with little legs, dripping soup, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_forklift"
+group = "enemies"
+kind = "object"
+width = 64
+height = 64
+seed = 2148
+view = "side"
+prompt = "pixel art of a small yellow forklift with headlight eyes and raised forks, beeping, full body, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_van"
+group = "props"
+kind = "object"
+width = 64
+height = 64
+seed = 2149
+prompt = "pixel art icon of a yellow delivery van with a banana painted on the side and a steel rabbit-shaped grille, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_whiteboard"
+group = "props"
+kind = "object"
+width = 48
+height = 48
+seed = 2150
+prompt = "pixel art icon of a rolling whiteboard covered in arrows, boxes and one small heart, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_vent"
+group = "props"
+kind = "object"
+width = 32
+height = 32
+seed = 2151
+prompt = "pixel art icon of a square metal wall vent cover with slats, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_boot"
+group = "props"
+kind = "object"
+width = 32
+height = 32
+seed = 2152
+prompt = "pixel art icon of a black army boot with a folded note sticking out of it, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_heli"
+group = "props"
+kind = "object"
+width = 64
+height = 64
+seed = 2153
+prompt = "pixel art icon of a small green helicopter with its door open, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_letter"
+group = "props"
+kind = "object"
+width = 32
+height = 32
+seed = 2154
+prompt = "pixel art icon of a white envelope with a small cartoon rabbit sticker on the flap, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_title"
+group = "title"
+kind = "scene"
+width = 320
+height = 180
+seed = 2155
+view = "side"
+prompt = "pixel art title screen of a yellow delivery van with a steel rabbit grille parked on a hill above a pine valley at sunrise, seven small silhouettes in animal onesies with ears on their hoods standing on the van's roof, empty space in the upper middle for a logo, clean 16-bit JRPG pixel art, flat lighting"
+
+[[piece]]
+id = "stay_logo"
+group = "title"
+kind = "object"
+width = 256
+height = 96
+seed = 2156
+prompt = "pixel art game logo emblem with no text, a steel rabbit head inside a ring of seven small animal ears, crossed whiteboard marker and wrench behind it, bold caper badge style, clean 16-bit JRPG pixel art, flat lighting"

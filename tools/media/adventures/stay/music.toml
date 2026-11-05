@@ -1,0 +1,38 @@
+# The L-Team's soundtrack (adventure "stay"): uv run python -m tools.media music --adventure stay (dry run).
+# Once a track is on disk, point its cue at it in web/src/data/adventures/stay/shared.ts (TRACK).
+# Prompts name genres, instruments and moods only: never an artist, a band, a song or a show.
+
+[[track]]
+id = "stay_caper"
+group = "stay"
+model = "song"
+seconds = 75
+prompt = "Upbeat 80s-style caper theme for a retro console game: a funky slap bass line, punchy brass stabs, a synth lead, a snare-heavy drum groove, confident and cheeky, a team getting ready for a big job, loopable."
+
+[[track]]
+id = "stay_camp"
+group = "stay"
+model = "song"
+seconds = 60
+prompt = "Sneaky comic march for a retro console game: a tight military snare, pizzicato strings tiptoeing, a tuba bass, a piccolo melody, playful tension, sneaking past guards, loopable."
+
+[[track]]
+id = "stay_chase"
+group = "stay"
+model = "song"
+seconds = 75
+prompt = "Fast getaway chase music for a retro console game: driving drums at 160 bpm, a surf guitar riff, synth brass, a rising bass line, breathless and fun, loopable."
+
+[[track]]
+id = "stay_boss"
+group = "stay"
+model = "song"
+seconds = 75
+prompt = "Comic boss battle theme for a retro console game: a pompous brass march turned frantic, timpani, whistles, a distorted guitar, over-serious and silly at once, loopable."
+
+[[track]]
+id = "stay_reunion"
+group = "stay"
+model = "song"
+seconds = 60
+prompt = "Warm sunrise reunion theme for a retro console game: a soft acoustic guitar, a gentle piano melody, light strings swelling slowly, tender and hopeful, morning birds feel, loopable."

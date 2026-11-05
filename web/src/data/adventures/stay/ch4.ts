@@ -1,6 +1,6 @@
 import type { MinigameSpec } from "../../../minigames/types";
 import type { Chapter, Enemy } from "../../types";
-import { TRACK } from "./shared";
+import { ONESIES, TRACK } from "./shared";
 
 // Barracks: Rae's bunk and boots on the left, Private Kim on the right, the door to the parade ground below.
 const BARRACKS_GRID: readonly string[] = [
@@ -104,7 +104,7 @@ const ENEMIES: readonly Enemy[] = [
   {
     id: "stay_whistle",
     name: "Sergeant Whistle",
-    art: "boss_stay_whistle",
+    art: "boss_stay_whistle_boss",
     stats: { hp: 260, mp: 20, atk: 17, def: 10, mag: 8, spd: 12 },
     stayPoints: 200,
     color: 0x4a5a3b,
@@ -130,6 +130,7 @@ export const CHAPTER: Chapter = {
   title: "Part 4: Inside the Camp",
   party: ["m2"],
   enemies: ENEMIES,
+  costumes: ONESIES,
   speakers: {
     "Sergeant Whistle": "stay_whistle",
     "Private Kim": "stay_kim",
@@ -157,7 +158,7 @@ export const CHAPTER: Chapter = {
         {
           id: "kim",
           name: "Private Kim",
-          figure: "npc_cop",
+          figure: "stay_soldier",
           glyph: "K",
           dialogue: "kim",
           variants: [{ when: DRILL_WON, dialogue: "kim_after" }],
@@ -177,7 +178,7 @@ export const CHAPTER: Chapter = {
         {
           id: "whistle",
           name: "Sergeant Whistle",
-          figure: "npc_redcoat",
+          figure: "stay_sergeant",
           glyph: "W",
           dialogue: "drill",
           variants: [{ when: DRILL_WON, dialogue: "drill_after" }],
@@ -203,7 +204,7 @@ export const CHAPTER: Chapter = {
         {
           id: "m1",
           name: "A quokka",
-          figure: "m1",
+          figure: "stay_m1",
           glyph: "S",
           dialogue: "laugh",
           hiddenWhen: "laugh_done",
@@ -211,7 +212,7 @@ export const CHAPTER: Chapter = {
         {
           id: "m3",
           name: "A wolf",
-          figure: "m3",
+          figure: "stay_m3",
           glyph: "D",
           dialogue: "crew_wolf",
           hiddenWhen: "laugh_done",
@@ -219,19 +220,19 @@ export const CHAPTER: Chapter = {
         {
           id: "m6",
           name: "A chick",
-          figure: "m6",
+          figure: "stay_m6",
           glyph: "L",
           dialogue: "crew_chick",
           hiddenWhen: "laugh_done",
         },
-        { id: "m4", name: "A ferret", figure: "m4", glyph: "A", dialogue: "crew_ferret" },
-        { id: "m7", name: "A puppy", figure: "m7", glyph: "J", dialogue: "crew_puppy" },
-        { id: "m8", name: "A fox", figure: "m8", glyph: "N", dialogue: "crew_fox" },
-        { id: "m5", name: "A pig", figure: "m5", glyph: "B", dialogue: "crew_pig" },
+        { id: "m4", name: "A ferret", figure: "stay_m4", glyph: "A", dialogue: "crew_ferret" },
+        { id: "m7", name: "A puppy", figure: "stay_m7", glyph: "J", dialogue: "crew_puppy" },
+        { id: "m8", name: "A fox", figure: "stay_m8", glyph: "N", dialogue: "crew_fox" },
+        { id: "m5", name: "A pig", figure: "stay_m5", glyph: "B", dialogue: "crew_pig" },
         {
           id: "whistle_mess",
           name: "Sergeant Whistle",
-          figure: "npc_redcoat",
+          figure: "stay_sergeant",
           glyph: "W",
           dialogue: "whistle_boss",
           shownWhen: "laugh_done",
