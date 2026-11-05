@@ -1,9 +1,20 @@
 # Loose Orphans: Legend of Minsung
 
-A roughly 70-minute, Final Fantasy VI-style browser RPG about a fictional boy band, **Loose Orphans**, flung across a
+A Final Fantasy VI-style browser RPG about a fictional boy band, **Loose Orphans**, flung across a
 chain of K-drama-flavoured worlds. It is also a worked example of making a whole game with AI helpers and a strict
 engineering gate: pixel art from PixelLab, character sprites composed from free LPC layers, a generated soundtrack,
 generated cutscenes, and every spend capped and logged.
+
+**TL;DR**
+
+- **Two games in one:** *Legend of Minsung* (the 70-minute drama RPG) and *The L-Team* (a 45-minute caper: seven
+  idols in onesies spring the eighth from army camp). Pick one on the **Choose an adventure** screen.
+- **Play:** `cd web && npm install && npm run dev`, open http://127.0.0.1:5173. Add `?adventure=stay` to jump straight
+  into the L-Team. Saves stay in your browser; no account, no keys.
+- **Make it yours:** copy `cast.toml` to `cast.local.toml` and change the names ([how](#make-it-yours-the-cast-file)).
+- **Add a third adventure:** follow the checklist in [`docs/adventures/README.md`](docs/adventures/README.md).
+- **Make new art or music:** needs API keys in `secrets.env` ([how](#api-keys-a-short-how-to)); every tool dry-runs
+  and shows the cost first.
 
 > **Please read this first.** This is an independent, non-commercial parody. Every character is fictional, and any
 > resemblance to a real person, group or company is coincidental. It is not affiliated with, endorsed by, or
