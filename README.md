@@ -99,7 +99,7 @@ as chaste as the original. Member ids (`m1` to `m8`) never change, so art, saves
 
 | Part | Tool | Where | Cost control |
 |---|---|---|---|
-| Hero art: portraits, backdrops, bosses, enemies, stills | [PixelLab](https://pixellab.ai) (Pixen model) | `tools/art/` (`pixellab.toml`) | Picture cap in `config.toml [budget]` |
+| Hero art: portraits, backdrops, bosses, enemies, stills | [PixelLab](https://pixellab.ai) (Pixen model) | `tools/art/` (`pixellab.toml`) | Picture cap in `config.toml [budget.<adventure>]` |
 | Walking sprites | [Universal LPC Spritesheet Character Generator](https://github.com/sanderfrenken/Universal-LPC-Spritesheet-Character-Generator) layers, composed by script | `tools/art/lpc.py`, `tools/art/cast.toml` | Free |
 | One shared palette | Quantizer over every picture | `tools/art/palette.py` | Free |
 | Soundtrack | Lyria on the Gemini API | `tools/media/` (`music.toml`) | Dollar caps |
@@ -110,10 +110,14 @@ as chaste as the original. Member ids (`m1` to `m8`) never change, so art, saves
 The working rules that made it affordable and repeatable:
 
 - **Dry run first.** Every runner prints what it would make and what it would cost, and does nothing until you add
-  `--run`. A batch that would cross a cap in `config.toml [budget]` is refused before any call is made.
+  `--run`. A batch that would cross a cap in `config.toml [budget.<adventure>]` is refused before any call is made.
+  Each adventure has its own caps: pass `--adventure <id>` (default `main`); any adventure but `main` keeps its
+  manifests under `tools/art/adventures/<id>/` and `tools/media/adventures/<id>/`.
 - **A file on disk is never regenerated.** Delete it to redo it. Raw API output is cached under `.cache/` so
   re-processing is free.
 - **Every call is written to a ledger** (`docs/art-ledger.md`, `docs/media-ledger.md`), created on the first spend.
+  Each row ends with the adventure it was for; an adventure's caps count only its own rows, and a row without that
+  column is `main`'s.
 - **Prompts name no real person, artist, band, song or show.** Music prompts name genres, instruments and moods only.
 - **Palette discipline.** One 128-colour palette for every picture keeps AI art looking like one game.
 

@@ -7,12 +7,12 @@ would cross the music cap in config.toml is refused before any call is made.
 
 from __future__ import annotations
 
-import tomllib
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.adventure import read_manifest
 from tools.media import budget, gemini, post
 from tools.media.jobs import Job, batch_cents
 from tools.media.settings import MEDIA_LEDGER, MUSIC_DIR, MUSIC_SPEC, RAW_DIR, MediaSettings
@@ -95,7 +95,7 @@ def check_unique(tracks: list[Track]) -> None:
 
 def load_tracks(path: Path = MUSIC_SPEC) -> list[Track]:
     """Every track in the manifest, checked."""
-    tracks = [track_from(raw) for raw in tomllib.loads(path.read_text()).get("track", [])]
+    tracks = [track_from(raw) for raw in read_manifest(path).get("track", [])]
     for track in tracks:
         check_track(track)
     check_unique(tracks)
@@ -119,7 +119,7 @@ def compose(track: Track, key: str, composer: Composer, ledger: Path, settings: 
     track.raw.parent.mkdir(parents=True, exist_ok=True)
     track.raw.write_bytes(composer(MODELS[track.model], track.full_prompt(), key))
     cost = job_for(track, settings).estimate_cents
-    budget.record(ledger, budget.LedgerRow(KIND, track.id, cost, MODELS[track.model]))
+    budget.record(ledger, budget.LedgerRow(KIND, track.id, cost, MODELS[track.model], settings.adventure))
 
 
 def encode(track: Track, settings: MediaSettings) -> None:
@@ -138,7 +138,14 @@ def run(
 ) -> list[Path]:
     """Bring every track given to disk, after the budget check; the files made."""
     jobs = [job_for(track, settings) for track in tracks]
-    budget.check(ledger, KIND, batch_cents(jobs), settings.music_cap_cents, settings.media_cap_cents)
+    budget.check(
+        ledger,
+        KIND,
+        batch_cents(jobs),
+        settings.music_cap_cents,
+        settings.media_cap_cents,
+        adventure=settings.adventure,
+    )
     made: list[Path] = []
     for track in tracks:
         if not track.raw.exists():

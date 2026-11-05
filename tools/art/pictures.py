@@ -7,7 +7,6 @@ docs/art-ledger.md, and a batch that would cross the cap in config.toml is refus
 from __future__ import annotations
 
 import json
-import tomllib
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,6 +14,7 @@ from typing import Any
 
 from PIL import Image
 
+from tools.adventure import MAIN, read_manifest
 from tools.art import budget, pixellab
 from tools.art.settings import ART_DIR, ART_LEDGER, PICTURES_SPEC
 
@@ -126,7 +126,7 @@ def check_unique(pieces: list[Piece]) -> None:
 
 def load_pieces(path: Path = PICTURES_SPEC) -> list[Piece]:
     """Every piece in the manifest, checked."""
-    pieces = [piece_from(raw) for raw in tomllib.loads(path.read_text()).get("piece", [])]
+    pieces = [piece_from(raw) for raw in read_manifest(path).get("piece", [])]
     for piece in pieces:
         check_kind(piece)
         check_size(piece)
@@ -140,29 +140,36 @@ def missing(pieces: list[Piece], only: str | None = None) -> list[Piece]:
     return [piece for piece in wanted if not piece.path.exists()]
 
 
-def dry_run(pieces: list[Piece], cap: int, ledger: Path = ART_LEDGER) -> str:
-    """What a run would draw and cost, without drawing."""
+def dry_run(pieces: list[Piece], cap: int, ledger: Path = ART_LEDGER, *, adventure: str = MAIN) -> str:
+    """What a run would draw and cost against one adventure's cap, without drawing."""
     cost = len(pieces) * PICTURES_PER_PIECE
-    used = budget.spent(ledger)
+    used = budget.spent(ledger, adventure=adventure)
     lines = [f"{piece.group}/{piece.id} {piece.size} {piece.kind}" for piece in pieces]
     lines.append(f"{len(pieces)} piece(s) = {cost} picture(s); ledger {used} + {cost} of cap {cap}")
     return "\n".join(lines)
 
 
-def draw(piece: Piece, key: str, drawer: Drawer, ledger: Path) -> Path:
-    """Draw one piece, write it, record it."""
+def draw(piece: Piece, key: str, drawer: Drawer, ledger: Path, adventure: str = MAIN) -> Path:
+    """Draw one piece, write it, record it against its adventure."""
     piece.path.parent.mkdir(parents=True, exist_ok=True)
     piece.path.write_bytes(drawer(piece.request_body(), key))
-    budget.record(ledger, budget.LedgerRow(f"{piece.group}/{piece.id}", piece.size, PICTURES_PER_PIECE, "pixen"))
+    row = budget.LedgerRow(f"{piece.group}/{piece.id}", piece.size, PICTURES_PER_PIECE, "pixen", adventure)
+    budget.record(ledger, row)
     return piece.path
 
 
-def run(
-    pieces: list[Piece], cap: int, key: str, drawer: Drawer = pixellab.pixen, ledger: Path = ART_LEDGER
+def run(  # noqa: PLR0913 - the batch, its cap, the key, the drawer and the ledger, plus whose budget it is
+    pieces: list[Piece],
+    cap: int,
+    key: str,
+    drawer: Drawer = pixellab.pixen,
+    ledger: Path = ART_LEDGER,
+    *,
+    adventure: str = MAIN,
 ) -> list[Path]:
-    """Draw every piece given, after the budget check; the paths drawn."""
-    budget.check(ledger, len(pieces) * PICTURES_PER_PIECE, cap)
-    return [draw(piece, key, drawer, ledger) for piece in pieces]
+    """Draw every piece given, after the adventure's budget check; the paths drawn."""
+    budget.check(ledger, len(pieces) * PICTURES_PER_PIECE, cap, adventure=adventure)
+    return [draw(piece, key, drawer, ledger, adventure) for piece in pieces]
 
 
 def credits_markdown(pieces: list[Piece]) -> str:

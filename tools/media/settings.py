@@ -6,7 +6,8 @@ import math
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+
+from tools.adventure import MAIN, budget_table, manifest_dir
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG = ROOT / "config.toml"
@@ -16,19 +17,21 @@ VIDEO_DIR = ASSETS / "video"
 ART_DIR = ASSETS / "art"
 RAW_DIR = ROOT / ".cache" / "media"  # the API's own output, kept so post-processing can be redone for free
 MEDIA_LEDGER = ROOT / "docs" / "media-ledger.md"
-MUSIC_SPEC = ROOT / "tools" / "media" / "music.toml"
-CUTSCENES_SPEC = ROOT / "tools" / "media" / "cutscenes.toml"
-IMAGES_SPEC = ROOT / "tools" / "media" / "images.toml"
+TOOL_DIR = ROOT / "tools" / "media"
+MUSIC_SPEC = TOOL_DIR / "music.toml"
+CUTSCENES_SPEC = TOOL_DIR / "cutscenes.toml"
+IMAGES_SPEC = TOOL_DIR / "images.toml"
 CENTS = 100
 MILLION = 1_000_000
 
 
 @dataclass(frozen=True)
 class MediaSettings:
-    """The `[budget]` caps and the `[media]` table of config.toml, money in whole cents."""
+    """One adventure's `[budget.<id>]` caps and the `[media]` table of config.toml, money in whole cents."""
 
     music_cap_cents: int
     cutscenes_cap_cents: int
+    images_cap_cents: int
     media_cap_cents: int
     lyria_clip_cents: int
     lyria_song_cents: int
@@ -43,6 +46,7 @@ class MediaSettings:
     video_colors: int
     pixel_size: tuple[int, int]
     video_size: tuple[int, int]
+    adventure: str = MAIN
 
     def video_cents(self, seconds: float) -> int:
         """What one clip of `seconds` costs, rounded up to the cent."""
@@ -56,19 +60,19 @@ def cents(usd: float) -> int:
     return round(usd * CENTS)
 
 
-def budget_table(raw: dict[str, Any]) -> dict[str, Any]:
-    """The caps in config.toml."""
-    table: dict[str, Any] = raw["budget"]
-    return table
+def spec(manifest: Path, adventure: str = MAIN) -> Path:
+    """One of main's manifests (`MUSIC_SPEC`, `CUTSCENES_SPEC`, `IMAGES_SPEC`) as an adventure has it."""
+    return manifest_dir(TOOL_DIR, adventure) / manifest.name
 
 
-def load_settings(path: Path = CONFIG) -> MediaSettings:
-    """Read the settings file; every field is required."""
+def load_settings(path: Path = CONFIG, adventure: str = MAIN) -> MediaSettings:
+    """Read the settings file for one adventure; every field is required."""
     raw = tomllib.loads(path.read_text())
-    budget, media = budget_table(raw), raw["media"]
+    budget, media = budget_table(raw, adventure), raw["media"]
     return MediaSettings(
         music_cap_cents=cents(float(budget["music_usd_cap"])),
         cutscenes_cap_cents=cents(float(budget["cutscenes_usd_cap"])),
+        images_cap_cents=cents(float(budget["images_usd_cap"])),
         media_cap_cents=cents(float(budget["media_usd_cap"])),
         lyria_clip_cents=cents(float(media["lyria_clip_usd"])),
         lyria_song_cents=cents(float(media["lyria_song_usd"])),
@@ -83,4 +87,5 @@ def load_settings(path: Path = CONFIG) -> MediaSettings:
         video_colors=int(media["video_colors"]),
         pixel_size=(int(media["pixel_width"]), int(media["pixel_height"])),
         video_size=(int(media["video_width"]), int(media["video_height"])),
+        adventure=adventure,
     )

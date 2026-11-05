@@ -84,7 +84,7 @@ def test_art_record_line_is_unchanged(tmp_path: Path) -> None:
     ledger = art_ledger(tmp_path, 0)
     art_budget.record(ledger, art_budget.LedgerRow("portraits/m1", "128x128", 1, "pixen"))
     row = ledger.read_text().removeprefix(ART_HEADER)
-    assert row.split("|", 2)[2] == " portraits/m1 | 128x128 | 1 | pixen |\n"
+    assert row.split("|", 2)[2] == " portraits/m1 | 128x128 | 1 | pixen | main |\n"
 
 
 def test_art_dry_run_text_is_unchanged(tmp_path: Path) -> None:
@@ -158,7 +158,7 @@ def test_media_record_line_is_unchanged(tmp_path: Path) -> None:
     ledger.write_text(MEDIA_HEADER)
     media_budget.record(ledger, media_budget.LedgerRow("omni", "sample", JOB_CENTS, "720p 6.0s"))
     row = ledger.read_text().removeprefix(MEDIA_HEADER)
-    assert row.split("|", 2)[2] == " omni | sample | 0.62 | 720p 6.0s |\n"
+    assert row.split("|", 2)[2] == " omni | sample | 0.62 | 720p 6.0s | main |\n"
 
 
 def test_media_dry_run_text_is_unchanged(tmp_path: Path) -> None:
