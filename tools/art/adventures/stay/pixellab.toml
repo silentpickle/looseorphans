@@ -213,7 +213,7 @@ width = 320
 height = 180
 seed = 2121
 view = "side"
-prompt = "pixel art cinematic scene, a hilltop at sunrise crowded with cheering recruits in green fatigues, a stern sergeant blowing a whistle and clapping, a large white goose, in the middle a young soldier hugging a young man in a brown quokka onesie, clean 16-bit JRPG pixel art, flat lighting"
+prompt = "pixel art cinematic scene, a grassy hilltop at sunrise crowded with cheering young recruits in plain olive green fatigues and no hats, no insignia, no badges, no stars, a sergeant with a moustache blowing a whistle, a large white goose at one side, in the middle a young soldier with a buzzcut hugging a young man in a brown quokka onesie, clean 16-bit JRPG pixel art, flat lighting"
 
 [[piece]]
 id = "stay_rust"
@@ -231,7 +231,7 @@ kind = "object"
 width = 128
 height = 128
 seed = 2131
-prompt = "pixel art portrait bust of a young gate guard in green army fatigues and a plain cap, eating a triangle rice ball, suspicious eyes, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+prompt = "pixel art portrait bust of a young gate guard in a plain olive cap, eating a triangle rice ball, suspicious eyes, plain olive green fatigues with no insignia, no badges, no collar patches, no stars, no flags, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
 
 [[piece]]
 id = "stay_whistle"
@@ -249,7 +249,7 @@ kind = "object"
 width = 128
 height = 128
 seed = 2133
-prompt = "pixel art portrait bust of a cheerful young army private with a buzzcut and green fatigues, rosy cheeks, waving, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
+prompt = "pixel art portrait bust of a cheerful young army private with a buzzcut, rosy cheeks, waving, plain olive green fatigues with no insignia, no badges, no collar patches, no stars, no flags, JRPG dialogue portrait, facing slightly left, clean 16-bit style"
 
 [[piece]]
 id = "stay_oh"
@@ -469,4 +469,4 @@ kind = "object"
 width = 256
 height = 96
 seed = 2156
-prompt = "pixel art game logo emblem with no text, a steel rabbit head inside a ring of seven small animal ears, crossed whiteboard marker and wrench behind it, bold caper badge style, clean 16-bit JRPG pixel art, flat lighting"
+prompt = "pixel art round badge emblem on a transparent background, a small steel rabbit head in the middle with a wrench crossed behind it, a thin ring around it, absolutely no letters, no words, no writing, no frame or box, compact and centered, clean 16-bit JRPG pixel art, flat lighting"

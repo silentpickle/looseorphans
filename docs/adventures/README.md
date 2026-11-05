@@ -9,7 +9,7 @@ the last choice, else `main`). Choosing a different adventure reloads the page; 
 | id | Title (default cast) | Status | Campaign | Content | Story bible | Art / media manifests | Budget |
 |---|---|---|---|---|---|---|---|
 | `main` | Loose Orphans: Legend of Minsung | done, art and media drawn | `web/src/campaigns/main.ts` | `web/src/data/chapters/` | `docs/story-bible.md` | `tools/art/pixellab.toml`, `tools/art/cast.toml` + `cast/ch*.toml`, `tools/media/*.toml` | `config.toml [budget.main]` |
-| `stay` | The L-Team | playable end to end; pictures, music and video not drawn yet (stand-ins) | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
+| `stay` | The L-Team | playable end to end; pictures, portraits and music drawn, cutscenes not yet | `web/src/campaigns/stay.ts` | `web/src/data/adventures/stay/` | `docs/adventures/stay/story-bible.md` | `tools/art/adventures/stay/pixellab.toml`, `tools/art/cast/stay.toml`, `tools/media/adventures/stay/*.toml` | `config.toml [budget.stay]` |
 
 `main` keeps the folders it had before there were adventures; every later adventure uses the `adventures/<id>/`
 layout below.
@@ -43,8 +43,6 @@ layout below.
 9. **Play it.** `scripts/hygiene.sh`, then the `web` preview: pick it on the select screen and play to the credits
    (`web/qa/driver.js` can drive it with `?qa=1`). Keep the browser muted (volume slider to 0).
 
-## After the L-Team's art is drawn
-- Point `TRACK` in `web/src/data/adventures/stay/shared.ts` at the `stay_*` tracks.
-- Give the crew their onesie portraits: add `"{m1}": "stay_m1"` and so on for every member to a `speakers` table in
-  the chapters from the crew reveal on (chapters 2 to 5). Until those PNGs exist, an override would hide the
-  portrait, so it waits.
+## The L-Team's art and media
+Drawn on 2026-11-05: 48 PixelLab pictures, 8 Nano Banana crew portraits, 5 Lyria tracks (ledgers in `docs/`).
+Cutscenes come next: each clip animates its still, so dry-run `tools.media cutscenes --adventure stay` and ask.

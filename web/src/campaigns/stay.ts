@@ -12,7 +12,7 @@ export const CAMPAIGN: Campaign = fmtDeep({
   id: "stay",
   settings: { title: "{stay_team|upper}", dedication: SETTINGS.game.dedication, maker: SETTINGS.game.maker },
   subtitle: "a caper for {fandom}",
-  title: { music: "overworld", backdrop: "title_stay_title", logo: "title_stay_logo" },
+  title: { music: "stay_caper", backdrop: "title_stay_title", logo: "title_stay_logo" },
   saveKey: "{slug}.stay.save",
   volumeKey: "{slug}.volume",
   startChapter: "stay1",

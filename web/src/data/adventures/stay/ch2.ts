@@ -1,6 +1,6 @@
 import type { MinigameSpec } from "../../../minigames/types";
 import type { Chapter, Enemy } from "../../types";
-import { ONESIES, TRACK, VAN_IMAGE } from "./shared";
+import { CREW_PORTRAITS, ONESIES, TRACK, VAN_IMAGE } from "./shared";
 
 // The scrapyard: Bo's welding bay and Mr. Rust's shed along the top, the van and the plan board in the middle, the
 // gate to the back yard bottom right.
@@ -92,7 +92,8 @@ export const CHAPTER: Chapter = {
   party: ["m3", "m1", "m6"],
   enemies: ENEMIES,
   costumes: ONESIES,
-  speakers: { "Mr. Rust": "stay_rust" },
+  // The crew portraits apply to the whole adventure: the speaker table is one per campaign (data/art.ts).
+  speakers: { ...CREW_PORTRAITS, "Mr. Rust": "stay_rust" },
   start: { map: "yard", ...YARD_SPAWN },
   maps: {
     yard: {

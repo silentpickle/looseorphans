@@ -76,6 +76,56 @@
       "height": 180
     },
     {
+      "id": "stay_backyard",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_barracks",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_garage",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_gate",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_hill",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_mess",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_motor",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_parade",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_pines",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_scrapyard",
+      "width": 320,
+      "height": 180
+    },
+    {
       "id": "unearth_circle",
       "width": 320,
       "height": 180
@@ -126,6 +176,26 @@
       "id": "squish_battle",
       "width": 320,
       "height": 180
+    },
+    {
+      "id": "stay_camp_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_pines_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_scrapyard_battle",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_street_battle",
+      "width": 320,
+      "height": 180
     }
   ],
   "bosses": [
@@ -166,6 +236,26 @@
     },
     {
       "id": "saja_leader_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_bunker_boss",
+      "width": 192,
+      "height": 128
+    },
+    {
+      "id": "stay_honk_boss",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_hound_boss",
+      "width": 192,
+      "height": 128
+    },
+    {
+      "id": "stay_whistle_boss",
       "width": 128,
       "height": 128
     },
@@ -289,6 +379,46 @@
       "height": 64
     },
     {
+      "id": "stay_complaint",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_drone",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_forklift",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_goose",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_ladle",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_magnet",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_searchlight",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_tyre",
+      "width": 64,
+      "height": 64
+    },
+    {
       "id": "weather_sprite",
       "width": 64,
       "height": 64
@@ -296,17 +426,7 @@
   ],
   "portraits": [
     {
-      "id": "m3",
-      "width": 128,
-      "height": 128
-    },
-    {
       "id": "burrsung",
-      "width": 128,
-      "height": 128
-    },
-    {
-      "id": "m5",
       "width": 128,
       "height": 128
     },
@@ -317,11 +437,6 @@
     },
     {
       "id": "dongun",
-      "width": 128,
-      "height": 128
-    },
-    {
-      "id": "m6",
       "width": 128,
       "height": 128
     },
@@ -341,11 +456,6 @@
       "height": 128
     },
     {
-      "id": "m1",
-      "width": 128,
-      "height": 128
-    },
-    {
       "id": "hosier",
       "width": 128,
       "height": 128
@@ -356,17 +466,12 @@
       "height": 128
     },
     {
-      "id": "m4",
-      "width": 128,
-      "height": 128
-    },
-    {
-      "id": "m8",
-      "width": 128,
-      "height": 128
-    },
-    {
       "id": "jester",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m1",
       "width": 128,
       "height": 128
     },
@@ -376,12 +481,112 @@
       "height": 128
     },
     {
-      "id": "saja_leader",
+      "id": "m3",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m4",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m5",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m6",
       "width": 128,
       "height": 128
     },
     {
       "id": "m7",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "m8",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "saja_leader",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_ajumma_lee",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_bunker",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_kang",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_kim",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m1",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m2",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m3",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m4",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m5",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m6",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m7",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_m8",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_oh",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_rust",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "id": "stay_whistle",
       "width": 128,
       "height": 128
     },
@@ -473,6 +678,36 @@
       "height": 32
     },
     {
+      "id": "stay_boot",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "stay_heli",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_letter",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "stay_van",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "stay_vent",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "id": "stay_whiteboard",
+      "width": 48,
+      "height": 48
+    },
+    {
       "id": "umbrella",
       "width": 32,
       "height": 32
@@ -525,6 +760,41 @@
       "height": 180
     },
     {
+      "id": "stay_crew",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_fence",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_flight",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_gate_ending",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_laugh",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_montage",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "stay_reunion",
+      "width": 320,
+      "height": 180
+    },
+    {
       "id": "wrist_grab",
       "width": 320,
       "height": 180
@@ -535,6 +805,16 @@
       "id": "logo",
       "width": 256,
       "height": 96
+    },
+    {
+      "id": "stay_logo",
+      "width": 256,
+      "height": 96
+    },
+    {
+      "id": "stay_title",
+      "width": 320,
+      "height": 180
     },
     {
       "id": "title",
